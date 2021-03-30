@@ -1,0 +1,61 @@
+nav {
+    background-color: antiquewhite;
+    /* height: 200px; */
+    overflow: hidden;
+    padding: 1rem;
+}
+.menu-navgation-logo {
+    width: 16rem;
+    margin: 0 auto;
+}
+
+
+.menu-navigation-list  {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 1rem auto;
+}
+.menu-navigation-list li  {
+    margin-left: 2rem;
+}
+.menu-navigation-list a  {
+    text-decoration: none;
+}
+
+.menu-navigation-logo-image {
+    width: 100%;
+    height: auto;
+
+    display: block;
+}
+
+.navigation-banner {
+    display: flex;
+    align-items: center;
+}
+
+.navigation-banner i {
+    font-size: 1.4rem;
+    margin: 0 .5rem;
+}
+
+.menu-cart {
+    position: relative;
+}
+
+.menu-cart-items {
+    width: 1em;
+    height: 1em;
+    padding: .5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: var(--fs-smalltext);
+
+    position: absolute;
+    background-color: var(--clr-secondry);
+    top: 1em;
+    left: 1.2em;
+}
