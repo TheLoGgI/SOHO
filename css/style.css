@@ -8,19 +8,19 @@
     --clr-bg: #9b9b9b;
     --clr-error: #FF4B4B;
     --fs-heading: 4rem;
-    --fs-paragrath: 1rem;
-    --fs-smalltext: 0.875;
+    --fs-nm: 1rem;
+    --fs-sm: 0.875;
+    --fs-xs: 0.675;
 }
 
 * {
     margin: 0;
     padding: 0;
-    
+    box-sizing: border-box;
 }
 
 body {
     font-family: var(--ff-body);
-    box-sizing: border-box;
     background-color: lightslategrey;
 }
 
