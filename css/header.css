@@ -7,19 +7,149 @@
     }
 } */
 
+
 .info-bar {
     display: none;
 }
 
-nav {
+header {
+    background-color: #5A5A5A;
+    padding: .5rem;
+}
+
+.logo svg {
+    max-width: 150px;
+}
+
+#type {
     display: none;
 }
+
+nav {
+    display: block;
+    z-index: 5;
+}
+
+.fa-bars {
+    position: absolute;
+    z-index: 10;
+    font-size: 1.6rem;
+    top: 1.4rem;
+    right: 1rem;
+}
+
+.mobil-nav {
+    position: fixed;
+    background-color: #E1D8CC;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    transform: translateX(110%);
+    transition: transform .3s ease-in-out;
+    padding: 4rem 2rem 1rem 2rem;
+    font-size: 1.2rem;
+    z-index: 2;
+    line-height: 200%;
+}
+
+.shadow-mobil-nav {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: transform .1s ease-in-out;
+    transform: translateX(100%);
+}
+
+.menu-navigation-list a {
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 5;
+    outline: none;
+}
+
+.menu-navigation-list {
+    list-style-type: none;
+
+}
+
+.menu-navigation-list li {
+    position: relative;
+}
+
+.menu-navigation-list li::after {
+    content: '';
+    position: absolute;
+    background-color: blueviolet; 
+    width: 100%;
+    height: 0ch;
+    padding: .0em .5rem;
+    z-index: 1;
+    transition: height .4s ease, padding .4s ease;
+    bottom: 0;
+    left: -.5rem;
+}
+
+.menu-navigation-list li:active::after {
+    height: 2ch;
+    padding: .2em .5rem;
+}
+
+.menu-navigation-list>.selected-page::after {
+    height: .3ch;
+    bottom: -.2em;
+}
+
+.navigation-banner {
+    position: absolute;
+    top: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.navigation-banner {
+    display: flex;
+    align-items: center;
+}
+
+.navigation-banner i {
+    font-size: 1.4rem;
+    margin: 0 .5rem;
+}
+
+.menu-cart {
+    position: relative;
+}
+
+.menu-cart-items {
+    width: 1em;
+    height: 1em;
+    padding: .6em;
+    font-size: var(--fs-sm, 0.875rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+
+    position: absolute;
+    background-color: var(--clr-secondry);
+    top: 1em;
+    left: 1.2em;
+}
+
+
+
+
 
 
 @media screen and (min-width: 1200px) {
     nav {
         background-color: antiquewhite;
-        /* height: 200px; */
         overflow: hidden;
         padding: 1rem var(--pd-header);
         display: flex;
@@ -37,30 +167,28 @@ nav {
         align-items: center;
     }
 
-
+    .menu-navigation-list li::after {
+        content: '';
+        position: absolute;
+        background-color: blueviolet;
+        width: 100%;
+        height: 0ch;
+        padding: .0em .5rem;
+        z-index: 1;
+        transition: height .4s ease, padding .4s ease;
+        bottom: 0;
+        left: -.5rem;
+    }
 
 
     .menu-navigation-list {
         display: flex;
         justify-content: center;
-        list-style-type: none;
         margin: 1rem auto;
-
     }
 
     .menu-navigation-list li {
         margin-left: 2rem;
-        position: relative;
-
-    }
-
-    .menu-navigation-list a {
-        color: black;
-        text-decoration: none;
-        text-transform: uppercase;
-        position: relative;
-        z-index: 5;
-        outline: none;
     }
 
     .menu-navigation-list li::after {
@@ -86,12 +214,6 @@ nav {
         padding: .2em .5rem;
     }
 
-    .menu-navigation-list>.selected-page::after {
-        height: .3ch;
-        bottom: -.2em;
-    }
-
-
     .menu-navigation-logo-image {
         width: 100%;
         height: auto;
@@ -99,33 +221,5 @@ nav {
         display: block;
     }
 
-    .navigation-banner {
-        display: flex;
-        align-items: center;
-    }
-
-    .navigation-banner i {
-        font-size: 1.4rem;
-        margin: 0 .5rem;
-    }
-
-    .menu-cart {
-        position: relative;
-    }
-
-    .menu-cart-items {
-        width: 1em;
-        height: 1em;
-        padding: .6em;
-        font-size: var(--fs-sm, 0.875rem);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-
-        position: absolute;
-        background-color: var(--clr-secondry);
-        top: 1em;
-        left: 1.2em;
-    }
+    
 }
