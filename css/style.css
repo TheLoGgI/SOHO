@@ -5,7 +5,7 @@
     --clr-secondry: #68BAA6;
     --clr-icon: #FA7A02;
     --clr-link: #000;
-    --clr-bg: #9b9b9b;
+    --clr-body-bg: #F3EFE9;
     --clr-error: #FF4B4B;
     --pd-header: 4rem;
     --fs-heading: 4rem;
@@ -22,7 +22,7 @@
 
 body {
     font-family: var(--ff-body);
-    background-color: lightslategrey;
+    background-color: var(--clr-body-bg);
     overflow-x: hidden;
 }
 

@@ -1,34 +1,26 @@
 
-
-/* mobil */
-/* @media screen and (max-width: 320px) {
-    .info-bar {
-        display: none;
-    }
-} */
-
-
 .info-bar {
     display: none;
 }
 
 header {
-    background-color: #5A5A5A;
+    background-color: #fff;
     padding: .5rem;
 }
 
 .logo svg {
     max-width: 150px;
+    display: inline-block;
 }
 
 #type {
     display: none;
 }
 
-nav {
+/* nav {
     display: block;
     z-index: 5;
-}
+} */
 
 .fa-bars {
     position: absolute;
@@ -36,6 +28,7 @@ nav {
     font-size: 1.6rem;
     top: 1.4rem;
     right: 1rem;
+    cursor: pointer;
 }
 
 .mobil-nav {
@@ -61,7 +54,7 @@ nav {
     left: 0;
     right: 0;
     transition: transform .1s ease-in-out;
-    transform: translateX(100%);
+    transform: translateX(-100%);
 }
 
 .menu-navigation-list a {
@@ -112,11 +105,6 @@ nav {
     align-items: center;
 }
 
-.navigation-banner {
-    display: flex;
-    align-items: center;
-}
-
 .navigation-banner i {
     font-size: 1.4rem;
     margin: 0 .5rem;
@@ -143,17 +131,39 @@ nav {
 }
 
 
-
-
-
-
 @media screen and (min-width: 1200px) {
+    header {
+        padding: 0rem;
+    }
+
+    .logo svg {
+        max-width: 150px;
+    }
+
+    .logo {
+        width: 200px;
+    }
+
+    #type {
+        display: block;
+    }
+
     nav {
-        background-color: antiquewhite;
-        overflow: hidden;
-        padding: 1rem var(--pd-header);
         display: flex;
         align-items: center;
+        padding: 1rem var(--pd-header);
+    }
+
+    .mobil-nav {
+        position: static;
+        display: flex;
+        background-color: inherit;
+        transform: translateX(0%);
+        transition: transform .3s ease-in-out;
+        padding: 1rem;
+        font-size: 1rem;
+        z-index: 2;
+        line-height: 200%;
     }
 
     .info-bar {
@@ -180,6 +190,9 @@ nav {
         left: -.5rem;
     }
 
+    .fa-bars {
+        display: none;
+    }
 
     .menu-navigation-list {
         display: flex;
@@ -220,6 +233,14 @@ nav {
 
         display: block;
     }
+
+    .navigation-banner {
+        position: static;
+        display: flex;
+        align-items: center;
+    }
+
+    
 
     
 }
