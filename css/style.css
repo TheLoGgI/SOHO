@@ -1,7 +1,7 @@
 :root {
     --ff-heading: "Poppins", sans-serif;
     --ff-body: "Poppins", sans-serif;
-    --clr-main: #4D4BFF;
+    --clr-primary: #dbac2b;
     --clr-secondry: #68BAA6;
     --clr-icon: #FA7A02;
     --clr-link: #000;
@@ -31,6 +31,17 @@ body {
     margin: auto;
     padding: 0 1rem;
 }
+
+.btn {
+    background-color: var(--clr-primary);
+    border: none;
+    padding: .5rem 2rem;
+    color: white;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+
 
 
 @media screen and (min-width: 1200px) {
