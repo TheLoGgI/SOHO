@@ -28,12 +28,11 @@
 .details {
     display: flex;
     justify-content: space-evenly;
-    padding: 4rem;
-    width: 80%;
-    margin: 0 auto;
+    flex-flow: row wrap;
+    padding: 1rem 0rem;
+    /* width: calc(100% - var(--pd-header) * 2); */
+    margin: 0 calc(var(--pd-header) * .5);
     background-color: var(--clr-body-bg);
-    position: relative;
-    bottom: 6rem;
     border-radius: 5px;
 }
 
@@ -41,10 +40,147 @@
     display: flex;
     flex-direction: column;
     text-align: center;
+    width: 50%;
 }
+
+.detail img {
+    width: 100px;
+    margin: 2rem auto;
+}
+
+.menu-topics {
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+    padding: 1rem;
+    
+    /* margin: 16rem auto 16rem auto; */
+}
+
+.menutopic {
+    /* display: none; */
+    --size: 450px;
+    max-width: var(--size);
+    max-height: var(--size);
+    min-height: 450px;
+    position: relative;
+    margin: .5rem 0rem;
+}
+
+.menutopic-title {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    font-size: 150%;
+    z-index: 5;
+    color: white;
+}
+
+
+.menutopic-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(60%);
+}
+
+
+/* Desktop */
+@media screen and (min-width: 1200px) { 
+
+
+.details {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 4rem 0rem;
+    width: calc(100% - var(--pd-header) * 2);
+    margin: 0 var(--pd-header);
+    background-color: var(--clr-body-bg);
+    /* position: relative; */
+    transform: translateY(-6rem);
+    font-size: var(--fs-lg);
+    /* bottom: 6rem; */
+    /* border-radius: 5px; */
+}
+
+.detail {
+    width: auto;
+}
+
 
 .detail img {
     width: 200px;
     max-width: 200px;
     margin-bottom: 2rem;
+}
+
+.menu-topics {
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+    margin-top: -4rem;
+    /* margin: 16rem auto 16rem auto; */
+}
+
+.menutopic {
+    max-width: 25%;
+    max-height: 25%;
+    min-height: auto;
+    position: relative;
+}
+
+.menutopic-title {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    font-size: var(--fs-xx);
+    z-index: 5;
+    color: white;
+}
+
+
+.menutopic-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(60%);
+}
+
+.customer-club {
+    background-color: #5A858B;
+    background-image: url('../images/kundeklub-shirts.jpg');
+    width: 100%;
+    padding: var(--pd-header);
+    /* height: 300px; */
+}
+
+.customer-club-form {
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.customer-club-paragraph {
+    max-width: 50ch;
+    color: rgb(37, 37, 37);
+    margin: 1.5rem 0 2rem 0;
+}
+
+.customer-club-title {
+    font-size: var(--fs-xx);
+}
+
+.newsletter-field {
+    display: inline-flex;
+    align-items: stretch;
+    flex-flow: column nowrap;
+}
+
+.newsletter-field input {
+    font-size: var(--fs-lg);
+}
+
 }
