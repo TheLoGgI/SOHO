@@ -7,6 +7,8 @@ header {
     background-color: #fff;
     padding: .5rem;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 5;
 }
 
 .logo svg {
@@ -147,7 +149,7 @@ header {
     nav {
         display: flex;
         align-items: center;
-        padding: 1rem var(--pd-header);
+        padding: 0rem var(--pd-header);
     }
 
     .mobil-nav {
@@ -236,7 +238,81 @@ header {
         align-items: center;
     }
 
+    .bigmenu {
+        width: 100%;
+        background-color: #fff;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 1rem var(--pd-header);
+    }
+
+    .brands-link {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-rows: repeat(8, auto);
+    }
+
+
+    /* Fancy cover image */
+
+    .responsive-image {
+        position: relative;
+        width: 100%;
+        margin-top: 2rem;
+        /* z-index: 10; */
+        overflow: hidden;
+    }
+
+    .line-seperator {
+        width: 100%;
+        height: 5px;
+        background-color: white;
+        position: absolute;
+        transform: translateX(-9%) rotate(-70deg);
+    }
+
+    .revolution-brand-image-container, 
+    .lakor-brand-image-container {
+        /* display: block; */
+        position: relative;
+        width: 300px;
+        overflow: hidden;
+    }
+
+    .lakor-brand-image {
+        /* clip-path: polygon(0 0, 100% 0, 29% 100%, 0% 100%); */
+        /* object-position: left; */
+        cursor: pointer;
+        display: block;
+        object-fit: cover;
+        position: relative;
+        width: 100%;
+        top:0;
+        right: 40%;
+        /* border: 2px red solid; */
+        /* height: 300px; */
+    }
+
+    .lakor-brand-image:hover,
+    .revolution-brand-image:hover {
+        filter:grayscale(1)
+    }
     
+    .revolution-brand-image {
+        clip-path: polygon(100% 0, 35% 0, 16% 100%, 100% 100%);
+        cursor: pointer;
+        display: block;
+        object-fit: cover;
+        /* object-position: right; */
+        top: 0px;
+        left: 20%;
+        position: absolute;
+        width: 100%;
+        /* border: 2px blue solid; */
+        /* height: 300px; */
+    }
+
+
 
     
 }
