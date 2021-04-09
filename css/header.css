@@ -16,6 +16,7 @@ header {
     height: 4rem;
     background-color: blueviolet;
     position: fixed;
+    -webkit-position: fixed;
     bottom: 0;
 }
 
