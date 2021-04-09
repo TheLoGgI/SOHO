@@ -263,12 +263,14 @@ header {
         overflow: hidden;
     }
 
+
     .line-seperator {
         width: 100%;
         height: 5px;
         background-color: white;
         position: absolute;
         transform: translateX(-9%) rotate(-70deg);
+        transition: transform .2s ease;
     }
 
     .revolution-brand-image-container, 
@@ -281,7 +283,6 @@ header {
 
     .lakor-brand-image {
         /* clip-path: polygon(0 0, 100% 0, 29% 100%, 0% 100%); */
-        /* object-position: left; */
         cursor: pointer;
         display: block;
         object-fit: cover;
@@ -289,8 +290,18 @@ header {
         width: 100%;
         top:0;
         right: 40%;
-        /* border: 2px red solid; */
-        /* height: 300px; */
+        transition: clip-path .3s ease;
+        transition: transform .2s ease;
+    }
+
+
+    .lakor-brand-image:hover {
+        transform: translateX(20%);
+        transition: transform .2s ease;
+    }
+    .revolution-brand-image:hover {
+        transform: translateX(-20%);
+        transition: transform .2s ease;
     }
 
     .lakor-brand-image:hover,
@@ -303,13 +314,12 @@ header {
         cursor: pointer;
         display: block;
         object-fit: cover;
-        /* object-position: right; */
+        transition: clip-path .3s ease;
         top: 0px;
         left: 20%;
         position: absolute;
         width: 100%;
-        /* border: 2px blue solid; */
-        /* height: 300px; */
+        transition: transform .2s ease;
     }
 
 

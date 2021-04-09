@@ -40,3 +40,27 @@ window.addEventListener('resize', () => {
 
 
 })
+
+// Animate hover fancy image
+const lakorBrandImage = document.getElementById('lakorBrandImage')
+const revolutionBrandImage = document.getElementById('revolutionBrandImage')
+const imageSeperatorLine = document.getElementById('imageSeperatorLine')
+
+lakorBrandImage.addEventListener('mouseover', e => {
+    console.log(e.currentTarget)
+    revolutionBrandImage.style.clipPath =`polygon(100% 0, 55% 0, 36% 100%, 100% 100%)`
+    imageSeperatorLine.style.transform = `translateX(11%) rotate(-70deg)`
+})
+lakorBrandImage.addEventListener('mouseleave', e => {
+    revolutionBrandImage.style.clipPath =`polygon(100% 0, 35% 0, 16% 100%, 100% 100%)`
+    imageSeperatorLine.style.transform = `translateX(-9%) rotate(-70deg)`
+})
+
+revolutionBrandImage.addEventListener('mouseover', e => {
+    console.log(e.currentTarget)
+    imageSeperatorLine.style.transform = `translateX(-29%) rotate(-70deg)`
+})
+revolutionBrandImage.addEventListener('mouseleave', e => {
+    revolutionBrandImage.style.clipPath =`polygon(100% 0, 35% 0, 16% 100%, 100% 100%)`
+    imageSeperatorLine.style.transform = `translateX(-9%) rotate(-70deg)`
+})
