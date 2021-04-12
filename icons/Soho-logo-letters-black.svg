@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="530.28" height="253" viewBox="0 0 530.28 253">
+  <g id="Soho-logo-letters-black" transform="translate(-184.72 -733)">
+    <rect id="Rectangle_12" data-name="Rectangle 12" width="110" height="22" transform="translate(445 849)"/>
+    <rect id="Rectangle_10" data-name="Rectangle 10" width="253" height="22" transform="translate(462 733) rotate(90)"/>
+    <rect id="Rectangle_181" data-name="Rectangle 181" width="253" height="22" transform="translate(560 733) rotate(90)"/>
+    <g id="Ellipse_4" data-name="Ellipse 4" transform="translate(577 763)" fill="none" stroke="#000" stroke-width="22">
+      <circle cx="69" cy="69" r="69" stroke="none"/>
+      <circle cx="69" cy="69" r="58" fill="none"/>
+    </g>
+    <g id="Ellipse_5" data-name="Ellipse 5" transform="translate(286 763)" fill="none" stroke="#000" stroke-width="22">
+      <circle cx="69" cy="69" r="69" stroke="none"/>
+      <circle cx="69" cy="69" r="58" fill="none"/>
+    </g>
+    <path id="Path_3" data-name="Path 3" d="M2542.648,199.009c-10.738-11.06-46.616-23.657-60.463,4.589-3.6,7.344-3.77,13.37-1.945,18.555,4.793,13.647,25,18.435,25,18.435S2551.3,252.7,2533.6,282.214s-58.228,14.5-69.051,2.443" transform="translate(-2271.648 589.111)" fill="none" stroke="#000" stroke-width="22"/>
+  </g>
+</svg>
