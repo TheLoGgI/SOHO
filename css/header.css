@@ -11,14 +11,14 @@ header {
     z-index: 5;
 }
 
-.mobil-bottom-nav {
+/* .mobil-bottom-nav {
     width: 100%;
     height: 4rem;
     background-color: blueviolet;
     position: fixed;
     -webkit-position: fixed;
     bottom: 0;
-}
+} */
 
 .logo svg {
     max-width: 150px;
@@ -137,6 +137,10 @@ header {
     left: 1.2em;
 }
 
+.bigmenu {
+    display: none;
+}
+
 
 @media screen and (min-width: 1200px) {
     header {
@@ -158,7 +162,7 @@ header {
     nav {
         display: flex;
         align-items: center;
-        padding: 0rem var(--pd-header);
+        padding: 0rem var(--pd-desktop);
     }
 
     .mobil-nav {
@@ -178,7 +182,7 @@ header {
         color: white;
         font-size: 0.875rem;
         width: 100%;
-        padding: .5rem var(--pd-header);
+        padding: .5rem var(--pd-desktop);
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -247,19 +251,31 @@ header {
         align-items: center;
     }
 
+    .bigmenu h2 {
+        margin-bottom: 1rem;
+    }
+
+    .bignav-links > img {
+        height: .8em;
+        margin-left: .5em;
+    }
+
     .bigmenu {
         width: 100%;
         background-color: #fff;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        padding: 1rem var(--pd-header);
+        padding: 1rem var(--pd-desktop);
     }
 
     .brands-link {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         grid-template-rows: repeat(8, auto);
+        row-gap: .5em;
+        margin-top: 1rem;
     }
+
 
 
     /* Fancy cover image */
@@ -280,6 +296,7 @@ header {
         position: absolute;
         transform: translateX(-9%) rotate(-70deg);
         transition: transform .2s ease;
+        z-index: 10;
     }
 
     .revolution-brand-image-container, 
@@ -291,7 +308,7 @@ header {
     }
 
     .lakor-brand-image {
-        /* clip-path: polygon(0 0, 100% 0, 29% 100%, 0% 100%); */
+        clip-path: polygon(0 0, 94% 0, 81% 100%, 0% 100%);
         cursor: pointer;
         display: block;
         object-fit: cover;
@@ -307,6 +324,7 @@ header {
     .lakor-brand-image:hover {
         transform: translateX(20%);
         transition: transform .2s ease;
+        z-index: 10;
     }
     .revolution-brand-image:hover {
         transform: translateX(-20%);
