@@ -25,6 +25,7 @@
     background-color: #ce9c12;
 }
 
+/* Details section */
 .details {
     display: flex;
     justify-content: space-evenly;
@@ -48,21 +49,20 @@
     margin: 2rem auto;
 }
 
+/* Categories section */
 .menu-topics {
     display: flex;
     justify-content: space-evenly;
     flex-flow: row wrap;
     padding: 1rem;
-    
-    /* margin: 16rem auto 16rem auto; */
 }
 
 .menutopic {
-    /* display: none; */
     --size: 450px;
     max-width: var(--size);
     max-height: var(--size);
     min-height: 450px;
+    aspect-ratio: 1/1;
     position: relative;
     margin: .5rem 0rem;
 }
@@ -87,14 +87,11 @@
 }
 
 .customer-club {
-    /* background-color: #5A858B; */
-    /* background: linear-gradient(90deg, rgba(90,133,139,1) 0%, rgba(90,133,139,1) 58%, rgba(90,133,139,0) 100%); */
+    background-color: #5A858B;
     background-image: url('../images/kundeklub-shirts.jpg');
     background-position: center;
     width: 100%;
     padding: var(--pd-mobil);
-    /* font-size: var(--fs-nm); */
-    /* height: 300px; */
 }
 
 
@@ -162,6 +159,10 @@
     width: auto;
 }
 
+.product {
+    margin: 0 .5rem;
+}
+
 .product img {
     width: 100%;
 }
@@ -170,11 +171,25 @@
     font-size: var(--fs-sm);
 }
 
+.splide {
+    min-height: 16rem;
+}
+
+.splide__pagination .splide__pagination__page{
+    background-color: rgb(98, 98, 98);
+}
+
+.splide__pagination .is-active{
+    background-color: black;
+}
+
+
+
 /* Mobil Footer */
 footer {
     background-color: var(--clr-footer);
     color: white;
-    padding: var(--pd-mobil);
+    padding: var(--pd-mobil) var(--pd-mobil) 5rem var(--pd-mobil); /* 5rem is more then the height of mobil nav */
 }
 
 .footer-list {
