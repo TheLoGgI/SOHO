@@ -32,6 +32,20 @@
 
 <body>
     <div class="body-wrapper">
+
+        <!-- Mobile filter elements -->
+        <div class="mobile-filter-container">
+            <div class="mobile-filter-bg-fill"></div>
+            <div class="mobile-filter-window">
+                <div class="mobile-filter-top-elements-container">
+                    <h6 class="mobile-filter-heading">Filter</h6>
+                    <button class="mobile-filter-close-btn">
+                        <img class="mobile-filter-close-icon" src="../icons/x-close-icon.svg" alt="close-icon">
+                    </button>
+                </div>
+            </div>
+        </div>
+
         <nav class="mobil-bottom-nav">
             <button id="menuIconButton" class="mobil-nav-item">
                 <div id="nav-icon">
@@ -230,13 +244,14 @@
                     <div class="filters-container">
                         <div class="filters-devider">
                             <button id="filter-button" class="filter-buttons">
-                                <img class="filter-icon" src="../icons/Filter-icon-white.svg" alt="filter">
-                                Filtre
+                                <img class="filter-icon" src="../icons/Filter-icon.svg" alt="filter">
+                                Filter
                             </button>
                         </div>
                         <div class="filters-devider">
                             <button id="sort-button" class="filter-buttons">
                                 Sorter
+                                <img class="sort-arrow" src="../icons/Medium-arrow-down.svg" alt="Sort-arrow">
                             </button>
                         </div>
                     </div>
@@ -433,23 +448,8 @@
 
 
     <!-- <script type="text/javascript" src="js/serviceWorkerHandler.js"></script> -->
-    <script type="text/javascript" src="js/header.js"></script>
-    <script>
-        new Splide('#splide1', {
-            type: 'loop',
-            perPage: 2.5,
-            perMove: 1,
-            pagination: true,
-            autoHeight: true,
-        }).mount();
-        new Splide('#splide2', {
-            type: 'loop',
-            perPage: 2.5,
-            perMove: 1,
-            pagination: true,
-            autoHeight: true,
-        }).mount();
-    </script>
+    <!-- <script type="text/javascript" src="js/header.js"></script> -->
+    <script type="text/javascript" src="../js/filter-functionality.js"></script>
 
 
 </html>
