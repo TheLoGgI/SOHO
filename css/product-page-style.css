@@ -1,3 +1,51 @@
+/* Filter window styling */
+
+.mobile-filter-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+}
+
+.mobile-filter-bg-fill {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.294);
+}
+
+.mobile-filter-window {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 85vw;
+    height: 100vh;
+    background-color: white;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.178);
+}
+
+.mobile-filter-top-elements-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.mobile-filter-heading {
+    font-family: var(--ff-body);
+    font-size: 24px;
+}
+
+.mobile-filter-close-btn {
+    border-style: none;
+    background-color: white;
+    height: 40px;
+    width: 40px;
+}
+
+.mobile-filter-close-icon {}
+
 /* Styling af navigation path */
 
 .navigation-path-container {
@@ -31,25 +79,51 @@
 
 .filters-container {
     width: 100vw;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-column-gap: 6px;
-    background-color: blueviolet;
-    margin-top: 10px;
-    padding: 0px 20px;
+    display: flex;
+    padding: 0px 17px;
+    margin-top: 20px;
 }
 
-.filter-button {
-    height: 48px;
+.filters-devider {
+    width: 50vw;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.filter-buttons {
     font-size: 16px;
+    width: 100%;
+    height: 48px;
     border-style: none;
-    background-color: var(--clr-body-bg);
+    font-family: var(--ff-body);
+}
+
+#filter-button {
     display: flex;
+    align-items: center;
+    background-color: #1D1D1D;
+    color: white;
 }
 
 .filter-icon {
-    width: 40px;
+    width: 26px;
     display: block;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+#sort-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 16px;
+    border-style: solid;
+    border-color: #1D1D1D;
+}
+
+.sort-arrow {
+    width: 20px;
+    margin-right: 16px;
 }
 
 /* Styling af individuel produktkort */
