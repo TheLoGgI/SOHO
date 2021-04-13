@@ -95,7 +95,6 @@
     background-image: url('../images/kundeklub-shirts.jpg');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 100%;
     width: 100%;
     padding: var(--pd-mobil);
 }
@@ -266,6 +265,7 @@ hr { display: none; }
 
 .customer-club {
     padding: var(--pd-desktop);
+    background-size: 100%;
 }
 
 .customer-club-form {
