@@ -25,11 +25,12 @@ function toggleMainMenuNavigation() {
     document.body.style.overflow = 'hidden'
 }
 
+
 function toggleSearchMenu(buttonTarget) {
     const menu = document.getElementById('mobilSearchNav')
     // hidden - off
     if (menu.style.transform === 'translateY(0%)') {
-        buttonTarget.style.fill = 'auto'
+        buttonTarget.style.fill = '#000'
         menu.style.transform = `translateY(140%)`
         document.body.style.overflow = 'auto'
         return
