@@ -23,7 +23,7 @@ function showSlides(n) {
 
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
-function dropdownFunction() {
+function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
 
