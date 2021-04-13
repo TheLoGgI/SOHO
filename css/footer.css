@@ -2,6 +2,11 @@
 /* Mobil Footer */
 footer {
     background-color: var(--clr-footer);
+    width: 100%;
+}
+
+.footer-wrapper {
+    background-color: var(--clr-footer);
     color: white;
     padding: var(--pd-mobil) var(--pd-mobil) 5rem var(--pd-mobil); /* 5rem is more then the height of mobil nav */
 }
@@ -83,10 +88,11 @@ hr {
 @media screen and (min-width: 1200px) { 
 
     /* Footer */
-footer {
+.footer-wrapper {
+    width: 100%;
     padding: 2rem;
     display: grid;
-    grid-template-columns: repeat(5, minmax(300px, 1fr));
+    grid-template-columns: repeat(5, minmax(calc(1600px / 5px), 1fr));
     column-gap: 2rem;
     /* row-gap: 2rem; */
     grid-template-areas: 

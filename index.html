@@ -22,7 +22,6 @@
 
     <title>Soho - En unik tøjstil med mere</title>
     <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/css/splide.min.css" rel="stylesheet" />
-    <!-- <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/css/splide-core.min.css" rel="stylesheet" /> -->
     <link href="css/style.css" rel="stylesheet" />
     <link href="css/frontpage.css" rel="stylesheet" />
     <link href="css/header.css" rel="stylesheet" />
@@ -30,7 +29,7 @@
 </head>
 
 <body>
-    <div class="body-wrapper">
+    <!-- <div class="body-wrapper"> -->
         <nav class="mobil-bottom-nav">
             <button id="menuIconButton" class="mobil-nav-item">
                 <div id="nav-icon">
@@ -104,6 +103,7 @@
                 <p class="info-bar-paragrath">Levering 1 - 2 hverdage</p>
                 <p class="info-bar-paragrath">30 dages returret</p>
             </div>
+
             <div class="logo">
                 <a href="/">
                     <svg xmlns="http://www.w3.org/2000/svg" width="236" height="160.181" viewBox="0 0 236 160.181">
@@ -125,11 +125,17 @@
             </div>
 
             <nav class="menu-navigation">
-                <!-- <div class="mobil-nav" id="mobilNavigationToggle">
+                <!-- SOHO Logo -->
+                <div class="menu-navigation-logo">
+                    <img src="images/Logo.svg" alt="soho logotype">
+                </div>
+
                     <ul class="menu-navigation-list">
                         <li><a href="#" class="menu-navagation-link">Nyheder</a></li>
-                        <li><a href="/pages/products.html" class="menu-navagation-link">Katagorier</a></li>
-                        <li class="selected-page"><a href="#" class="menu-navagation-link">Brands</a></li>
+                        <li><a href="/pages/products.html" class="menu-navagation-link" id="onHoverCategory">Katagorier</a></li>
+                        <li class="selected-page" id="onHoverBrand">
+                            <a href="#" class="menu-navagation-link">Brands</a>
+                        </li>
                         <li><a href="#" class="menu-navagation-link">Om Soho</a></li>
                         <li><a href="#" class="menu-navagation-link">Kontakt</a></li>
                     </ul>
@@ -141,39 +147,39 @@
                             <div class="menu-cart-items" id="cartItems">0</div>
                         </div>
                     </div>
-                </div> -->
             </nav>
+
         </header>
-        <div class="bigmenu">
+        <div class="bigmenu" id="bigmenu">
             <div class="bigmenu-col1">
                 <h2>Brands</h2>
     
-                <a href="#" class="bignav-links">Alle brands <img src="./images/arrow-right.svg" alt="arrow"></a> 
+                <a href="#/brands" class="bignav-links">Alle brands <img src="./images/arrow-right.svg" alt="arrow"></a> 
                 <div class="bignav-links brands-link">
-                    <a href="" class="brand-link">Anerkjendt</a>
-                    <a href="" class="brand-link">Borlemstock</a>
-                    <a href="" class="brand-link">Clean Cut</a>
-                    <a href="" class="brand-link">Dedicated</a>
-                    <a href="" class="brand-link">Egtved Socks</a>
-                    <a href="" class="brand-link">Elvine</a>
-                    <a href="" class="brand-link">Fuza Wool</a>
-                    <a href="" class="brand-link">Garcia</a>
+                    <a href="#/brands/Anerkjendt" class="brand-link">Anerkjendt</a>
+                    <a href="#/brands/Borlemstock" class="brand-link">Borlemstock</a>
+                    <a href="#/brands/Clean Cut" class="brand-link">Clean Cut</a>
+                    <a href="#/brands/Dedicated" class="brand-link">Dedicated</a>
+                    <a href="#/brands/Egtved Soc" class="brand-link">Egtved Socks</a>
+                    <a href="#/brands/Elvine" class="brand-link">Elvine</a>
+                    <a href="#/brands/Fuza Wo" class="brand-link">Fuza Wool</a>
+                    <a href="#/brands/Garcia" class="brand-link">Garcia</a>
     
-                    <a href="" class="brand-link">Gola</a>
-                    <a href="" class="brand-link">JBS</a>
-                    <a href="" class="brand-link">KnowledgeCotton Apparel</a>
-                    <a href="" class="brand-link">Laktor</a>
-                    <a href="" class="brand-link">Mads Nøregaard</a>
-                    <a href="" class="brand-link">Nature Footwear</a>
-                    <a href="" class="brand-link">ResterRöds</a>
-                    <a href="" class="brand-link">Revolution</a>
+                    <a href="#/brands/Gola" class="brand-link">Gola</a>
+                    <a href="#/brands/JBS" class="brand-link">JBS</a>
+                    <a href="#/brands/KnowledgeCotton-Apparel" class="brand-link">KnowledgeCotton Apparel</a>
+                    <a href="#/brands/Laktor" class="brand-link">Laktor</a>
+                    <a href="#/brands/Mads-noregaard" class="brand-link">Mads Nøregaard</a>
+                    <a href="#/brands/Nature-footwear" class="brand-link">Nature Footwear</a>
+                    <a href="#/brands/ResterRöds" class="brand-link">ResterRöds</a>
+                    <a href="#/brands/Revolution" class="brand-link">Revolution</a>
     
-                    <a href="" class="brand-link">Royal Republicq</a>
-                    <a href="" class="brand-link">Scotch & Soda</a>
-                    <a href="" class="brand-link">Shoe the Bear</a>
-                    <a href="" class="brand-link">Suit</a>
-                    <a href="" class="brand-link">WareCPH</a>
-                    <a href="" class="brand-link">Wrangler</a>
+                    <a href="#/brands/Royal-republicq" class="brand-link">Royal Republicq</a>
+                    <a href="#/brands/Scotch&soda" class="brand-link">Scotch & Soda</a>
+                    <a href="#/brands/Shoe-the-bear" class="brand-link">Shoe the Bear</a>
+                    <a href="#/brands/Suit" class="brand-link">Suit</a>
+                    <a href="#/brands/WareCPH" class="brand-link">WareCPH</a>
+                    <a href="#/brands/Wrangler" class="brand-link">Wrangler</a>
                 </div>
             </div>
             <div class="bigmenu-col2">
@@ -198,17 +204,20 @@
                 <button class="btn cta">Udforsk Webshoppen</button>
             </div>
         </section>
+
         <div class="details">
             <div class="detail delivery">
                 <img src="icons/Truck-moving.svg" alt="Hurtig levering" width="100" height="100">
                 <strong>1-2 hverdage</strong>
                 <p>Fri fragt på ordrer over 299.-</p>
             </div>
+
             <div class="detail delivery">
                 <img src="icons/return-arrow.svg" alt="Returret" width="60" height="100">
                 <strong>30 dages returret</strong>
                 <p>Gratis returlabel</p>
             </div>
+
             <div class="detail delivery">
                 <img src="icons/Trustpilot-starts.svg" alt="Trustpilot" width="120" height="100">
                 <strong>5 Stjerner på Trustpilot</strong>
@@ -216,7 +225,7 @@
             </div>
         </div>
 
-        <section class="menu-topics">
+        <section class="menu-topics content-wrapper">
             <div class="menutopic news">
                 <a href="#" class="menutopic-link">
                     <img src="./images/jakket-lakor.jpg" alt="Lakor clouthing" class="menutopic-image" width="200"
@@ -240,7 +249,9 @@
             </div>
         </section>
 
-        <div class="splide" id="splide1">
+        <section class="clothing-showcase">
+            <h2 class="showcase-title">Mest populære</h2>
+            <div class="splide" id="splide1">
                 <div class="splide__track">
                     <ul class="splide__list">
                         <li class="splide__slide">
@@ -306,25 +317,29 @@
                     </ul>
                 </div>
             </div>
+        </section>
 
         <div class="customer-club">
-            <h3 class="customer-club-title">Tilmeld dig vores kundeklub</h3>
-            <p class="customer-club-paragraph">Vi bestræber os altid på at gøre noget ekstra for vores kunder. Tilmeld
-                dig til vores kundeklub og vær blandt de første til at modtage nyheder og eksklusive tilbud.</p>
-            <form class="customer-club-form">
-                <div class="newsletter-field">
-                    <label for="firstname">Fornavn</label>
-                    <input type="text" name="name" id="firstname">
-                </div>
-                <div class="newsletter-field">
-                    <label for="email">Email</label>
-                    <input type="email" name="name" id="email">
-                </div>
-                <input type="submit" class="btn" value="Tilmeld dig">
-            </form>
+            <div class="content-wrapper">
+                <h3 class="customer-club-title">Tilmeld dig vores kundeklub</h3>
+                <p class="customer-club-paragraph">Vi bestræber os altid på at gøre noget ekstra for vores kunder. Tilmeld
+                    dig til vores kundeklub og vær blandt de første til at modtage nyheder og eksklusive tilbud.</p>
+                <form class="customer-club-form">
+                    <div class="newsletter-field">
+                        <label for="firstname">Fornavn</label>
+                        <input type="text" name="name" id="firstname">
+                    </div>
+                    <div class="newsletter-field">
+                        <label for="email">Email</label>
+                        <input type="email" name="name" id="email">
+                    </div>
+                    <input type="submit" class="btn" value="Tilmeld dig">
+                </form>
+            </div>
         </div>
 
         <section class="clothing-showcase">
+            <h2 class="showcase-title">Lokale brands</h2>
             <div class="splide" id="splide2">
                 <div class="splide__track">
                     <ul class="splide__list">
@@ -391,40 +406,6 @@
                     </ul>
                 </div>
             </div>
-
-            <!-- <div class="clothing-nav">
-                <h2>Lokale brands</h2>
-                
-                <a href="#" class="clothing-nav-link">Se mere
-                    <img src="./images/arrow-right.svg" alt="pil">
-                </a> 
-            </div>
-            <div class="products">
-                <div class="product">
-                    <a href="" class="product-link">
-                        <img src="./images/products/soho-shirt.jpg" alt="t-shirt showcase">
-                        <p class="product-brand"><strong>H&M</strong> </p>
-                        <p class="product-title">T-shirt i bomuldsjersey</p>
-                        <p class="product-price">kr. 499.-</p>
-                    </a>
-                </div>
-                <div class="product">
-                    <a href="#" class="product-link">
-                        <img src="./images/products/soho-shirt.jpg" alt="t-shirt showcase">
-                        <p class="product-brand"><strong>H&M</strong> </p>
-                        <p class="product-title">T-shirt i bomuldsjersey</p>
-                        <p class="product-price">kr. 499.-</p>
-                    </a>
-                </div>
-                <div class="product">
-                    <a href="#" class="product-link">
-                        <img src="./images/products/soho-shirt.jpg" alt="t-shirt showcase">
-                        <p class="product-brand"><strong>H&M</strong> </p>
-                        <p class="product-title">T-shirt i bomuldsjersey</p>
-                        <p class="product-price">kr. 499.-</p>
-                    </a>
-                </div>
-            </div> -->
         </section>
         
             
@@ -432,6 +413,7 @@
 
 
         <footer>
+            <div class="footer-wrapper content-wrapper">
             <div class="footer-logo">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="85 0 170 76"><defs>
                     <style>.cls-1{fill:none;stroke:rgb(255, 255, 255);stroke-width:6px;}</style>
@@ -532,10 +514,10 @@
                     <path id="Stripe-icon-white" d="M51.292,51.667c-.927,0-1.948.7-1.948,2.365h3.823C53.167,52.365,52.2,51.667,51.292,51.667Zm-12.229.271a2.218,2.218,0,0,0-1.771.729l.021,5.5a2.247,2.247,0,0,0,1.75.7c1.365,0,2.281-1.49,2.281-3.479C41.344,53.448,40.406,51.927,39.063,51.938ZM55,32H5a5,5,0,0,0-5,5V73.667a5,5,0,0,0,5,5H55a5,5,0,0,0,5-5V37A5,5,0,0,0,55,32ZM12.729,57.948c0,2.667-2.115,4.177-5.2,4.2A10.237,10.237,0,0,1,3.49,61.3V57.771a9.462,9.462,0,0,0,4.052,1.177c.823,0,1.417-.219,1.417-.906,0-1.771-5.625-1.1-5.625-5.2,0-2.625,2-4.187,5-4.187a9.765,9.765,0,0,1,3.677.677v3.479a8.318,8.318,0,0,0-3.677-.948c-.781,0-1.26.229-1.26.8,0,1.667,5.656.875,5.656,5.281Zm7.167-5.9H17.083v5.26c0,2.177,2.344,1.5,2.813,1.312v3.01a5.692,5.692,0,0,1-2.594.49,3.724,3.724,0,0,1-3.844-3.8l.021-11.865,3.615-.771V48.9h2.8Zm7.708.25a2.626,2.626,0,0,0-2.823.771v8.792h-3.7V48.9h3.2l.229,1.094A2.517,2.517,0,0,1,27.594,48.9h.01ZM32.2,61.865H28.479V48.9H32.2Zm0-14.885-3.719.792V44.76l3.719-.792Zm7.719,15.156A4.17,4.17,0,0,1,37.3,61.2l-.01,4.187-3.7.781V48.9h3.26l.188.917a4.178,4.178,0,0,1,2.9-1.156c2.594,0,5.042,2.344,5.042,6.646,0,4.7-2.417,6.823-5.063,6.833Zm16.708-5.365h-7.24c.167,1.729,1.438,2.24,2.875,2.24a7.81,7.81,0,0,0,3.635-.823v2.979a8.37,8.37,0,0,1-4.1.958c-3.6,0-6.125-2.26-6.125-6.719,0-3.771,2.135-6.76,5.656-6.76s5.344,2.99,5.344,6.781C56.667,55.792,56.635,56.563,56.625,56.771Z" transform="translate(0 -32)" fill="#fff"/>
                   </svg>
             </div>
-            
+        </div>
         </footer>
 
-    </div> <!-- End of body wrapper -->
+    <!-- </div> End of body wrapper -->
 
 
     <!-- <script type="text/javascript" src="js/serviceWorkerHandler.js"></script> -->
@@ -543,14 +525,15 @@
     <script>
         new Splide( '#splide1', {
             type   : 'loop',
-            perPage: 2.5,
+            perPage: 2,
             perMove: 1,
             pagination: true,
             autoHeight: true,
         } ).mount();
+        
         new Splide( '#splide2', {
             type   : 'loop',
-            perPage: 2.5,
+            perPage: 2,
             perMove: 1,
             pagination: true,
             autoHeight: true,
