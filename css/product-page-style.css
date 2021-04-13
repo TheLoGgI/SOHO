@@ -1,0 +1,118 @@
+/* Styling af navigation path */
+
+.navigation-path-container {
+    height: 50px;
+    background-color: blue;
+}
+
+/* Styling af produkt side */
+
+.product-page-container {
+    display: flex;
+    width: 100vw;
+}
+
+/* sidemenu-styling */
+
+.side-menu {
+    width: 350px;
+    background-color: brown;
+    min-height: 100vh;
+    display: none;
+}
+
+/* Produkt-vindue-styling */
+
+.product-window {
+    width: 100vw;
+}
+
+/* Styling af filter-container */
+
+.filters-container {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 6px;
+    background-color: blueviolet;
+    margin-top: 10px;
+    padding: 0px 20px;
+}
+
+.filter-button {
+    height: 48px;
+    font-size: 16px;
+    border-style: none;
+    background-color: var(--clr-body-bg);
+    display: flex;
+}
+
+.filter-icon {
+    width: 40px;
+    display: block;
+}
+
+/* Styling af individuel produktkort */
+
+.product-spawn {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 6px;
+    grid-row-gap: 16px;
+    padding: 20px;
+}
+
+.product-card {
+    width: 100%;
+    position: relative;
+    background-color: #F3EFE9;
+}
+
+.like-button {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 0px;
+    top: 0;
+    margin: 6px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: none;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.400);
+}
+
+.like-icon {
+    width: 60%;
+    padding-top: 2px;
+}
+
+.product-image {
+    aspect-ratio: 3/4;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.product-information {}
+
+.product-text-container {}
+
+.product-title {
+    font-size: 16px;
+}
+
+.product-brand {
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 4px;
+}
+
+.product-price-container {
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+.product-price {}
