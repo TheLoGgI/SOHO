@@ -31,7 +31,6 @@
     justify-content: space-evenly;
     flex-flow: row wrap;
     padding: 1rem 0rem;
-    /* width: calc(100% - var(--pd-header) * 2); */
     margin: 0 calc(var(--pd-desktop) * .5);
     background-color: var(--clr-body-bg);
     border-radius: 5px;
@@ -45,11 +44,6 @@
     text-align: center;
     margin: 2rem 0;
     
-}
-
-.detail img {
-    width: 100px;
-    /* margin: 2rem auto; */
 }
 
 .detail p {
@@ -200,23 +194,43 @@ footer {
     padding: var(--pd-mobil) var(--pd-mobil) 5rem var(--pd-mobil); /* 5rem is more then the height of mobil nav */
 }
 
+hr {
+    margin: 1rem 0;
+    border-color: rgb(192, 192, 192);
+    /* border-width: .5px; */
+}
+
+.footer-logo {
+    width: 200px;
+    margin: 0 auto;
+    grid-area: logo;
+}
+
+.socials-footer {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 2rem auto;
+    grid-area: socials;
+}
+
+.socials-footer img {
+    display: block;
+    margin-right: 1rem;
+}
+
 .footer-list {
     list-style-type: none;
 }
 
-.footer-list .list-item:first-child  {
-    margin: 1.2rem 0;
+.address-item {
+    display: grid;
+    grid-template-columns: 50px 1fr;
 }
 
 .list-item,
 .list-item-help {
     margin: 1rem 0;
     font-size: var(--fs-sm);
-}
-
-.list-item img {
-    margin-right: 1em;
-
 }
 
 .footer-list a {
@@ -227,12 +241,42 @@ footer {
     margin: .5rem 0;
 }
 
+.footer-section {
+    margin-top: 3rem;
+}
+
+.payments-methodes-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    grid-area: payments;
+}
+
+.payments-methodes-footer > * {
+    margin-left: 1.2rem;
+    width: 50px;
+}
+
+.payments-methodes-footer:first-child > * {
+    margin-left: 0;
+}
+
+.payments-methodes-footer > * path{
+    fill: rgb(192, 192, 192);
+}
+
 
 
 
 
 /* Desktop */
 @media screen and (min-width: 1200px) { 
+
+hr { display: none; }
+.mobil-bottom-nav { display: none !important; }
+.mobil-menu-nav { display: none; }
+.mobil-search-menu { display: none; }
+
 
 .details {
     display: flex;
@@ -362,10 +406,13 @@ footer {
 }
 /* Footer */
 footer {
-    background-color: #E5E5E5;
     padding: 2rem;
     display: grid;
     grid-template-columns: repeat(5, minmax(200px, 1fr));
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "address opening help ... ..."
+    "logo main . sidebar";
 }
 
 .footer-section {
@@ -374,6 +421,10 @@ footer {
 
 .footer-list {
     list-style-type: none;
+}
+
+.payments-methodes-footer {
+    
 }
 
 }
