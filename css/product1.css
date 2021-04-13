@@ -32,8 +32,8 @@
   border-radius: 3px 0 0 3px;
 }
 
-p {
-margin-left: 10px;
+.info {
+margin-left: 18px;
 margin-bottom: 10px;
 }
 
@@ -135,4 +135,10 @@ margin-bottom: 10px;
 .shopping-bag-icon {
     width: 15px;
     margin-right: 10px;
+}
+
+.delivery-info {
+    background-color: white;
+    margin: 18px;
+    padding: 18px;
 }
