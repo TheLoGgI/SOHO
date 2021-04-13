@@ -241,7 +241,9 @@ hr {
     margin: .5rem 0;
 }
 
-.footer-section {
+.footer-opening-section,
+.footer-address-section,
+.footer-helping-section {
     margin-top: 3rem;
 }
 
@@ -404,27 +406,45 @@ hr { display: none; }
 .product img {
     width: 100%;
 }
+
 /* Footer */
 footer {
     padding: 2rem;
     display: grid;
-    grid-template-columns: repeat(5, minmax(200px, 1fr));
-    grid-template-rows: auto;
+    grid-template-columns: repeat(5, minmax(300px, 1fr));
+    column-gap: 2rem;
+    /* row-gap: 2rem; */
     grid-template-areas: 
     "address opening help ... ..."
-    "logo main . sidebar";
+    "hr hr hr hr hr"
+    "logo ... socials ... payments";
 }
 
-.footer-section {
-    margin-top: 2rem;
+.footer-opening-section,
+.footer-address-section,
+.footer-helping-section {
+    margin-top: 0rem;
+    margin-bottom: 3rem;
 }
 
-.footer-list {
-    list-style-type: none;
+.row-seperator {
+    grid-area: hr;
+    display: block;
 }
 
-.payments-methodes-footer {
-    
+.footer-logo {
+    width: 150px;
+    align-self: center;
 }
+
+.socials-footer {
+    margin: 0;
+    align-self: center;
+}
+
+.socials-footer img {
+    width: 30px;
+}
+
 
 }
