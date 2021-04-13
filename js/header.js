@@ -1,9 +1,45 @@
-const menuIcon = document.getElementById('toggleMenu')
 let isMobilNavigationShowing = false
 
-menuIcon.addEventListener('click', () => {
-    toggleMenuNavgation()
-})
+
+document.getElementById('menuIconButton').addEventListener('click', e => {
+    document.getElementById('nav-icon').classList.toggle('open')
+    toggleMainMenuNavigation()
+  })
+
+document.getElementById('searchMenuButton').addEventListener('click', e => {
+    e.currentTarget.children[0].style.fill = '#dbac2b' /* Primary yellow */
+    toggleSearchMenu(e.currentTarget.children[0])
+    document.getElementById('searchInput').focus()
+  })
+
+
+function toggleMainMenuNavigation() {
+    const menu = document.getElementById('mainMenuNav')
+    if (menu.style.transform === 'translateX(0%)') {
+        menu.style.transform = `translateX(-140%)`
+        document.body.style.overflow = 'auto'
+        return
+    }
+
+    menu.style.transform = `translateX(0%)`
+    document.body.style.overflow = 'hidden'
+}
+
+
+function toggleSearchMenu(buttonTarget) {
+    const menu = document.getElementById('mobilSearchNav')
+    // hidden - off
+    if (menu.style.transform === 'translateY(0%)') {
+        buttonTarget.style.fill = '#000'
+        menu.style.transform = `translateY(140%)`
+        document.body.style.overflow = 'auto'
+        return
+    }
+    // Showing - on
+    buttonTarget.style.fill = '#dbac2b'
+    menu.style.transform = `translateY(0%)`
+    document.body.style.overflow = 'hidden'
+}
 
 function toggleMenuNavgation(show) {
     const mobilNav = document.getElementById('mobilNavigationToggle')

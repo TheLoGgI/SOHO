@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="69.156" height="31.087" viewBox="0 0 69.156 31.087">
+  <g id="Truck-moving" transform="translate(23065 10917.342)">
+    <path id="Path_188" data-name="Path 188" d="M-23038.223-10891.113h48.244v-11.933l-5.51-8.357h-11.773v-4.938h-30.961Z" transform="translate(-8.189)" fill="none" stroke="#000" stroke-width="2"/>
+    <path id="Path_189" data-name="Path 189" d="M-22993.623-10888.937v-12.312h17.664l-5.7-7.978h-11.967Z" transform="translate(-21.829 -2.176)" fill="none" stroke="#000" stroke-width="2"/>
+    <rect id="Rectangle_438" data-name="Rectangle 438" width="14" height="2" transform="translate(-23065 -10900.255)"/>
+    <rect id="Rectangle_439" data-name="Rectangle 439" width="6" height="2" transform="translate(-23057 -10896.255)"/>
+    <g id="Ellipse_63" data-name="Ellipse 63" transform="translate(-23012 -10896.255)" fill="#fff" stroke="#000" stroke-width="2">
+      <circle cx="5" cy="5" r="5" stroke="none"/>
+      <circle cx="5" cy="5" r="4" fill="none"/>
+    </g>
+    <g id="Ellipse_62" data-name="Ellipse 62" transform="translate(-23043 -10896.255)" fill="#fff" stroke="#000" stroke-width="2">
+      <circle cx="5" cy="5" r="5" stroke="none"/>
+      <circle cx="5" cy="5" r="4" fill="none"/>
+    </g>
+  </g>
+</svg>
