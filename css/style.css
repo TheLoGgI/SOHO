@@ -39,15 +39,7 @@ a {
 }
 
 
-
-
-
-.wrapper {
-    margin: auto;
-    padding: 0 1rem;
-}
-
-.body-wrapper {
+.content-wrapper {
     max-width: 1600px;
     margin: 0 auto;
 }
@@ -75,7 +67,7 @@ a {
         --fs-sm: 0.875rem; /* 14 px */
         --fs-xs: 0.75rem; /* 12 */
         --fs-xs: 0.625rem; /* 10 */
-        font-size: var(--fs-nm);
+        /* font-size: var(--fs-nm); */
     }
 
     .wrapper {
