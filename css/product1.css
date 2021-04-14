@@ -300,3 +300,58 @@ margin-bottom: 10px;
   width: 20px;
   float: right;
 }
+
+/* Desktop */
+@media screen and (min-width: 1000px) {
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-gap: 100px;
+    margin: 20px;
+  }
+
+  .item1 {
+    grid-column: 1 / span 3; 
+    grid-row: 1;
+  }
+
+  .item2 {
+    grid-column: 4;
+    grid-row: 1;
+  }
+
+  .dropdown-content {
+    width: 400px;
+  }
+
+  .basket-button {
+    justify-content: left;
+    margin-left: 18px;
+  }
+
+  .add-to-cart {
+    width: 400px;
+  }
+
+  .delivery-info {
+    max-width: 400px;
+  }
+
+  .review {
+    max-width: 400px;
+  }
+
+  .column b {
+    font-size: 30px;
+  }
+
+  .heart-icon {
+    display: none;
+  }
+
+  .dropbtn, .dropbtn2, .dropbtn3, .dropbtn4 {
+    width: 400px;
+  }
+}
+

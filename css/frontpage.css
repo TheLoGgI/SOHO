@@ -1,3 +1,4 @@
+
 @import 'footer.css';
 
 .hero {
@@ -93,6 +94,7 @@
     background-color: #5A858B;
     background-image: url('../images/kundeklub-shirts.jpg');
     background-position: center;
+    background-repeat: no-repeat;
     width: 100%;
     padding: var(--pd-mobil);
 }
@@ -132,8 +134,14 @@
     box-shadow: none;
 }
 
+/* clothing showcase */
 .clothing-showcase {
     padding: 2rem var(--pd-mobil);
+}
+
+.showcase-title {
+    margin-bottom: 1rem;
+    font-size: var(--fs-lg);
 }
 
 .clothing-nav {
@@ -197,10 +205,12 @@ hr { display: none; }
 .mobil-search-menu { display: none; }
 
 
+
+
 .details {
     display: flex;
     justify-content: space-evenly;
-    padding: 4rem 0rem;
+    padding: 2rem 0rem;
     width: calc(100% - var(--pd-desktop) * 2);
     margin: 0 var(--pd-desktop);
     background-color: var(--clr-body-bg);
@@ -217,9 +227,8 @@ hr { display: none; }
 
 
 .detail img {
-    width: 200px;
-    max-width: 200px;
-    margin-bottom: 2rem;
+    max-width: 150px;
+    margin-bottom: 0rem;
 }
 
 .menu-topics {
@@ -227,7 +236,6 @@ hr { display: none; }
     justify-content: space-evenly;
     flex-flow: row wrap;
     margin-top: -4rem;
-    /* margin: 16rem auto 16rem auto; */
 }
 
 .menutopic {
@@ -256,10 +264,8 @@ hr { display: none; }
 }
 
 .customer-club {
-    /* background-image: url('../images/kundeklub-shirts.jpg');
-    background-position: center;
-    width: 100%; */
     padding: var(--pd-desktop);
+    background-size: 100%;
 }
 
 .customer-club-form {
@@ -273,55 +279,27 @@ hr { display: none; }
     max-width: 50ch;
     color: rgb(37, 37, 37);
     margin: 1.5rem 0 2rem 0;
+    font-size: var(--fs-nm);
+    line-height: 1.5rem;
 }
 
 .customer-club-title {
-    font-size: var(--fs-xx);
+    font-size: var(--fs-xl);
 }
-
-
 
 .newsletter-field input {
     font-size: var(--fs-lg);
 }
 
-.clothing-nav {
-    padding: 2rem var(--pd-desktop) 0 var(--pd-desktop);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+/* clothing showcase */
+.clothing-showcase {
+    max-width: 1600px;
+    margin: 2rem auto;
 }
 
-.clothing-nav-link,
-.product-link,
-.footer-list-link {
-    text-decoration: none;
-    color: black;
-}
-
-.clothing-nav-link:hover,
-.footer-list-link:hover {
-    text-decoration: underline;
-}
-
-.clothing-nav-link img {
-    width: 30px;
-    margin-left: 1rem;
-}
-
-.products {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(200px, 1fr));
-    gap: 2rem;
-    padding: 1rem var(--pd-desktop);
-}
-
-.product {
-    /* max-width: 300px; */
-    width: 100%;
-}
-.product img {
-    width: 100%;
+.splide__slide {
+    max-width: 300px;
 }
 
 }
