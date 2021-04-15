@@ -1,7 +1,7 @@
 /* Filter window styling */
 
 .mobile-filter-container {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
@@ -13,6 +13,8 @@
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.294);
+    opacity: 0;
+    transition: opacity 2s ease 2s;
 }
 
 .mobile-filter-window {
@@ -23,6 +25,7 @@
     height: 100vh;
     background-color: white;
     box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.178);
+    overflow: hidden;
 }
 
 .mobile-filter-top-elements-container {
@@ -44,7 +47,92 @@
     width: 40px;
 }
 
-.mobile-filter-close-icon {}
+/* Hvert emne i filtermenu */
+
+.filter-subject-expand-container {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.filter-subject-btn {
+    width: 100%;
+    height: 48px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: var(--ff-body);
+    font-weight: 600;
+    font-size: 20px;
+    border-style: none;
+    background-color: white;
+}
+
+.filter-subject-arrow {
+    width: 20px;
+    height: 20px;
+    transform: rotate(-90deg);
+    margin-right: 10px;
+}
+
+.filter-subject-list {
+    list-style: none;
+    overflow-y: hidden;
+    height: 0px;
+    animation-duration: 3s;
+}
+
+.filter-subject-list-item {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.filter-subject-input-check {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    border-style: solid;
+    border-width: 1.8px;
+    border-radius: 4px;
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter-subject-input-check::after {
+    font-family: "Font Awesome 5 free";
+    font-weight: 900;
+    content: "\f00c";
+    font-size: 12px;
+    color: white;
+    display: none;
+}
+
+.filter-subject-input-check:checked {
+    background-color: black;
+}
+
+.filter-subject-input-check:checked::after {
+    display: block;
+}
+
+.filter-subject-name {
+    font-size: 16px;
+}
+
+.filter-line-devider {
+    height: 1px;
+    width: 100%;
+    background-color: black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
 /* Styling af navigation path */
 
