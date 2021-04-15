@@ -1,12 +1,10 @@
+/* Slideshow */
 var slideIndex = 1;
 showSlides(slideIndex);
 
+/* Giver brugeren mulighed for at skifte til næste og forrige slide */
 function plusSlides(n) {
     showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-    showSlides(slideIndex = n);
 }
 
 function showSlides(n) {
@@ -20,13 +18,13 @@ function showSlides(n) {
     slides[slideIndex - 1].style.display = "block";
 }
 
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
+/* Dropdown menuer */
+/* Når brugeren klikker på knappen, skifter den mellem at skjule og vise dropdown-indholdet */
 function dropdownFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
 
-// Close the dropdown menu if the user clicks outside of it
+/* Lukker dropdown menuen, hvis brugeren klikker udenfor boksen */
 window.onclick = function (event) {
     if (!event.target.matches('.dropbtn')) {
         var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -40,13 +38,11 @@ window.onclick = function (event) {
     }
 }
 
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
+
 function dropdownFunction2() {
     document.getElementById("myDropdown2").classList.toggle("show");
 }
 
-// Close the dropdown menu if the user clicks outside of it
 window.onclick = function (event) {
     if (!event.target.matches('.dropbtn2')) {
         var dropdowns = document.getElementsByClassName("dropdown-content2");
@@ -60,13 +56,11 @@ window.onclick = function (event) {
     }
 }
 
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
+
 function dropdownFunction3() {
     document.getElementById("myDropdown3").classList.toggle("show");
 }
 
-// Close the dropdown menu if the user clicks outside of it
 window.onclick = function (event) {
     if (!event.target.matches('.dropbtn3')) {
         var dropdowns = document.getElementsByClassName("dropdown-content3");
@@ -80,13 +74,11 @@ window.onclick = function (event) {
     }
 }
 
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
+
 function dropdownFunction4() {
     document.getElementById("myDropdown4").classList.toggle("show");
 }
 
-// Close the dropdown menu if the user clicks outside of it
 window.onclick = function (event) {
     if (!event.target.matches('.dropbtn4')) {
         var dropdowns = document.getElementsByClassName("dropdown-content4");
