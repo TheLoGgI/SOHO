@@ -11,11 +11,12 @@
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
     <!-- <base href="https://www.w3schools.com/" target="_blank"> -->
     <link rel="manifest" href="manifest.json">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
-    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicons/favicon-16x16.png">
+    <link rel="mask-icon" href="../favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="../favicons/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="msapplication-TileColor" content="#ffc40d">
     <meta name="msapplication-config" content="favicons/browserconfig.xml">
     <meta name="theme-color" content="#9C27B0">
@@ -35,14 +36,35 @@
 
         <!-- Mobile filter elements -->
         <div class="mobile-filter-container">
-            <div class="mobile-filter-bg-fill"></div>
+            <div class="mobile-filter-bg-fill" onclick="hideFilterWindow()"></div>
             <div class="mobile-filter-window">
+                <!-- Filter top elementer -->
                 <div class="mobile-filter-top-elements-container">
                     <h6 class="mobile-filter-heading">Filter</h6>
-                    <button class="mobile-filter-close-btn">
+                    <button class="mobile-filter-close-btn" onclick="hideFilterWindow()">
                         <img class="mobile-filter-close-icon" src="../icons/x-close-icon.svg" alt="close-icon">
                     </button>
                 </div>
+
+                <!-- Filter indhold -->
+                <div class="filter-subject-expand-container">
+                    <button class="filter-subject-btn" onclick="expandMobileFilterType()">
+                        <img class="filter-subject-arrow" src="../icons/thin-arrow-down.svg">Brands
+                    </button>
+                    <ul class="filter-subject-list">
+                        <li class="filter-subject-list-item"><input class="filter-subject-input-check" id="brand-1"
+                                type="checkbox">
+                            <label for="brand-1" class="filter-subject-name">Mads Nørgaard</label>
+                        </li>
+                        <li class="filter-subject-list-item"><input class="filter-subject-input-check" id="brand-2"
+                                type="checkbox">
+                            <label for="brand-2" class="filter-subject-name">Mads Nørgaard</label>
+                        </li>
+
+                    </ul>
+                    <div class="filter-line-devider"></div>
+                </div>
+
             </div>
         </div>
 
@@ -103,11 +125,11 @@
                 <li class="menu-nav-item"><a href="#nyheder">Nyheder</a></li>
                 <li class="menu-nav-item"><a href="#kategorier">
                         <p>Kategorier</p>
-                        <img src="./images/Arrow-right.svg" alt="pil">
+                        <img src="../images/Arrow-right.svg" alt="pil">
                     </a></li>
                 <li class="menu-nav-item"><a href="#brands">
                         <p>Brands</p>
-                        <img src="./images/Arrow-right.svg" alt="pil">
+                        <img src="../images/Arrow-right.svg" alt="pil">
                     </a></li>
                 <li class="menu-nav-item"><a href="#om-soho">Om Soho</a></li>
                 <li class="menu-nav-item"><a href="#kontakt">Kontakt</a></li>
@@ -116,7 +138,7 @@
 
         <div class="mobil-search-menu" id="mobilSearchNav">
             <div class="search-input">
-                <img src="./icons/Search-icon.svg" alt="search">
+                <img src="../icons/Search-icon.svg" alt="search">
                 <input id="searchInput" type="text">
             </div>
             <div class="search-results"></div>
@@ -188,7 +210,7 @@
             <div class="bigmenu-col1">
                 <h2>Brands</h2>
 
-                <a href="#" class="bignav-links">Alle brands <img src="./images/arrow-right.svg" alt="arrow"></a>
+                <a href="#" class="bignav-links">Alle brands <img src="../images/arrow-right.svg" alt="arrow"></a>
                 <div class="bignav-links brands-link">
                     <a href="" class="brand-link">Anerkjendt</a>
                     <a href="" class="brand-link">Borlemstock</a>
@@ -221,11 +243,11 @@
                 <div class="responsive-image">
                     <a href="#">
                         <img class="lakor-brand-image" id="lakorBrandImage"
-                            src="./images/lakor_CollectionCoverPC1_1920x.jpg" alt="Lakor collection cover">
+                            src="../images/lakor_CollectionCoverPC1_1920x.jpg" alt="Lakor collection cover">
                     </a>
                     <a href="#">
                         <img class="revolution-brand-image" id="revolutionBrandImage"
-                            src="./images/spring-jackets-layers_1600w.jpg" alt="spring jacket Revolution">
+                            src="../images/spring-jackets-layers_1600w.jpg" alt="spring jacket Revolution">
                     </a>
                     <div class="line-seperator" id="imageSeperatorLine"></div>
                 </div>
@@ -243,7 +265,7 @@
                 <div class="product-window">
                     <div class="filters-container">
                         <div class="filters-devider">
-                            <button id="filter-button" class="filter-buttons">
+                            <button id="filter-button" class="filter-buttons" onclick="showFilterWindow()">
                                 <img class="filter-icon" src="../icons/Filter-icon.svg" alt="filter">
                                 Filter
                             </button>
@@ -342,8 +364,8 @@
             </div>
             <hr>
             <div class="socials-footer">
-                <img src="/icons/Facebook-icon-white.svg" alt="facebook">
-                <img src="/icons/Instagram-icon-white.svg" alt="instagram">
+                <img src="../icons/Facebook-icon-white.svg" alt="facebook">
+                <img src="../icons/Instagram-icon-white.svg" alt="instagram">
             </div>
 
             <div class="footer-address-section">
@@ -353,16 +375,16 @@
                 <ul class="footer-list">
                     <address>
                         <li class="list-item address-item">
-                            <img src="./icons/Location-icon-white.svg" alt="marker">
+                            <img src="../icons/Location-icon-white.svg" alt="marker">
                             <p> Rosensgade 30, 8000 Aarhus C</p>
                         </li>
                         <li class="list-item address-item">
 
-                            <img src="./icons/Phone-icon-white.svg" alt="Telefon">
+                            <img src="../icons/Phone-icon-white.svg" alt="Telefon">
                             <p>+45 86 12 22 89</p>
                         </li>
                         <li class="list-item address-item">
-                            <img src="./icons/Mail-icon-white.svg" alt="mail">
+                            <img src="../icons/Mail-icon-white.svg" alt="mail">
                             <p>sohoaarhus@gmail.com </p>
                         </li>
                     </address>

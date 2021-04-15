@@ -10,14 +10,22 @@
     --clr-footer: #3B3B3B;
     --pd-desktop: 4rem;
     --pd-mobil: 1rem;
-    --fs-heading: 4rem; /* 64 px */
-    --fs-subheading: 3rem; /* 48 px */
-    --fs-xl: 1.5rem; /* 24 px */
-    --fs-lg: 1.25rem; /* 20 px */
-    --fs-nm: 1rem; /* 16 px */
-    --fs-sm: 0.8rem; /* 14 px */
-    --fs-xs: 0.75rem; /* 12 */
-    --fs-xs: 0.625rem; /* 10 */
+    --fs-heading: 4rem;
+    /* 64 px */
+    --fs-subheading: 3rem;
+    /* 48 px */
+    --fs-xl: 1.5rem;
+    /* 24 px */
+    --fs-lg: 1.25rem;
+    /* 20 px */
+    --fs-nm: 1rem;
+    /* 16 px */
+    --fs-sm: 0.8rem;
+    /* 14 px */
+    --fs-xs: 0.75rem;
+    /* 12 */
+    --fs-xs: 0.625rem;
+    /* 10 */
     font-size: var(--fs-lg);
 }
 
@@ -25,6 +33,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    outline: none;
+}
+
+*:focus, *:hover {
+    outline: none;
 }
 
 body {
@@ -37,7 +50,6 @@ a {
     text-decoration: none;
     color: var(--clr-link, #000);
 }
-
 
 .content-wrapper {
     max-width: 1600px;
@@ -53,30 +65,34 @@ a {
     cursor: pointer;
 }
 
-
-
 /* Desktop */
-@media screen and (min-width: 1200px) {
 
+@media screen and (min-width: 1200px) {
     :root {
-        --fs-heading: 4rem; /* 64 px */
-        --fs-subheading: 3rem; /* 48 px */
-        --fs-xl: 1.5rem; /* 24 px */
-        --fs-lg: 1.25rem; /* 20 px */
-        --fs-nm: 1rem; /* 16 px */
-        --fs-sm: 0.875rem; /* 14 px */
-        --fs-xs: 0.75rem; /* 12 */
-        --fs-xs: 0.625rem; /* 10 */
+        --fs-heading: 4rem;
+        /* 64 px */
+        --fs-subheading: 3rem;
+        /* 48 px */
+        --fs-xl: 1.5rem;
+        /* 24 px */
+        --fs-lg: 1.25rem;
+        /* 20 px */
+        --fs-nm: 1rem;
+        /* 16 px */
+        --fs-sm: 0.875rem;
+        /* 14 px */
+        --fs-xs: 0.75rem;
+        /* 12 */
+        --fs-xs: 0.625rem;
+        /* 10 */
         /* font-size: var(--fs-nm); */
     }
-
     .wrapper {
         margin: 2rem auto;
         padding: 0 4rem;
         max-width: 1200px;
         min-height: 100vh;
     }
-
     .loading {
         display: flex;
         justify-content: center;
@@ -84,35 +100,26 @@ a {
         height: 100%;
         margin-top: 10%;
     }
-
     a:hover {
         text-decoration: underline;
     }
-
     .loading i {
         font-size: 4rem;
         color: lightsalmon;
         animation: rotate-loading 3.5s ease-in-out 0s infinite normal forwards;
     }
-
     @keyframes rotate-loading {
         0% {
             transform: rotate(0deg);
         }
-
         50% {
             transform: rotate(180deg)
         }
-
         52% {
             transform: rotate(180deg)
         }
-
         100% {
             transform: rotate(360deg)
         }
     }
-
-    
 }
-
