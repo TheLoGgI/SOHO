@@ -7,9 +7,11 @@
     <meta name="author" content="" />
     <meta name="viewport"
         content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
-    <script src="https://kit.fontawesome.com/d577d4a2e5.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/d577d4a2e5.js" crossorigin="anonymous"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
     <!-- <base href="https://www.w3schools.com/" target="_blank"> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
@@ -140,17 +142,59 @@
                         <li><a href="#" class="menu-navagation-link">Kontakt</a></li>
                     </ul>
                     <div class="navigation-banner">
-                        <i class="far fa-heart"></i>
-                        <i class="fas fa-user-circle"></i>
-                        <div class="menu-cart">
-                            <i class="fas fa-shopping-cart"></i>
+                        <img src="./icons/Heart-icon.svg" alt="favoritter">
+                        <img src="./icons/Profile-icon.svg" alt="profil">
+                        <div class="menu-cart" id="cartIcon">
+                            <img src="./icons/Shopping-bag-icon.svg" alt="kurv">
                             <div class="menu-cart-items" id="cartItems">0</div>
                         </div>
+
+                        
                     </div>
             </nav>
 
         </header>
-        <div class="bigmenu" id="bigmenuBrand">
+
+        <div class="shopping-cart" id="shoppingCart" aria-label="closed">
+            <p class="shopping-cart-title">Kurv <span>(0)</span></p> 
+            <div class="cart-items">
+                <div class="cart-item">
+                    <div class="cart-product">
+                        <div class="cart-product-image">
+                            <img src="./images/products/SBD-apparel-t-shirt-female.jpg" alt="product">
+                        </div>
+                        <div class="product-info">
+                            <p class="product-brand">Adidas</p>
+                            <p class="product-title">SBD Apperel T-shirt</p>
+                            <p class="product-price">Pris: <span> 379</span> kr</p>
+                            
+                            <div class="product-details">
+                                <p>Størrelse: <span> Large</span></p>
+                                <p>Farve: <span> Sort</span></p>
+                                <p>Antal: <span> 1</span></p>
+                            </div>
+                            <button class="remove-item">Fjern kurv</button>
+                        </div>
+                    </div>
+                </div>
+                <hr class="thematic-break">
+            </div>
+
+            <div class="shopping-cart-total">
+                <div class="cart-delevery">
+                    <p>Levering</p>
+                    <p class="delevery-fee"><span>29,00</span> kr</p>
+                </div>
+                <div class="cart-total">
+                    <p>Pris i alt (inkl. moms)</p>
+                    <p class="cart-total-price"><span>758,00</span> kr</p>
+                </div>
+            </div>
+            <hr class="thematic-break">
+            <button class="shopping-btn btn">Indkøbskurv</button>
+        </div>
+
+        <div class="bigmenu" id="bigmenuBrand" aria-label="Close" tabindex="-1">
             <div class="bigmenu-col1">
                 <h2>Brands</h2>
     
@@ -196,7 +240,7 @@
             </div>
         </div>
 
-        <div class="bigmenu" id="bigmenuCategory">
+        <div class="bigmenu" id="bigmenuCategory" aria-label="Close" tabindex="-1">
             <div class="bigmenu-col1">
                 <h2>Kategorier</h2>
     

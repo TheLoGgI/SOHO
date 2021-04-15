@@ -125,15 +125,12 @@ a.mobil-nav-item,
   top: 1rem;
   display: flex;
   align-items: center;
-}
-
-.navigation-banner i {
-  font-size: 1.4rem;
-  margin: 0 0.5rem;
+  gap: 1rem;
 }
 
 .menu-cart {
   position: relative;
+  cursor: pointer;
 }
 
 .menu-cart-items {
@@ -147,9 +144,9 @@ a.mobil-nav-item,
   border-radius: 50%;
 
   position: absolute;
-  background-color: var(--clr-secondry);
+  background-color: var(--clr-primary);
   top: 1em;
-  left: 1.2em;
+  left: 1em;
 }
 
 .bigmenu {

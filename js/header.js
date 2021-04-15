@@ -58,6 +58,7 @@ bigMenuHover.forEach(item => {
 bigmenuCategory.addEventListener('mouseleave', e => {
     bigmenuCategory.style.transform = `translateY(-120%)`
 })
+
 bigmenuBrand.addEventListener('mouseleave', e => {
     bigmenuBrand.style.transform = `translateY(-120%)`
 })
@@ -72,6 +73,26 @@ function showBigMenu(changeTo) {
     }
 
 }
+
+const cart = document.getElementById('shoppingCart')
+document.getElementById('cartIcon').addEventListener('click', () => {
+    // cart.style.transform = `translateY(-120%)`
+    const state = cart.getAttribute('aria-label')
+    console.log('state: ', state);
+    if (state === 'closed') {
+        cart.style.transform = `translateY(0%)`
+        cart.setAttribute('aria-label', 'open')
+    }
+    else {
+        cart.style.transform = `translateY(-120%)`
+        cart.setAttribute('aria-label', 'closed')
+    }
+})
+
+cart.addEventListener('mouseleave', e => {
+    cart.style.transform = `translateY(-120%)`
+})
+
 
 // function toggleMenuNavgation(show) {
 //     const mobilNav = document.getElementById('mobilNavigationToggle')
