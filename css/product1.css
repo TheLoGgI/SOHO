@@ -13,6 +13,7 @@
 
 /* Next & previous buttons */
 .prev, .next {
+  cursor: pointer;
   position: absolute;
   top: 50%;
   width: auto;
@@ -35,6 +36,14 @@
 .info {
 margin-left: 18px;
 margin-bottom: 10px;
+}
+
+.heart-icon-button {
+  display: none;
+}
+
+.heart-icon2 {
+  display: none;
 }
 
 .product-headline, .colors {
@@ -72,6 +81,7 @@ margin-bottom: 10px;
 
 /* Dropdown Button */
 .dropbtn {
+  cursor: pointer;
   background-color: white;
   width: 340px;
   color: black;
@@ -87,7 +97,7 @@ margin-bottom: 10px;
 
 /* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {
-  background-color: grey;
+  background-color: #e9e8e7;
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -156,6 +166,7 @@ margin-bottom: 10px;
 
 /* Dropdown Button - Materiale og vaskeanvisninger */
 .dropbtn2 {
+  cursor: pointer;
   width: 340px;
   background-color: #F4EFE8;
   color: black;
@@ -201,6 +212,7 @@ margin-bottom: 10px;
 
 /* Dropdown Button - Informationer om produktet*/
 .dropbtn3 {
+  cursor: pointer;
   width: 340px;
   background-color: #F4EFE8;
   color: black;
@@ -246,6 +258,7 @@ margin-bottom: 10px;
 
 /* Dropdown Button - Pasform */
 .dropbtn4 {
+  cursor: pointer;
   width: 340px;
   background-color: #F4EFE8;
   color: black;
@@ -301,8 +314,16 @@ margin-bottom: 10px;
   float: right;
 }
 
+.similar-products {
+  display: none;
+}
+
 /* Desktop */
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1200px) {
+
+  .slideshow-container {
+    min-width: 800px;
+  }
 
   .grid-container {
     display: grid;
@@ -331,15 +352,33 @@ margin-bottom: 10px;
   }
 
   .add-to-cart {
-    width: 400px;
+    width: 330px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  .heart-icon-button {
+    display: block;
+    cursor: pointer;
+    background-color: white;
+    justify-content: center;
+    height: 60px;
+    width: 60px;
+    margin-top: 20px;
+    border: none;
+  }
+
+  .heart-icon2 {
+    display: block;
+    margin: 0 auto;
   }
 
   .delivery-info {
-    max-width: 400px;
+    width: 400px;
   }
 
   .review {
-    max-width: 400px;
+    width: 400px;
   }
 
   .column b {
@@ -353,5 +392,70 @@ margin-bottom: 10px;
   .dropbtn, .dropbtn2, .dropbtn3, .dropbtn4 {
     width: 400px;
   }
-}
 
+  /*Similar-products*/
+
+  .similar-products {
+    display: block;
+    margin-left: 18px;
+  }
+
+  .similar-products-flexbox {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    flex-direction: row;
+  }
+
+  .product-card {
+    flex: 0 0 auto;
+      width: 20%;
+      margin: 10px;
+      position: relative;
+      background-color: #F3EFE9;
+  }
+
+  .like-button {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      right: 0px;
+      top: 0;
+      margin: 6px;
+      border-radius: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-style: none;
+      box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.400);
+  }
+
+  .like-icon {
+      width: 60%;
+      padding-top: 2px;
+  }
+
+  .product-image {
+      aspect-ratio: 3/4;
+      width: 100%;
+      display: block;
+      object-fit: cover;
+  }
+
+  .product-title {
+      font-size: 16px;
+  }
+
+  .product-brand {
+      font-weight: 600;
+      font-size: 16px;
+      margin-top: 4px;
+  }
+
+  .product-price-container {
+      font-size: 16px;
+      margin-top: 8px;
+  }
+
+}

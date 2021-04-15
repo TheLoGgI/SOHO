@@ -1,5 +1,6 @@
 
 @import 'footer.css';
+@import 'shopping-cart.css';
 
 .hero {
     width: 100%;
@@ -203,8 +204,6 @@ hr { display: none; }
 .mobil-bottom-nav { display: none !important; }
 .mobil-menu-nav { display: none; }
 .mobil-search-menu { display: none; }
-
-
 
 
 .details {
