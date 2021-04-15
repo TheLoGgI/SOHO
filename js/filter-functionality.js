@@ -1,27 +1,34 @@
 // mobile filter show and hide function
 
 let filterBGShadow = document.querySelector(".mobile-filter-bg-fill");
+let filterContainer = document.querySelector(".mobile-filter-container");
 
-function showFilterWindow() {
+function toggleFilterWindow() {
 
-    console.log("hej");
-    let filterContainer = document.querySelector(".mobile-filter-container");
+    const state = filterContainer.getAttribute('aria-label')
+    console.log('state: ', state);
+    if (state === 'closed') {
+        filterContainer.style.transform = `translateX(0vw)`
+        filterContainer.setAttribute('aria-label', 'open')
+        filterBGShadow.style.display = "block";
+        filterBGShadow.style.opacity = "1";
+        document.body.style.overflow = "hidden";
+    }
+    else {
+        filterContainer.style.transform = `translateX(-100vw)`
+        filterContainer.setAttribute('aria-label', 'closed')
+        filterBGShadow.style.opacity = "0";
+        setTimeout(function () {
+            filterBGShadow.style.display = "none";
+        }, 300);
+        document.body.style.overflow = "auto";
+    }
 
-    filterContainer.style.display = "block";
-    filterBGShadow.style.opacity = "1";
-}
-
-function hideFilterWindow() {
-
-    console.log("farvel");
-    let filterContainer = document.querySelector(".mobile-filter-container");
-
-    filterContainer.style.display = "none";
-    filterBGShadow.style.opacity = "0";
 }
 
 // expand categori of filter mobile
 
+/*
 function expandMobileFilterType() {
 
     let filterList = document.querySelector(".filter-subject-list");
@@ -36,3 +43,4 @@ function expandMobileFilterType() {
         filterList.style.height = "auto";
     }
 }
+*/
