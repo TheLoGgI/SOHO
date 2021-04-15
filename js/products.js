@@ -1,4 +1,4 @@
-const loading = document.getElementById('loading')
+// const loading = document.getElementById('loading')
 let productData = []
 
 const cartStorage = JSON.parse(localStorage.getItem('userCart'))
@@ -42,48 +42,125 @@ async function getProducts() {
 
 async function init() {
     const products = await getProducts()
+    // console.log('products: ', products);
     productData = [...products]
-    userCart.add(productData?.[1])
-    products.forEach(product => {
-        addProduct(product)
-    })
-    loading.style.display =  'none'
+    // userCart.add(productData?.[1])
+    // products.forEach(product => {
+        // addProduct(product)
+    // })
+    // loading.style.display =  'none'
 }
 
-// async function addItemToShoppingCart(data) {
-//     const cartOptions = {
-//         method: 'POST',
-//         headers: {
-//             // 'content-Type': 'application/json',
-//             'charset': 'UTF-8',
-//             'content-Type': 'multipart/form-data',
-//             // 'accept': 'application/json'
-//         },
-//         mode: 'no-cors',
-//         body: JSON.stringify(data),
-//     }
-    
-//     const cart = await fetch('https://soho.lasseaakjaer.com/wp-json/cocart/v1/add-item', cartOptions)
-//     console.log('cart: ', cart);
-// }
 
 // Program start
 init()
 
-const itemCartCounter = document.getElementById('cartItems')
+// const itemCartCounter = document.getElementById('cartItems')
 // itemCartCounter.textContent = '4'
 
-function buyItem(id, volume = 1, color = 'black') {
-    let currentCartItems = Number(itemCartCounter.textContent)
-    itemCartCounter.textContent = currentCartItems + 1
+// function buyItem(id, volume = 1, color = 'black') {
+//     let currentCartItems = Number(itemCartCounter.textContent)
+//     itemCartCounter.textContent = currentCartItems + 1
+// }
+
+
+// function updateCartItemCount() {
+//     // console.log(id, volume, color)
+//     let currentCartItems = Number(itemCartCounter.textContent)
+//     console.log('currentCartItems: ', currentCartItems);
+//     itemCartCounter.textContent = currentCartItems + 1
+
+// }
+
+function getURLParam(param) {
+    const urlParams = new URLSearchParams(location.search)
+    return urlParams.get('id')
+}
+
+function isDifferent(obj1, obj2) {
+    console.log('obj1: ', obj1);
+    console.log('obj2: ', obj2);
+    const id = obj1.id === obj2.id
+    const size = obj1.size === obj2.size
+    const color = obj1.color === obj2.color
+    
+    console.log('isDifferent: ', id, size, color);
+    return id && size && color
 }
 
 
-function updateCartItemCount() {
-    // console.log(id, volume, color)
-    let currentCartItems = Number(itemCartCounter.textContent)
-    console.log('currentCartItems: ', currentCartItems);
-    itemCartCounter.textContent = currentCartItems + 1
+document.getElementById('addToCart').addEventListener('click', () => {
 
-}
+    const paramId = getURLParam('id')
 
+    let itemInCart = {}
+    if (productData) {
+        itemInCart = productData.find(item => Number(paramId) === item.id)
+        // console.log('itemInCart: ', itemInCart);
+
+    } else {
+        // throw 
+        // window.localStorage.getItem()
+    }
+
+    let alreadyInCart = localStorage.getItem('inShoppingCart')
+    if (alreadyInCart === null) {
+        localStorage.setItem('inShoppingCart', JSON.stringify([{
+            name: itemInCart.name,
+            id: itemInCart.id,
+            categories: itemInCart.categories,
+            tags: itemInCart.tags,
+            description: itemInCart.short_description,
+            images: itemInCart.images,
+            prices: itemInCart.prices,
+            color: 'white',
+            size: 'large',
+            amount: 1,
+            isFavorite: false,
+        }]))
+        console.log('New Cart')
+        return
+    }
+
+    // Update
+    alreadyInCart = JSON.parse(alreadyInCart)
+    console.log('alreadyInCart: ', alreadyInCart);
+    const hasSameId = alreadyInCart.find(item => Number(paramId) === item.id)
+    console.log('hasSameId: ', hasSameId);
+    if (hasSameId !== undefined) {
+        // console.log('is NOT Different', !isDifferent(alreadyInCart, hasSameId));
+        if (isDifferent(itemInCart, hasSameId)) {
+            localStorage.setItem('inShoppingCart', JSON.stringify([...alreadyInCart, {
+                name: itemInCart.name,
+                id: itemInCart.id,
+                categories: itemInCart.categories,
+                tags: itemInCart.tags,
+                description: itemInCart.short_description,
+                images: itemInCart.images,
+                prices: itemInCart.prices,
+                color: 'white',
+                size: 'large',
+                amount: Number(alreadyInCart.amount) + Number(hasSameId.amount),
+                isFavorite: false,
+            }]))
+            return
+        }
+        
+    }
+
+    // Create
+    localStorage.setItem('inShoppingCart', JSON.stringify([...alreadyInCart, {
+        name: itemInCart.name,
+        id: itemInCart.id,
+        categories: itemInCart.categories,
+        tags: itemInCart.tags,
+        description: itemInCart.short_description,
+        images: itemInCart.images,
+        prices: itemInCart.prices,
+        color: 'white',
+        size: 'large',
+        amount: 1,
+        isFavorite: false,
+    }]))
+    // console.log(inShoppingCart)
+})
