@@ -1,0 +1,8 @@
+
+function updateItemCount() {
+    
+}
+
+function displayShopItem() {
+    
+}

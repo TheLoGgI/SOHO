@@ -40,18 +40,59 @@ function toggleSearchMenu(buttonTarget) {
     document.body.style.overflow = 'hidden'
 }
 
+// Big Navigation Menu
+const bigmenuBrand = document.getElementById('bigmenuBrand')
+const bigmenuCategory = document.getElementById('bigmenuCategory')
+// const brandLink = document.getElementById('onHoverBrand')
+// const categoryLink = document.getElementById('onHoverCategory')
+const bigMenuHover = document.querySelectorAll('[data-template]')
 
-const bigmenu = document.getElementById('bigmenu')
-const brandLink = document.getElementById('onHoverBrand')
-const categoryLink = document.getElementById('onHoverCategory')
-
-brandLink.addEventListener('mouseenter', e => {
-    bigmenu.style.transform = `translateY(0%)`
+console.log('bigMenuHover: ', bigMenuHover);
+bigMenuHover.forEach(item => {
+    item.addEventListener('mouseenter', e => {
+        showBigMenu(item.dataset.template)
+    })
 })
 
-bigmenu.addEventListener('mouseleave', e => {
-    bigmenu.style.transform = `translateY(-120%)`
+
+bigmenuCategory.addEventListener('mouseleave', e => {
+    bigmenuCategory.style.transform = `translateY(-120%)`
 })
+
+bigmenuBrand.addEventListener('mouseleave', e => {
+    bigmenuBrand.style.transform = `translateY(-120%)`
+})
+
+function showBigMenu(changeTo) {
+    if (changeTo === 'brands') {
+        bigmenuCategory.style.transform = `translateY(-120%)`
+        bigmenuBrand.style.transform = `translateY(0%)`
+    } else if(changeTo === 'category') {
+        bigmenuBrand.style.transform = `translateY(-120%)`
+        bigmenuCategory.style.transform = `translateY(0%)`
+    }
+
+}
+
+const cart = document.getElementById('shoppingCart')
+document.getElementById('cartIcon').addEventListener('click', () => {
+    // cart.style.transform = `translateY(-120%)`
+    const state = cart.getAttribute('aria-label')
+    console.log('state: ', state);
+    if (state === 'closed') {
+        cart.style.transform = `translateY(0%)`
+        cart.setAttribute('aria-label', 'open')
+    }
+    else {
+        cart.style.transform = `translateY(-120%)`
+        cart.setAttribute('aria-label', 'closed')
+    }
+})
+
+cart.addEventListener('mouseleave', e => {
+    cart.style.transform = `translateY(-120%)`
+})
+
 
 // function toggleMenuNavgation(show) {
 //     const mobilNav = document.getElementById('mobilNavigationToggle')

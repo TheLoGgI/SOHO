@@ -125,15 +125,12 @@ a.mobil-nav-item,
   top: 1rem;
   display: flex;
   align-items: center;
-}
-
-.navigation-banner i {
-  font-size: 1.4rem;
-  margin: 0 0.5rem;
+  gap: 1rem;
 }
 
 .menu-cart {
   position: relative;
+  cursor: pointer;
 }
 
 .menu-cart-items {
@@ -147,9 +144,9 @@ a.mobil-nav-item,
   border-radius: 50%;
 
   position: absolute;
-  background-color: var(--clr-secondry);
+  background-color: var(--clr-primary);
   top: 1em;
-  left: 1.2em;
+  left: 1em;
 }
 
 .bigmenu {
@@ -306,6 +303,7 @@ a.mobil-nav-item,
     padding: 2rem var(--pd-desktop);
     position: absolute;
     z-index: 1;
+    transition: transform .5s ease-in-out;
     transform: translateY(-120%);
   }
 
@@ -314,6 +312,7 @@ a.mobil-nav-item,
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-template-rows: repeat(8, auto);
+    grid-auto-flow: column;
     row-gap: 0.5em;
     margin-top: 1rem;
   }
@@ -336,6 +335,12 @@ a.mobil-nav-item,
     transform: translateX(-9%) rotate(-70deg);
     transition: transform 0.2s ease;
     z-index: 10;
+  }
+
+  .t-shirt-cover {
+    /* width: 300px; */
+    display: block;
+    width: 100%;
   }
 
   .revolution-brand-image-container,
