@@ -4,7 +4,7 @@ let productData = []
 const cartStorage = JSON.parse(localStorage.getItem('userCart'))
 const userCart = new Cart(cartStorage)
 
-console.log('userCart.cart: ', userCart.cart);
+// console.log('userCart.cart: ', userCart.cart);
 // https://blog.abelotech.com/posts/number-currency-formatting-javascript/
 function currencyFormat(num) {
     return Number(num.substring(0, num.length - 2)).toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' DKK'
@@ -40,116 +40,35 @@ async function getProducts() {
     return data
 }
 
-async function init() {
+(async function init() {
     const products = await getProducts()
-    // console.log('products: ', products);
     productData = [...products]
-    // userCart.add(productData?.[1])
-    // products.forEach(product => {
-        // addProduct(product)
-    // })
+
     // loading.style.display =  'none'
-}
+})()
 
 
-// Program start
-init()
-
-// const itemCartCounter = document.getElementById('cartItems')
-// itemCartCounter.textContent = '4'
-
-// function buyItem(id, volume = 1, color = 'black') {
-//     let currentCartItems = Number(itemCartCounter.textContent)
-//     itemCartCounter.textContent = currentCartItems + 1
-// }
-
-
-// function updateCartItemCount() {
-//     // console.log(id, volume, color)
-//     let currentCartItems = Number(itemCartCounter.textContent)
-//     console.log('currentCartItems: ', currentCartItems);
-//     itemCartCounter.textContent = currentCartItems + 1
-
-// }
-
+// const
 function getURLParam(param) {
     const urlParams = new URLSearchParams(location.search)
-    return urlParams.get('id')
+    return urlParams.get(param)
 }
-
-function isDifferent(obj1, obj2) {
-    console.log('obj1: ', obj1);
-    console.log('obj2: ', obj2);
-    const id = obj1.id === obj2.id
-    const size = obj1.size === obj2.size
-    const color = obj1.color === obj2.color
-    
-    console.log('isDifferent: ', id, size, color);
-    return id && size && color
-}
-
 
 document.getElementById('addToCart').addEventListener('click', () => {
 
-    const paramId = getURLParam('id')
+    const paramId = getURLParam('id') || 62
 
-    let itemInCart = {}
+    let itemInCart
     if (productData) {
         itemInCart = productData.find(item => Number(paramId) === item.id)
-        // console.log('itemInCart: ', itemInCart);
+        console.log('itemInCart: ', itemInCart);
 
     } else {
         // throw 
         // window.localStorage.getItem()
     }
 
-    let alreadyInCart = localStorage.getItem('inShoppingCart')
-    if (alreadyInCart === null) {
-        localStorage.setItem('inShoppingCart', JSON.stringify([{
-            name: itemInCart.name,
-            id: itemInCart.id,
-            categories: itemInCart.categories,
-            tags: itemInCart.tags,
-            description: itemInCart.short_description,
-            images: itemInCart.images,
-            prices: itemInCart.prices,
-            color: 'white',
-            size: 'large',
-            amount: 1,
-            isFavorite: false,
-        }]))
-        console.log('New Cart')
-        return
-    }
-
-    // Update
-    alreadyInCart = JSON.parse(alreadyInCart)
-    console.log('alreadyInCart: ', alreadyInCart);
-    const hasSameId = alreadyInCart.find(item => Number(paramId) === item.id)
-    console.log('hasSameId: ', hasSameId);
-    if (hasSameId !== undefined) {
-        // console.log('is NOT Different', !isDifferent(alreadyInCart, hasSameId));
-        if (isDifferent(itemInCart, hasSameId)) {
-            localStorage.setItem('inShoppingCart', JSON.stringify([...alreadyInCart, {
-                name: itemInCart.name,
-                id: itemInCart.id,
-                categories: itemInCart.categories,
-                tags: itemInCart.tags,
-                description: itemInCart.short_description,
-                images: itemInCart.images,
-                prices: itemInCart.prices,
-                color: 'white',
-                size: 'large',
-                amount: Number(alreadyInCart.amount) + Number(hasSameId.amount),
-                isFavorite: false,
-            }]))
-            return
-        }
-        
-    }
-
-    // Create
-    localStorage.setItem('inShoppingCart', JSON.stringify([...alreadyInCart, {
+    userCart.add({
         name: itemInCart.name,
         id: itemInCart.id,
         categories: itemInCart.categories,
@@ -158,9 +77,9 @@ document.getElementById('addToCart').addEventListener('click', () => {
         images: itemInCart.images,
         prices: itemInCart.prices,
         color: 'white',
-        size: 'large',
+        size: 'medium',
         amount: 1,
         isFavorite: false,
-    }]))
-    // console.log(inShoppingCart)
+    })
+
 })
