@@ -18,6 +18,61 @@ function showSlides(n) {
     slides[slideIndex - 1].style.display = "block";
 }
 
+/* Vælg farve */
+/* Circlerne får en gul kant når de er valgt */
+function dotfun() {
+    var Image_Id = document.getElementById('dot-black');
+    if (Image_Id.src.match("/images/black-dot.png")) {
+        Image_Id.src = "/images/black-dot-yellow-border.png";
+    }
+    else {
+        Image_Id.src = "/images/black-dot.png";
+    }
+}
+
+function dotfun2() {
+    var Image_Id = document.getElementById('dot-blue');
+    if (Image_Id.src.match("/images/blue-dot.png")) {
+        Image_Id.src = "/images/blue-dot-yellow-border.png";
+    }
+    else {
+        Image_Id.src = "/images/blue-dot.png";
+    }
+}
+
+function dotfun3() {
+    var Image_Id = document.getElementById('dot-red');
+    if (Image_Id.src.match("/images/red-dot.png")) {
+        Image_Id.src = "/images/red-dot-yellow-border.png";
+    }
+    else {
+        Image_Id.src = "/images/red-dot.png";
+    }
+}
+
+/* Skifter hjerte icon fra outline til filled */
+/* Mobil */
+function imagefun() {
+    var Image_Id = document.getElementById('heart-icon');
+    if (Image_Id.src.match("/icons/Heart-icon.svg")) {
+        Image_Id.src = "/icons/heart-icon-filled.svg";
+    }
+    else {
+        Image_Id.src = "/icons/Heart-icon.svg";
+    }
+}
+
+/* Desktop */
+function imagefun2() {
+    var Image_Id = document.getElementById('heart-icon2');
+    if (Image_Id.src.match("/icons/Heart-icon.svg")) {
+        Image_Id.src = "/icons/heart-icon-filled.svg";
+    }
+    else {
+        Image_Id.src = "/icons/Heart-icon.svg";
+    }
+}
+
 /* Dropdown menuer */
 /* Når brugeren klikker på knappen, skifter den mellem at skjule og vise dropdown-indholdet */
 function dropdownFunction() {
