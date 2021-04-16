@@ -26,21 +26,92 @@ function toggleFilterWindow() {
 
 }
 
-// expand categori of filter mobile
+// filters array
 
-/*
-function expandMobileFilterType() {
 
-    let filterList = document.querySelector(".filter-subject-list");
-    let filterArrow = document.querySelector(".filter-subject-arrow");
-    console.log("expand");
 
-    if (filterList.style.height === "auto") {
-        filterList.style.height = "0px";
-        filterArrow.style.transform = "rotate(90deg)";
+const brands = [
+    "Anerkjendt",
+    "Birkenstock",
+    "Clean Cut",
+    "Dedicated",
+    "Egtved Socks",
+    "Elvine",
+    "Fuza Wool",
+    "Garcia",
+    "Gola",
+    "JBS",
+    "KnowledgeCotton Apparel",
+    "Lakor",
+    "Mads Nørgaard",
+    "Nature Footwear",
+    "Resteröds",
+    "Revolution",
+    "Royal Republiq",
+    "Scotch&Soda",
+    "Shoe the Bear",
+    "Suit",
+    "Warecph",
+    "Wrangler"
+];
 
-    } else {
-        filterList.style.height = "auto";
+const categories = [
+    "Bukser",
+    "Habitter",
+    "Jakker",
+    "Jeans",
+    "Shorts",
+    "Sko",
+    "Strik",
+    "Strømper",
+    "Trøjer",
+    "Underbukser",
+    "Accessories",
+    "Bælter",
+    "Hatte",
+    "Huer",
+    "Tasker"
+];
+
+const filters = [
+    {
+        name: "Brands",
+        filterType: brands
+    },
+    {
+        name: "Categories",
+        filterType: categories
     }
+];
+
+
+const mobileFiltersWindow = document.querySelector(".mobile-filter-subjects-window");
+
+function appendFilters(filters) {
+    let htmlTemplate = "";
+    for (const filter of filters) {
+        htmlTemplate += /*html*/`
+            <details class="filter-subject-expand-container">
+                <summary class="filter-subject-summary">${filter.name}</summary>
+                <ul class="filter-subject-list">${loopFilterEmner(filter.filterType)}</ul>
+            </details>
+            <div class="filter-line-devider"></div>
+        `;
+    }
+    document.querySelector(".mobile-filter-subjects-window").innerHTML = htmlTemplate;
+};
+
+function loopFilterEmner(array) {
+    let template = "";
+    for (const listItem of array) {
+        template += /*html*/ `
+             <li class="filter-subject-list-item">
+                <input class="filter-subject-input-check" id="${listItem}" type="checkbox"/>
+                <label for="${listItem}" class="filter-subject-name">${listItem}</label>
+            </li>
+        `;
+    }
+    return template;
 }
-*/
+
+appendFilters(filters);
