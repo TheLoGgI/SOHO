@@ -65,7 +65,8 @@
                         <p><b>SBD Apparel T-shirt</b></p>
                     </div>
                     <div class=column>
-                        <img class="heart-icon" src="/icons/Heart-icon.svg">
+                        <img src="/icons/Heart-icon.svg" onclick="imagefun()" id="heart-icon" width="35.09"
+                            height="29.94">
                     </div>
                 </div>
                 <p>kr. 379,- inkl. moms</p>
@@ -78,9 +79,12 @@
                         <p>Farve:</p>
                     </div>
                     <div class="column">
-                        <span class="dot-black"></span>
-                        <span class="dot-blue"></span>
-                        <span class="dot-red"></span>
+                        <button class="dot-black-button"><img id="dot-black" onclick="dotfun()"
+                                src="/images/black-dot.png"></button>
+                        <button class="dot-blue-button"><img id="dot-blue" onclick="dotfun2()"
+                                src="/images/blue-dot.png"></button>
+                        <button class="dot-red-button"><img id="dot-red" onclick="dotfun3()"
+                                src="/images/red-dot.png"></button>
                     </div>
                 </div>
             </section>
@@ -88,26 +92,22 @@
             <br>
 
             <!-- vælg størrelse sektion -->
-            <div class="dropdown">
-                <button onclick="dropdownFunction()" class="dropbtn">Vælg størrelse <img class="arrow-down"
-                        src="/images/arrow-down.png" alt="arrow" width="15px"></button>
-                <div id="myDropdown" class="dropdown-content">
-                    <a href="#">XS</a>
-                    <a href="#">S</a>
-                    <a href="#">M</a>
-                    <a href="#">L</a>
-                    <a href="#">XL</a>
-                </div>
-            </div>
+            <select name="pets" class="dropdown">
+                <option value="">Vælg størrelse</option>
+                <option value="XS">XS</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
 
             <!-- tilføj til kurv sektion -->
             <div class="basket-button">
-                <button class="add-to-cart" id="addToCart">
-                    <img class="shopping-bag-icon" src="/icons/Shopping-bag-icon.svg">
-                    <b>Tilføj til kurven</b>
-                </button>
-                <button class="heart-icon-button"><img class="heart-icon2" src="/icons/Heart-icon.svg"
-                        alt="heart-icon"></button>
+                <button class="add-to-cart"><img class="shopping-bag-icon" src="/icons/Shopping-bag-icon.svg"><b>Tilføj
+                        til
+                        kurven</b></button>
+                <button class="heart-icon-button"><img id="heart-icon2" onclick="imagefun2()"
+                        src="/icons/Heart-icon.svg" alt="heart-icon" width="35.09" height="29.94"></button>
             </div>
 
             <br>

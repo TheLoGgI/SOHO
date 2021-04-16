@@ -56,67 +56,15 @@
                                     type="checkbox">
                                 <label for="brand-1" class="filter-subject-name">Anerkjendt</label>
                             </li>
-                            <li class="filter-subject-list-item"><input class="filter-subject-input-check" id="brand-2"
-                                    type="checkbox">
-                                <label for="brand-2" class="filter-subject-name">Borlemstock</label>
-                            </li>
-                            <li class="filter-subject-list-item"><input class="filter-subject-input-check" id="brand-3"
-                                    type="checkbox">
-                                <label for="brand-3" class="filter-subject-name">Clean Cut</label>
-                            </li>
-                            <li class="filter-subject-list-item"><input class="filter-subject-input-check" id="brand-4"
-                                    type="checkbox">
-                                <label for="brand-4" class="filter-subject-name">Dedicated</label>
-                            </li>
-                            <li class="filter-subject-list-item"><input class="filter-subject-input-check" id="brand-5"
-                                    type="checkbox">
-                                <label for="brand-5" class="filter-subject-name">Egtved Socks</label>
-                            </li>
-                            <li class="filter-subject-list-item"><input class="filter-subject-input-check" id="brand-6"
-                                    type="checkbox">
-                                <label for="brand-6" class="filter-subject-name">Elvine</label>
-                            </li>
-                            <li class="filter-subject-list-item"><input class="filter-subject-input-check" id="brand-7"
-                                    type="checkbox">
-                                <label for="brand-7" class="filter-subject-name">Fuza Wool</label>
-                            </li>
-                            <li class="filter-subject-list-item"><input class="filter-subject-input-check" id="brand-8"
-                                    type="checkbox">
-                                <label for="brand-8" class="filter-subject-name">Garcia</label>
-                            </li>
-                            <li class="filter-subject-list-item"><input class="filter-subject-input-check" id="brand-9"
-                                    type="checkbox">
-                                <label for="brand-9" class="filter-subject-name">Gola</label>
-                            </li>
-                            <li class="filter-subject-list-item"><input class="filter-subject-input-check" id="brand-10"
-                                    type="checkbox">
-                                <label for="brand-10" class="filter-subject-name">JBS</label>
-                            </li>
-                            <li class="filter-subject-list-item"><input class="filter-subject-input-check" id="brand-11"
-                                    type="checkbox">
-                                <label for="brand-11" class="filter-subject-name">KnowledgeCotton Apparel</label>
-                            </li>
-                            <li class="filter-subject-list-item"><input class="filter-subject-input-check" id="brand-12"
-                                    type="checkbox">
-                                <label for="brand-12" class="filter-subject-name">Laktor</label>
-                            </li>
-                            <li class="filter-subject-list-item"><input class="filter-subject-input-check" id="brand-13"
-                                    type="checkbox">
-                                <label for="brand-13" class="filter-subject-name">Mads Nøregaard</label>
-                            </li>
-                            <li class="filter-subject-list-item"><input class="filter-subject-input-check" id="brand-14"
-                                    type="checkbox">
-                                <label for="brand-14" class="filter-subject-name">Nature Footwear</label>
-                            </li>
-                            <li class="filter-subject-list-item"><input class="filter-subject-input-check" id="brand-15"
-                                    type="checkbox">
-                                <label for="brand-15" class="filter-subject-name">Nature Footwear</label>
-                            </li>
-
                         </ul>
                     </details>
                     <div class="filter-line-devider"></div>
 
+                </div>
+                <div class="reset-filters-container">
+                    <button class="reset-filters-btn">
+                        Nulstil
+                    </button>
                 </div>
 
             </div>
@@ -404,15 +352,107 @@
                             </button>
                         </div>
                         <div class="filters-devider">
-                            <button id="sort-button" class="filter-buttons">
-                                Sorter
-                                <img class="sort-arrow" src="icons/Medium-arrow-down.svg" alt="Sort-arrow">
-                            </button>
+                            <select name="sorter" id="sort-button" class="filter-buttons">
+                                <option value="sorter efter">Sorter efter</option>
+                                <option value="nyheder">Nyheder</option>
+                                <option value="pris-faldende">Pris(Faldende)</option>
+                                <option value="pris-stigende">Pris(Stigende)</option>
+                            </select>
                         </div>
                     </div>
 
                     <!-- Product cards -->
                     <div class="product-spawn">
+
+                        <div class="product-card">
+                            <div class="product-image-container">
+                                <button class="like-button">
+                                    <img class="like-icon" src="icons/Heart-icon.svg" alt="">
+                                </button>
+                                <img class="product-image" src="images/jakket-lakor.jpg" alt="">
+                            </div>
+                            <div class="product-information">
+                                <div class="product-text-container">
+                                    <p class="product-brand">Adidas</p>
+                                    <p class="product-title">Sort T-shirt</p>
+                                </div>
+                                <div class="product-price-container">
+                                    <p class="product-price">500 kr</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image-container">
+                                <button class="like-button">
+                                    <img class="like-icon" src="icons/Heart-icon.svg" alt="">
+                                </button>
+                                <img class="product-image" src="images/jakket-lakor.jpg" alt="">
+                            </div>
+                            <div class="product-information">
+                                <div class="product-text-container">
+                                    <p class="product-brand">Adidas</p>
+                                    <p class="product-title">Sort T-shirt</p>
+                                </div>
+                                <div class="product-price-container">
+                                    <p class="product-price">500 kr</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image-container">
+                                <button class="like-button">
+                                    <img class="like-icon" src="icons/Heart-icon.svg" alt="">
+                                </button>
+                                <img class="product-image" src="images/jakket-lakor.jpg" alt="">
+                            </div>
+                            <div class="product-information">
+                                <div class="product-text-container">
+                                    <p class="product-brand">Adidas</p>
+                                    <p class="product-title">Sort T-shirt</p>
+                                </div>
+                                <div class="product-price-container">
+                                    <p class="product-price">500 kr</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image-container">
+                                <button class="like-button">
+                                    <img class="like-icon" src="icons/Heart-icon.svg" alt="">
+                                </button>
+                                <img class="product-image" src="images/jakket-lakor.jpg" alt="">
+                            </div>
+                            <div class="product-information">
+                                <div class="product-text-container">
+                                    <p class="product-brand">Adidas</p>
+                                    <p class="product-title">Sort T-shirt</p>
+                                </div>
+                                <div class="product-price-container">
+                                    <p class="product-price">500 kr</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image-container">
+                                <button class="like-button">
+                                    <img class="like-icon" src="icons/Heart-icon.svg" alt="">
+                                </button>
+                                <img class="product-image" src="images/jakket-lakor.jpg" alt="">
+                            </div>
+                            <div class="product-information">
+                                <div class="product-text-container">
+                                    <p class="product-brand">Adidas</p>
+                                    <p class="product-title">Sort T-shirt</p>
+                                </div>
+                                <div class="product-price-container">
+                                    <p class="product-price">500 kr</p>
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="product-card">
                             <div class="product-image-container">

@@ -44,7 +44,7 @@ margin-bottom: 10px;
   display: none;
 }
 
-.heart-icon2 {
+#heart-icon2 {
   display: none;
 }
 
@@ -57,7 +57,12 @@ margin-bottom: 10px;
 }
 
 /* Vælg farve */
-.dot-black {
+.dot-black-button, .dot-blue-button, .dot-red-button {
+  border: none;
+}
+
+#dot-black {
+  cursor: pointer;
   height: 25px;
   width: 25px;
   background-color: rgb(0, 0, 0);
@@ -65,7 +70,8 @@ margin-bottom: 10px;
   display: inline-block;
 }
 
-.dot-blue {
+#dot-blue {
+  cursor: pointer;
   height: 25px;
   width: 25px;
   background-color: #4AAEBC;
@@ -73,7 +79,8 @@ margin-bottom: 10px;
   display: inline-block;
 }
 
-.dot-red {
+#dot-red {
+  cursor: pointer;
   height: 25px;
   width: 25px;
   background-color: #C54040;
@@ -81,57 +88,16 @@ margin-bottom: 10px;
   display: inline-block;
 }
 /* Vælg størrelse */
-/* Dropdown knap */
-.dropbtn {
-  cursor: pointer;
-  background-color: white;
-  width: 340px;
-  color: black;
-  padding: 16px;
-  font-size: 16px;
-  text-align: left;
-  border: none;
-}
-
-.arrow-down {
-  float: right;
-}
-
-/* Dropdown knap med hover & focus. Dette fungere kun på desktop og vil ikke have nogen effekt på mobil */
-.dropbtn:hover, .dropbtn:focus {
-  background-color: #e9e8e7;
-}
-
-/* The container <div> - er nødvendig for at placere dropdownindholdet */
 .dropdown {
   position: relative;
   display: inline-block;
   margin-left: 18px;
+  font-family: var(--ff-body);
+  font-size: 1rem;
+  padding-left: 5px;
+  width: 340px;
+  height: 57.48px;
 }
-
-/* Dropdown indhold (Har en standard funktion, som skjuler indholdet) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 340px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links i dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-/* Skifter farve  når man hover over dropdown links */
-.dropdown-content a:hover {background-color: #ddd;}
-
-/* Viser dropdown menu (Vi bruger JS for at få dropdownindholdet vist, når brugeren klikker på dropdown knappen) */
-.show {display:block;}
 
 /* Tilføj til kurv knap*/
 .add-to-cart {
@@ -166,6 +132,9 @@ margin-bottom: 10px;
   margin-right: 15px;
 }
 
+.arrow-down {
+  float: right;
+}
 
 /* Dropdown Button - Materiale og vaskeanvisninger */
 .dropbtn2 {
@@ -330,7 +299,7 @@ margin-bottom: 10px;
     grid-row: 1;
   }
 
-  .dropdown-content {
+  .dropdown {
     width: 400px;
   }
 
@@ -356,7 +325,7 @@ margin-bottom: 10px;
     border: none;
   }
 
-  .heart-icon2 {
+  #heart-icon2 {
     display: block;
     margin: 0 auto;
   }
@@ -373,7 +342,7 @@ margin-bottom: 10px;
     font-size: 30px;
   }
 
-  .heart-icon {
+  #heart-icon {
     display: none;
   }
 
