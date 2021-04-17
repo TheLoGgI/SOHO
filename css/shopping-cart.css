@@ -13,10 +13,16 @@
 
 /* Cart item */
 
+.cart-items {
+    max-height: 35vh;
+    overflow-y: auto;
+}
+
 .cart-product {
     display: flex;
     flex-flow: row nowrap;
     gap: 1rem;
+    transition: transform .3s ease;
 }
 
 .cart-product-image {
@@ -82,4 +88,7 @@
     width: 100%;
     font-size: var(--fs-sm);
     font-weight: 600;
+    display: block;
+    text-align: center;
+
 }

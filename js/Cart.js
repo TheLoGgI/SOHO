@@ -26,23 +26,31 @@ class Cart {
         return Array.from(this.cartItems.values())
     }
 
+    get keys() {
+        return this.cartItems.keys()
+    }
+
     add(itemObject) {
+        if (!itemObject) return false
         const {id, cartItem} = this.hasItem(itemObject)
         console.log('cartItem: ', cartItem);
-        // const sameItem = this.isSameItem(cartItem, itemObject)
+        
         if (cartItem) {
-            this.updateCart(id, itemObject)
+            this.updateItem(id, itemObject)
             return false
         }
 
-        console.log(itemObject);
-        this.addToStorage(itemObject)
-        this.cartItems.set(this.randomKey, itemObject)
+
+        const key = this.randomKey
+        const item = {...itemObject, key} 
+        this.addToStorage(item)
+        this.cartItems.set(key, item)
         return this.itemObject
     }
 
-    remove(id) {
-        return this.cartItems.delete(id)
+    remove(key) {
+        this.removeFromStorage(key)
+        return this.cartItems.delete(key)
     }
     
     clear() {
@@ -54,7 +62,8 @@ class Cart {
 
         while (true) {
             const obj = mapIterator.next().value
-            if (obj === undefined) return false
+            console.log('obj: ', obj);
+            if (obj === undefined ) return false
             if (obj[1].id === itemObject.id) { 
                 
                 if (this.isSameItem(itemObject, obj[1])) {
@@ -75,8 +84,17 @@ class Cart {
         window.localStorage.setItem('userCart', 
             JSON.stringify([...this.cart, itemObject]))
     }
+    
+    removeFromStorage(key) {
+        const storage = JSON.parse(window.localStorage.getItem('userCart'))
+        const index = storage.findIndex(value => value.key === key)
+        storage.splice(index, 1)
+        console.log('storage: ', storage);
+        window.localStorage.setItem('userCart', JSON.stringify(storage))
 
-    updateCart(id) {
+    }
+
+    updateItem(id) {
         const item = this.getItem(id)
         this.cartItems.set(id, {...item, amount: item.amount + 1})
         window.localStorage.setItem('userCart', JSON.stringify([...this.cart]))
@@ -87,6 +105,9 @@ class Cart {
     }
 
 
-
-
 }
+
+// Init class
+
+const cartStorage = JSON.parse(localStorage.getItem('userCart'))
+const userCart = new Cart(cartStorage)

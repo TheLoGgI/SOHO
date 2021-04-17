@@ -91,7 +91,17 @@ document.getElementById('cartIcon').addEventListener('click', () => {
 
 cart.addEventListener('mouseleave', e => {
     cart.style.transform = `translateY(-120%)`
+    cart.setAttribute('aria-label', 'closed')
 })
+
+function updateBasket() {
+    const headerCartItems = document.getElementById('cartItems')
+    headerCartItems.textContent = userCart.cart.length
+    
+}
+
+updateBasket()
+basketTemplate()
 
 
 // function toggleMenuNavgation(show) {
@@ -128,6 +138,79 @@ cart.addEventListener('mouseleave', e => {
 //     }
 
 // })
+
+
+function basketTemplate() {
+    const basket = document.getElementById('shoppingCart')
+    const cartItems = userCart.cart
+    const key = userCart.keys
+    const totalPrice = cartItems.reduce((acc, val) => acc + val.price, 0)
+
+    let html = `<p class="shopping-cart-title">Kurv <span>(${cartItems.length})</span></p> 
+    <div class="cart-items">
+            ${basketItemTemplate(cartItems, key)}
+    </div>
+
+    <div class="shopping-cart-total">`
+    if (cartItems.length > 0) {
+        html += `
+        <div class="cart-delevery">
+            <p>Levering</p>
+            <p class="delevery-fee"><span>29,00</span> kr</p>
+        </div>`
+    } 
+
+    html += `<div class="cart-total">
+            <p>Pris i alt (inkl. moms)</p>
+            <p class="cart-total-price"><span>${totalPrice},00</span> kr</p>
+        </div>
+    </div>
+    <hr class="thematic-break">
+    <a href="#kurv" class="shopping-btn btn">Indkøbskurv</a>`
+
+    basket.innerHTML = html
+}
+
+function basketItemTemplate(items, key) {
+    return items.reduce((acc, val) => {
+        return acc += `
+        <div class="cart-product">
+        <div class="cart-product-image">
+            <img src="${val.images[1].src}" alt="${val.name}">
+        </div>
+        <div class="product-info">
+            <p class="product-brand">${val.tags[0].name}</p>
+            <p class="product-title">${val.name}</p>
+            <p class="product-price">Pris: <span> ${val.price}</span> kr</p>
+            
+            <div class="product-details">
+                <p>Størrelse: <span> ${val.size}</span></p>
+                <p>Farve: <span> ${val.color}</span></p>
+                <p>Antal: <span> 1</span></p>
+            </div>
+            <button class="remove-item" onclick="removeShoppingItem(this)" data-key="${key.next().value}">Fjern kurv</button>
+            
+        </div>
+    </div>
+    <hr class="thematic-break">`
+    }, '')
+     
+}
+
+function removeShoppingItem(target) {
+    const key = target.getAttribute('data-key')
+    console.log('key: ', key);
+    const removedItem = userCart.remove(key)
+    const cartItem = target.parentNode.parentNode
+
+    cartItem.style.transform = `translateX(-120%)`
+    console.dir(cartItem);
+    setTimeout(() => {
+        basketTemplate()
+    }, 300);
+    updateBasket()
+}
+
 
 // Animate hover fancy image
 const lakorBrandImage = document.getElementById('lakorBrandImage')

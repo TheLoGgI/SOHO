@@ -154,6 +154,11 @@ a.mobil-nav-item,
 }
 
 @media screen and (min-width: 1200px) {
+  hr { display: none; }
+.mobil-bottom-nav { display: none !important; }
+.mobil-menu-nav { display: none; }
+.mobil-search-menu { display: none; }
+
   header {
     padding: 0;
     display: block;
