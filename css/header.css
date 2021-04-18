@@ -2,6 +2,7 @@
 
 .info-bar { display: none; }
 .menu-navigation { display: none; }
+.shopping-cart {display: none;}
   
 
 
@@ -158,6 +159,7 @@ a.mobil-nav-item,
 .mobil-bottom-nav { display: none !important; }
 .mobil-menu-nav { display: none; }
 .mobil-search-menu { display: none; }
+.shopping-cart {display: block;}
 
   header {
     padding: 0;
@@ -184,22 +186,9 @@ a.mobil-nav-item,
       max-width: 100%;
   }
 
-  /* .mobil-nav {
-    position: static;
-    display: flex;
-    background-color: inherit;
-    transform: translateX(0%);
-    transition: transform 0.3s ease-in-out;
-    padding: 1rem;
-    font-size: 1rem;
-    z-index: 2;
-    line-height: 200%;
-  } */
-
   .menu-navagation-link {
     color: black;
     text-decoration: none;
-    text-transform: uppercase;
     position: relative;
     z-index: 3;
     outline: none;
@@ -216,7 +205,7 @@ a.mobil-nav-item,
   .menu-navigation-list li::after {
     content: "";
     position: absolute;
-    background-color: blueviolet;
+    background-color: var(--clr-primary);
     width: 100%;
     height: 0ch;
     padding: 0em 0.5rem;
@@ -262,18 +251,6 @@ a.mobil-nav-item,
     margin-left: 2rem;
   }
 
-  .menu-navigation-list li::after {
-    content: "";
-    position: absolute;
-    background-color: blueviolet;
-    width: 100%;
-    height: 0ch;
-    padding: 0em 0.5rem;
-    z-index: 1;
-    transition: height 0.4s ease, padding 0.4s ease;
-    bottom: 0;
-    left: -0.5rem;
-  }
 
   .menu-navigation-list li:hover::after {
     height: 2ch;
