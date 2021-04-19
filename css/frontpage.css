@@ -271,10 +271,14 @@
     margin: 1rem 0;
 }
 
+.customer-club-form .btn {
+    font-size: var(--fs-sm);
+}
+
 .customer-club-paragraph {
     max-width: 50ch;
     color: rgb(37, 37, 37);
-    margin: 1.5rem 0 2rem 0;
+    margin: .5rem 0 2rem 0;
     font-size: var(--fs-nm);
     line-height: 1.5rem;
 }
@@ -284,7 +288,7 @@
 }
 
 .newsletter-field input {
-    font-size: var(--fs-lg);
+    font-size: var(--fs-nm);
 }
 
 

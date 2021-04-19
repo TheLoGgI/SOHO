@@ -23,6 +23,9 @@
     flex-flow: row nowrap;
     gap: 1rem;
     transition: transform .3s ease;
+    margin: 1rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #CFCFCF;
 }
 
 .cart-product-image {
@@ -38,9 +41,7 @@
     display: block;
 }
 
-.thematic-break {
-    display: block;
-}
+
 
 .shopping-cart-total > div {
     display: flex;
@@ -91,4 +92,10 @@
     display: block;
     text-align: center;
 
+}
+
+/* Mobil */
+@media screen and (max-width: 1200px) { 
+
+    
 }
