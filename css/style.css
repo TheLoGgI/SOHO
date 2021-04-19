@@ -44,6 +44,7 @@ body {
     font-family: var(--ff-body);
     background-color: var(--clr-body-bg);
     overflow-x: hidden;
+    counter-reset: picker;
 }
 
 a {

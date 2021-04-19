@@ -1,14 +1,23 @@
-
+@import 'footer.css';
+@import 'shopping-cart.css';
+@import 'custom-heart-checkbox.css';
+@import 'custom-radio-buttons.css';
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
   position: relative;
   margin: auto;
 }
 
 .mySlides {
     display: none;
+}
+
+.mySlides img {
+  width: 100%;
+  max-height: 800px;
+  object-fit: cover;
+  object-position: center;
 }
 
 /* Næste & tilbage knap */
@@ -33,27 +42,27 @@
   border-radius: 3px 0 0 3px;
 }
 
-.info {
-margin-left: 18px;
-margin-bottom: 10px;
-}
-
-/* Knap med hjerte ikon skal ikke vises på mobil, så vi sætter - display: none; - på */
-.heart-icon-button {
-  display: none;
-}
-
 #heart-icon2 {
   display: none;
 }
 
-.product-headline, .colors {
-    display: flex;
+.info p {
+  margin: .5em 0;
 }
 
-.column {
-    padding-right: 20px;
+.colors {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+  }
+
+.color-pick {
+    margin-left: 1rem;
+    
 }
+
+
+
 
 /* Vælg farve */
 .dot-black-button, .dot-blue-button, .dot-red-button {
@@ -88,43 +97,58 @@ margin-bottom: 10px;
 }
 /* Vælg størrelse */
 .dropdown {
-  position: relative;
-  display: inline-block;
-  margin-left: 18px;
+  width: 100%;
   font-family: var(--ff-body);
-  font-size: 1rem;
-  padding-left: 5px;
-  width: 340px;
-  height: 57.48px;
+  font-size: var(--fs-sm);
+  padding: .5rem;
+  margin-bottom: 1rem;
+}
+
+.item2 {
+  padding: var(--pd-mobil);
+}
+
+.basket-button {
+  display: flex;
+  /* justify-content: center; */
 }
 
 /* Tilføj til kurv knap*/
 .add-to-cart {
     background-color: #D8A61F;
-  width: 340px;
+  width: 100%;
   color: black;
   padding: 16px;
-  font-size: 16px;
+  font-size: var(--fs-sm);
+  cursor: pointer;
   border: none;
-  margin-top: 20px;
-}
-
-.basket-button {
-    display: flex;
-    justify-content: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
 }
 
 .shopping-bag-icon {
-    width: 15px;
+    width: 1em;
     margin-right: 10px;
 }
 
 /* Leveringsinfo sektion*/
 .delivery-info {
     background-color: white;
-    margin: 18px;
-    padding: 18px;
+    padding: 1rem;
+    margin-top: 1rem; 
+    font-size: var(--fs-sm);
 }
+
+.delivery-info p {
+  margin: .5rem 0;
+}
+
+/* .delivery-info hr {
+  margin: 0
+} */
 
 .return-arrow {
   width: 25px;
@@ -136,135 +160,37 @@ margin-bottom: 10px;
 }
 
 /* Dropdown Button - Materiale og vaskeanvisninger */
-.dropbtn2 {
+.dropdown-menus {
+  margin-top: 1rem;
+}
+
+.info-dropdown {
+  width: 100%;
+  background-color: #F4EFE8;
   cursor: pointer;
-  width: 340px;
-  background-color: #F4EFE8;
-  color: black;
-  border-style: none none solid none;
-  padding: 16px;
-  font-size: 16px;
+  padding: .6rem;
+  font-size: var(--fs-sm);
   text-align: left;
+  border-style: none none solid none;
 }
 
-.dropbtn2:hover, .dropbtn2:focus {
-  background-color: #e9e8e7;
-}
-
-.dropdown2 {
-  position: relative;
-  display: inline-block;
-  margin-left: 18px;
-}
-
-.dropdown-content2 {
+#myDropdown2
+#myDropdown3
+#myDropdown4 {
   display: none;
-  position: absolute;
-  padding: 20px;
-  background-color: #F4EFE8;
-  min-width: 340px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content2 a {
-  color: black;
-  padding: 12px 16px;
-  font-size: 16px;
-  display: block;
 }
 
 .show {display:block;}
 
-.dropbtn3 {
-  cursor: pointer;
-  width: 340px;
-  background-color: #F4EFE8;
-  color: black;
-  border-style: none none solid none;
-  padding: 16px;
-  font-size: 16px;
-  text-align: left;
-}
-
-.dropbtn3:hover, .dropbtn3:focus {
-  background-color: #e9e8e7;
-}
-
-.dropdown3 {
-  position: relative;
-  display: inline-block;
-  margin-left: 18px;
-}
-
-.dropdown-content3 {
-  display: none;
-  position: absolute;
-  padding: 20px;
-  background-color: #F4EFE8;
-  min-width: 340px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content3 a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.show {display:block;}
-
-.dropbtn4 {
-  cursor: pointer;
-  width: 340px;
-  background-color: #F4EFE8;
-  color: black;
-  border-style: none none solid none;
-  padding: 16px;
-  font-size: 16px;
-  text-align: left;
-}
-
-.dropbtn4:hover, .dropbtn4:focus {
-  background-color: #e9e8e7;
-}
-
-.dropdown4 {
-  position: relative;
-  display: inline-block;
-  margin-left: 18px;
-}
-
-.dropdown-content4 {
-  display: none;
-  position: absolute;
-  padding: 20px;
-  background-color: #F4EFE8;
-  min-width: 340px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content4 a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.show {display:block;}
 
 /* Andmeldelse */
 .review {
-  margin-left: 18px;
-  margin-right: 18px;
-  margin-top: 20px;
+  font-size: var(--fs-nm);
+  margin-top: 1rem;
 }
 
 .star-icon {
-  width: 20px;
+  width: 1.3em;
   float: right;
 }
 
@@ -283,62 +209,18 @@ margin-bottom: 10px;
   /* Vi bruger grid til at placere vores indhold på siden */
   .grid-container {
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
-    grid-gap: 100px;
+    grid-template-columns: 1fr minmax(200px, 500px);
+    grid-gap: 4rem;
     margin: 20px;
-  }
-
-  .item1 {
-    grid-column: 1 / span 3; 
-    grid-row: 1;
-  }
-
-  .item2 {
-    grid-column: 4;
-    grid-row: 1;
-  }
-
-  .dropdown {
-    width: 400px;
   }
 
   .basket-button {
     justify-content: left;
-    margin-left: 18px;
-  }
-
-  .add-to-cart {
-    width: 330px;
-    cursor: pointer;
-    margin-right: 10px;
-  }
-
-  .heart-icon-button {
-    display: block;
-    cursor: pointer;
-    background-color: white;
-    justify-content: center;
-    height: 60px;
-    width: 60px;
-    margin-top: 20px;
-    border: none;
   }
 
   #heart-icon2 {
     display: block;
     margin: 0 auto;
-  }
-
-  .delivery-info {
-    width: 400px;
-  }
-
-  .review {
-    width: 400px;
-  }
-
-  .column b {
-    font-size: 30px;
   }
 
   #heart-icon {
@@ -354,6 +236,7 @@ margin-bottom: 10px;
     display: block;
     margin-left: 18px;
     margin-top: 50px;
+    margin-bottom: 4rem;
   }
 
   /* Vi har brugt en horizontal scroll, som giver brugeren en mulighed for at se en række af anbefalede produkter. 
