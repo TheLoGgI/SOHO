@@ -43,8 +43,6 @@ function toggleSearchMenu(buttonTarget) {
 // Big Navigation Menu
 const bigmenuBrand = document.getElementById('bigmenuBrand')
 const bigmenuCategory = document.getElementById('bigmenuCategory')
-// const brandLink = document.getElementById('onHoverBrand')
-// const categoryLink = document.getElementById('onHoverCategory')
 const bigMenuHover = document.querySelectorAll('[data-template]')
 
 console.log('bigMenuHover: ', bigMenuHover);
@@ -88,6 +86,8 @@ document.getElementById('cartIcon').addEventListener('click', () => {
         cart.setAttribute('aria-label', 'closed')
     }
 })
+
+
 
 cart.addEventListener('mouseleave', e => {
     cart.style.transform = `translateY(-120%)`
@@ -160,12 +160,12 @@ function basketTemplate() {
         </div>`
     } 
 
-    html += `<div class="cart-total">
+    html += `
+    <div class="cart-total">
             <p>Pris i alt (inkl. moms)</p>
             <p class="cart-total-price"><span>${totalPrice},00</span> kr</p>
         </div>
     </div>
-    <hr class="thematic-break">
     <a href="#kurv" class="shopping-btn btn">Indkøbskurv</a>`
 
     basket.innerHTML = html
@@ -186,21 +186,19 @@ function basketItemTemplate(items, key) {
             <div class="product-details">
                 <p>Størrelse: <span> ${val.size}</span></p>
                 <p>Farve: <span> ${val.color}</span></p>
-                <p>Antal: <span> 1</span></p>
+                <p>Antal: <span> ${val.amount}</span></p>
             </div>
             <button class="remove-item" onclick="removeShoppingItem(this)" data-key="${key.next().value}">Fjern kurv</button>
             
         </div>
-    </div>
-    <hr class="thematic-break">`
+    </div>`
     }, '')
      
 }
 
 function removeShoppingItem(target) {
     const key = target.getAttribute('data-key')
-    console.log('key: ', key);
-    const removedItem = userCart.remove(key)
+    userCart.remove(key)
     const cartItem = target.parentNode.parentNode
 
     cartItem.style.transform = `translateX(-120%)`
