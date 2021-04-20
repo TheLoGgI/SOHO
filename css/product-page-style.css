@@ -368,10 +368,16 @@
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.400);
 }
 
-.like-icon {
+.favorite-icon-shop {
     width: 60%;
     padding-top: 2px;
 }
+
+#favorite-icon-outline {
+    display: none;
+}
+
+#favorite-icon-solid {}
 
 .product-image {
     aspect-ratio: 3/4;
