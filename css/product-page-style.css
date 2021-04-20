@@ -221,7 +221,8 @@
 
 .side-menu {
     width: 20vw;
-    padding: 20px;
+    padding: 30px;
+    padding-top: 38px;
     display: none;
 }
 
@@ -242,18 +243,18 @@
 }
 
 .side-menu-list li {
-    padding-bottom: 4px;
+    padding-bottom: 6px;
 }
 
 .side-menu-link {
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .side-menu-arrow-link {
-    font-size: 16px;
+    font-size: 14px;
     display: flex;
     align-items: center;
-    padding-bottom: 4px;
+    padding-bottom: 6px;
 }
 
 .side-menu-arrow {
@@ -306,6 +307,10 @@
     margin-right: 16px;
 }
 
+#desktop-filter-btn-container {
+    display: none;
+}
+
 #sort-button {
     display: flex;
     align-items: center;
@@ -325,6 +330,10 @@
 
 .sort-arrow {
     width: 20px;
+}
+
+.desktop-filter-container {
+    display: none;
 }
 
 /* Styling af individuel produktkort */
@@ -417,6 +426,9 @@
     .mobile-filter-window {
         width: 30vw;
     }
+    .mobile-filter-container {
+        width: 30vw;
+    }
     .filter-line-devider {
         width: 27vw;
     }
@@ -425,5 +437,54 @@
     }
     .product-window {
         width: 80vw;
+    }
+    #mobile-filter-btn-container {
+        display: none;
+    }
+    #desktop-filter-btn-container {
+        display: flex;
+        align-items: center;
+    }
+    .desktop-filter-heading {
+        font-family: var(--ff-body);
+        font-weight: 600;
+        font-size: 16px;
+        margin-right: 20px;
+    }
+    .desktop-filter-container {
+        display: block;
+        background-color: white;
+        overflow-y: scroll;
+        transition: 300ms;
+    }
+    #desktop-categories-filters {
+        height: 0vh;
+    }
+    #desktop-brands-filters {
+        height: 0vh;
+    }
+    .desktop-filter-list {
+        padding: 20px;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+    }
+    .desktop-filter-btn {
+        height: 48px;
+        padding-left: 16px;
+        padding-right: 16px;
+        display: flex;
+        align-items: center;
+        margin-right: 16px;
+        font-size: 16px;
+        font-family: var(--ff-body);
+        background-color: rgba(255, 255, 255, 0);
+        border-style: none;
+        cursor: pointer;
+    }
+    .desktop-filter-btn-arrow {
+        padding-left: 16px;
+    }
+    #sort-button {
+        border-style: none;
     }
 }

@@ -26,9 +26,8 @@ function toggleFilterWindow() {
 
 }
 
+
 // filters array
-
-
 
 const brands = [
     "Anerkjendt",
@@ -115,3 +114,74 @@ function loopFilterEmner(array) {
 }
 
 appendFilters(filters);
+
+// desktop filters
+
+let desktopCategoriesFilters = document.querySelector("#desktop-categories-filters");
+let desktopBrandsFilters = document.querySelector("#desktop-brands-filters");
+
+function toggleDesktopCategoriesFilters() {
+
+    const state = desktopCategoriesFilters.getAttribute('aria-label');
+    console.log('state: ', state);
+    if (state === 'closed') {
+        desktopCategoriesFilters.style.height = "260px";
+        desktopCategoriesFilters.setAttribute('aria-label', 'open');
+        desktopBrandsFilters.style.height = "0vh";
+        desktopBrandsFilters.setAttribute('aria-label', 'closed');
+    }
+    else {
+        desktopCategoriesFilters.style.height = "0vh";
+        desktopCategoriesFilters.setAttribute('aria-label', 'closed');
+    }
+}
+
+function toggleDesktopBrandsFilters() {
+
+    const state = desktopBrandsFilters.getAttribute('aria-label');
+    console.log('state: ', state);
+    if (state === 'closed') {
+        desktopBrandsFilters.style.height = "260px";
+        desktopBrandsFilters.setAttribute('aria-label', 'open');
+        desktopCategoriesFilters.style.height = "0vh";
+        desktopCategoriesFilters.setAttribute('aria-label', 'closed');
+    }
+    else {
+        desktopBrandsFilters.style.height = "0vh";
+        desktopBrandsFilters.setAttribute('aria-label', 'closed');
+    }
+}
+
+
+const desktopCategoriesFiltersList = document.querySelector("#desktop-categories-filter-list");
+const desktopBrandsFiltersList = document.querySelector("#desktop-brands-filter-list");
+
+function appendDesktopCategoriesFilters(filters) {
+    let htmlTemplate = "";
+    for (const filter of filters) {
+        htmlTemplate += /*html*/ `
+             <li class="filter-subject-list-item">
+                <input class="filter-subject-input-check" id="1${filter}" type="checkbox"/>
+                <label for="1${filter}" class="filter-subject-name">${filter}</label>
+            </li>
+        `;
+    }
+    document.querySelector("#desktop-categories-filter-list").innerHTML = htmlTemplate;
+}
+
+function appendDesktopBrandsFilters(filters) {
+    let htmlTemplate = "";
+    for (const filter of filters) {
+        htmlTemplate += /*html*/ `
+             <li class="filter-subject-list-item">
+                <input class="filter-subject-input-check" id="1${filter}" type="checkbox"/>
+                <label for="1${filter}" class="filter-subject-name">${filter}</label>
+            </li>
+        `;
+    }
+    document.querySelector("#desktop-brands-filter-list").innerHTML = htmlTemplate;
+}
+
+appendDesktopCategoriesFilters(categories);
+appendDesktopBrandsFilters(brands);
+
