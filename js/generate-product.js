@@ -62,7 +62,7 @@ function currencyFormat(num) {
     <div class="item2">
         <form id="productForm">
         <section class="info">
-            <p>${currentProduct.tags[0].name}</p>
+            <p>${currentProduct?.tags[0]?.name}</p>
             <h2>${currentProduct.name}</h2>
             <p>kr. ${currencyFormat(currentProduct.prices.price)},- inkl. moms</p>
 
@@ -101,7 +101,7 @@ function currencyFormat(num) {
 
         <div class="basket-button">
             <button class="add-to-cart" id="addToCart" type="submit">
-                <img class="shopping-bag-icon" src="/icons/Shopping-bag-icon.svg">
+                <img class="shopping-bag-icon" src="icons/Shopping-bag-icon.svg">
                 Tilføj til kurven
             </button>
             
@@ -121,7 +121,7 @@ function currencyFormat(num) {
             <hr>
             <p>30 dages returret
                 <span style="float: left;">
-                    <img class="return-arrow" src="/icons/return-arrow.svg">
+                    <img class="return-arrow" src="icons/return-arrow.svg">
                 </span>
             </p>
         </section>
@@ -130,7 +130,7 @@ function currencyFormat(num) {
         <section class="dropdown-menus">
             <div class="dropdown2">
                 <button onclick="dropdownFunction2()" class="info-dropdown">Materiale og vaskeanvisninger<img
-                        class="arrow-down" src="/images/arrow-down.png" alt="arrow" width="15px"></button>
+                        class="arrow-down" src="images/arrow-down.png" alt="arrow" width="15px"></button>
                 <!-- <div id="myDropdown2" class="dropdown-content2">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore
@@ -142,7 +142,7 @@ function currencyFormat(num) {
             </div>
             <div class="dropdown3">
                 <button onclick="dropdownFunction3()" class="info-dropdown">Information og produkt<img class="arrow-down"
-                        src="/images/arrow-down.png" alt="arrow" width="15px"></button>
+                        src="images/arrow-down.png" alt="arrow" width="15px"></button>
                 <!-- <div id="myDropdown3" class="dropdown-content3">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore
@@ -154,7 +154,7 @@ function currencyFormat(num) {
             </div>
             <div class="dropdown4">
                 <button onclick="dropdownFunction4()" class="info-dropdown">Pasform<img class="arrow-down"
-                        src="/images/arrow-down.png" alt="arrow" width="15px"></button>
+                        src="images/arrow-down.png" alt="arrow" width="15px"></button>
                 <!-- <div id="myDropdown4" class="dropdown-content4">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore
@@ -169,11 +169,11 @@ function currencyFormat(num) {
         <!-- anmeldelser -->
         <section class="review">
             <p>Anmeldelser (0)
-                <img class="star-icon" src="/icons/Star-icon.svg" alt="star-icon">
-                <img class="star-icon" src="/icons/Star-icon.svg" alt="star-icon">
-                <img class="star-icon" src="/icons/Star-icon.svg" alt="star-icon">
-                <img class="star-icon" src="/icons/Star-icon.svg" alt="star-icon">
-                <img class="star-icon" src="/icons/Star-icon.svg" alt="star-icon">
+                <img class="star-icon" src="icons/Star-icon.svg" alt="star-icon">
+                <img class="star-icon" src="icons/Star-icon.svg" alt="star-icon">
+                <img class="star-icon" src="icons/Star-icon.svg" alt="star-icon">
+                <img class="star-icon" src="icons/Star-icon.svg" alt="star-icon">
+                <img class="star-icon" src="icons/Star-icon.svg" alt="star-icon">
             </p>
         </section>
     </div>`
