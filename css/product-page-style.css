@@ -456,6 +456,8 @@
         background-color: white;
         overflow-y: scroll;
         transition: 300ms;
+        margin-left: 20px;
+        margin-right: 20px;
     }
     #desktop-categories-filters {
         height: 0vh;
@@ -474,7 +476,6 @@
         padding-right: 16px;
         display: flex;
         align-items: center;
-        margin-right: 16px;
         font-size: 16px;
         font-family: var(--ff-body);
         background-color: rgba(255, 255, 255, 0);
@@ -482,9 +483,17 @@
         cursor: pointer;
     }
     .desktop-filter-btn-arrow {
-        padding-left: 16px;
+        padding: 16px;
     }
     #sort-button {
         border-style: none;
+    }
+    #desktop-brands-arrow {
+        transform: scaleY(1);
+        transition: 300ms;
+    }
+    #desktop-categories-arrow {
+        transform: scaleY(1);
+        transition: 300ms;
     }
 }
