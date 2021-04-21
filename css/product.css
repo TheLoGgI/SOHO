@@ -200,7 +200,7 @@
 }
 
 /* Desktop */
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1200px) {
 
   .slideshow-container {
     min-width: 800px;

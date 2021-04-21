@@ -41,12 +41,10 @@
     display: block;
 }
 
-
-
 .shopping-cart-total > div {
     display: flex;
     justify-content: space-between;
-    margin-top: 1rem;
+    margin: 1rem 0;
 }
 
 .product-title {
@@ -55,7 +53,7 @@
 }
 
 .shopping-cart-title {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     font-weight: 600;
 }
 
@@ -92,10 +90,4 @@
     display: block;
     text-align: center;
 
-}
-
-/* Mobil */
-@media screen and (max-width: 1200px) { 
-
-    
 }
