@@ -200,6 +200,13 @@ async function getProducts() {
     const data = await (await fetch('https://soho.lasseaakjaer.com/wp-json/wc/store/products')).json()
     console.log(data)
     showProductList(data)
+    new Splide('#splide1', {
+        type: 'loop',
+        perPage: 3,
+        perMove: 1,
+        pagination: true,
+        autoHeight: true,
+    }).mount();
 }
 
 getProducts()
@@ -213,12 +220,13 @@ function showProductList(array) {
         templet += `<li class="splide__slide">
         <div class="product">
             <a href="${'/pages/product.html?id=' + item.id}" class="product-link">
-                <img src="${item?.images[1]?.src}" alt="t-shirt showcase">
-                    <p class="product-brand"><strong>${item.tags[0]?.name}</strong> </p>
-                    <p class="product-title">${item.name}</p>
-                    <p class="product-price">kr. ${currencyFormat(item.prices.price)},-</p>
-                                </a>
-                            </div>
+                <img src="${item?.images[1] ? item?.images[1].src : 'https://via.placeholder.com/300'
+            } " alt="t - shirt showcase">
+        <p class="product-brand"> <strong>${item.tags[0] ? item?.tags[0].name : ''}</strong> </p >
+            <p class="product-title">${item.name}</p>
+            <p class="product-price">kr. ${currencyFormat(item.prices.price)},-</p>
+                                </a >
+                            </div >
                         </li > `
     }
     console.log(templet)
