@@ -62,7 +62,7 @@ function deliveryTime(params) {
     <div class="item2">
         <form id="productForm">
         <section class="info">
-            <p>${currentProduct?.tags[0]?.name}</p>
+            <p>${currentProduct.tags[0] ? currentProduct.tags[0].name : ''}</p>
             <h2>${currentProduct.name}</h2>
             <p>kr. ${currencyFormat(currentProduct.prices.price)},- inkl. moms</p>
 

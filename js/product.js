@@ -4,9 +4,6 @@ let productData = []
 
 
 
-// async function getProducts() {
-//     return await (await fetch('https://soho.lasseaakjaer.com/wp-json/wc/store/products')).json()
-// }
 
 // (async function init() {
 //     const products = await getProducts()
