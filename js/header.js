@@ -1,12 +1,20 @@
-// let isMobilNavigationShowing = false
 
 
+// Main navigation menu Button
 document.getElementById('menuIconButton').addEventListener('click', e => {
     document.getElementById('nav-icon').classList.toggle('open')
     toggleMainMenuNavigation()
   })
 
+// Search Button
 document.getElementById('searchMenuButton').addEventListener('click', e => {
+    e.currentTarget.children[0].style.fill = '#dbac2b' /* Primary yellow */
+    toggleSearchMenu(e.currentTarget.children[0])
+    
+  })
+
+//   Shopping Button
+document.getElementById('searchShoppingButton').addEventListener('click', e => {
     e.currentTarget.children[0].style.fill = '#dbac2b' /* Primary yellow */
     toggleSearchMenu(e.currentTarget.children[0])
     
@@ -26,7 +34,23 @@ function toggleMainMenuNavigation() {
 }
 
 function toggleSearchMenu(buttonTarget) {
-    const menu = document.getElementById('mobilSearchNav')
+    const menu = document.getElementById('shoppingCart')
+    // hidden - off
+    if (menu.style.transform === 'translateY(0%)') {
+        buttonTarget.style.fill = '#000'
+        menu.style.transform = `translateY(140%)`
+        document.body.style.overflow = 'auto'
+        return
+    }
+    // Showing - on
+    buttonTarget.style.fill = '#dbac2b'
+    menu.style.transform = `translateY(0%)`
+    document.body.style.overflow = 'hidden'
+    document.getElementById('searchInput').focus()
+}
+
+function toggleShopppingMenu(buttonTarget) {
+    const menu = document.getElementById('searchShoppingButton')
     // hidden - off
     if (menu.style.transform === 'translateY(0%)') {
         buttonTarget.style.fill = '#000'
@@ -126,12 +150,13 @@ function basketTemplate() {
     } 
 
     html += `
-    <div class="cart-total">
-            <p>Pris i alt (inkl. moms)</p>
-            <p class="cart-total-price"><span>${totalPrice},00</span> kr</p>
-        </div>
-    </div>
-    <a href="#kurv" class="shopping-btn btn">Indkøbskurv</a>`
+    
+        <div class="cart-total">
+                <p>Pris i alt (inkl. moms)</p>
+                <p class="cart-total-price"><span>${totalPrice},00</span> kr</p>
+            </div>
+            <a href="#kurv" class="shopping-btn btn">Indkøbskurv</a>
+            </div>`
 
     basket.innerHTML = html
 }

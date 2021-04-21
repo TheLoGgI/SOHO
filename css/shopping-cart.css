@@ -95,5 +95,24 @@
 @media screen and (max-width: 1200px){
     .shopping-cart {
         top: 0rem;
+        padding: 1rem;
+        min-width: auto;
+        height: 85vh;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        font-size: var(--fs-sm);
+        transform: translateY(-120%);
+    }
+
+    .shopping-cart-total > div {
+        display: flex;
+        justify-content: space-between;
+        margin: .3rem 0;
+    }
+
+    .cart-items {
+        max-height: initial;
+        overflow-y: auto;
     }
 }
