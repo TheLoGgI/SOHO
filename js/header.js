@@ -9,7 +9,7 @@ document.getElementById('menuIconButton').addEventListener('click', e => {
 document.getElementById('searchMenuButton').addEventListener('click', e => {
     e.currentTarget.children[0].style.fill = '#dbac2b' /* Primary yellow */
     toggleSearchMenu(e.currentTarget.children[0])
-    document.getElementById('searchInput').focus()
+    
   })
 
 
@@ -38,6 +38,7 @@ function toggleSearchMenu(buttonTarget) {
     buttonTarget.style.fill = '#dbac2b'
     menu.style.transform = `translateY(0%)`
     document.body.style.overflow = 'hidden'
+    document.getElementById('searchInput').focus()
 }
 
 // Big Navigation Menu
@@ -102,42 +103,6 @@ function updateBasket() {
 
 updateBasket()
 basketTemplate()
-
-
-// function toggleMenuNavgation(show) {
-//     const mobilNav = document.getElementById('mobilNavigationToggle')
-//     const shadow = document.getElementById('shadowNav')
-//     isMobilNavigationShowing = show ?? !isMobilNavigationShowing // '??' Nullish coalescing operator - if not null or undefined use the show variable
-//     if (isMobilNavigationShowing) {
-//         mobilNav.style.transform = `translateX(20%)`
-//         shadow.style.transform = `translateX(0%)`
-//         return true
-//     } else {
-//         // Hides mobil navigation
-//         mobilNav.style.transform = `translateX(110%)`
-//         shadow.style.transform = `translateX(-100%)`
-//         return false
-//     }
-
-// }
-
-// window.addEventListener('resize', () => {
-
-//     const mobilNav = document.getElementById('mobilNavigationToggle')
-//     if (window.innerWidth >= 1200) {
-//         // mobilNav.style.transition = 'transform 0.3s ease-in-out 0s'
-//         mobilNav.style.transform = `translateX(0%)`
-//     } else {
-//         mobilNav.style.transition = 'all 0s ease 0s'
-//         mobilNav.style.transform = `translateX(110%)`
-        
-//         // Prevents 1 tick animation
-//         setTimeout(() => {
-//             mobilNav.style.transition = 'transform 0.3s ease-in-out 0s'
-//         }, 0)
-//     }
-
-// })
 
 
 function basketTemplate() {
