@@ -8,6 +8,7 @@
     <meta name="viewport"
         content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
     <base href="../" target="_blank">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
     <script src="https://kit.fontawesome.com/d577d4a2e5.js" crossorigin="anonymous"></script>
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
@@ -20,6 +21,7 @@
     <meta name="theme-color" content="#9C27B0">
 
     <title>Soho - En unik tøjstil med mere</title>
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/css/splide.min.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
     <link href="css/product.css" rel="stylesheet" />
     <link href="css/header.css" rel="stylesheet" />
@@ -214,7 +216,7 @@
         </div>
         <hr class="thematic-break">
         <button class="shopping-btn btn">Indkøbskurv</button>
-    </div>  
+    </div>
 
     <div class="bigmenu" id="bigmenuBrand" aria-label="Close" tabindex="-1">
         <div class="bigmenu-col1">
@@ -252,8 +254,8 @@
             <h2>Lokale Brands: Lakor & Revolution</h2>
             <div class="responsive-image">
                 <a href="#">
-                    <img class="lakor-brand-image" id="lakorBrandImage"
-                        src="images/lakor_CollectionCoverPC1_1920x.jpg" alt="Lakor collection cover">
+                    <img class="lakor-brand-image" id="lakorBrandImage" src="images/lakor_CollectionCoverPC1_1920x.jpg"
+                        alt="Lakor collection cover">
                 </a>
                 <a href="#">
                     <img class="revolution-brand-image" id="revolutionBrandImage"
@@ -305,7 +307,7 @@
         <section class="similar-products">
             <p><b>Lignende produkter</b></p>
             <p>Anbefalinger til dig</p><br>
-            <div class="similar-products-flexbox">
+            <!-- <div class="similar-products-flexbox">
                 <div class="product-card">
                     <div class="product-image-container">
                         <button class="like-button">
@@ -408,6 +410,72 @@
                             <p class="product-price">199 kr</p>
                         </div>
                     </div>
+                </div>
+            </div> -->
+            <div class="splide" id="splide1">
+                <div class="splide__track">
+                    <ul class="splide__list" id="product-list">
+                        <li class="splide__slide">
+                            <div class="product">
+                                <a href="#" class="product-link">
+                                    <img src="./images/products/soho-shirt.jpg" alt="t-shirt showcase">
+                                    <p class="product-brand"><strong>H&M</strong> </p>
+                                    <p class="product-title">T-shirt i bomuldsjersey</p>
+                                    <p class="product-price">kr. 499.-</p>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="product">
+                                <a href="#" class="product-link">
+                                    <img src="./images/products/soho-shirt.jpg" alt="t-shirt showcase">
+                                    <p class="product-brand"><strong>H&M</strong> </p>
+                                    <p class="product-title">T-shirt i bomuldsjersey</p>
+                                    <p class="product-price">kr. 499.-</p>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="product">
+                                <a href="#" class="product-link">
+                                    <img src="./images/products/soho-shirt.jpg" alt="t-shirt showcase">
+                                    <p class="product-brand"><strong>H&M</strong> </p>
+                                    <p class="product-title">T-shirt i bomuldsjersey</p>
+                                    <p class="product-price">kr. 499.-</p>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="product">
+                                <a href="#" class="product-link">
+                                    <img src="./images/products/soho-shirt.jpg" alt="t-shirt showcase">
+                                    <p class="product-brand"><strong>H&M</strong> </p>
+                                    <p class="product-title">T-shirt i bomuldsjersey</p>
+                                    <p class="product-price">kr. 499.-</p>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="product">
+                                <a href="#" class="product-link">
+                                    <img src="./images/products/soho-shirt.jpg" alt="t-shirt showcase">
+                                    <p class="product-brand"><strong>H&M</strong> </p>
+                                    <p class="product-title">T-shirt i bomuldsjersey</p>
+                                    <p class="product-price">kr. 499.-</p>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="product">
+                                <a href="#" class="product-link">
+                                    <img src="./images/products/soho-shirt.jpg" alt="t-shirt showcase">
+                                    <p class="product-brand"><strong>H&M</strong> </p>
+                                    <p class="product-title">T-shirt i bomuldsjersey</p>
+                                    <p class="product-price">kr. 499.-</p>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -546,6 +614,15 @@
     <script type="text/javascript" src="js/header.js"></script>
     <script type="text/javascript" src="js/generate-product.js"></script>
     <script type="text/javascript" src="js/slide.js"></script>
+    <script>
+        new Splide('#splide1', {
+            type: 'loop',
+            perPage: 3,
+            perMove: 1,
+            pagination: true,
+            autoHeight: true,
+        }).mount();
+    </script>
 
 
 </html>
