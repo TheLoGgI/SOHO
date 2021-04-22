@@ -61,7 +61,7 @@
                 </g>
             </svg>
         </a>
-        <a class="mobil-nav-item" href="#cart">
+        <button class="mobil-nav-item" id="searchShoppingButton">
             <!-- Shopping bag icon -->
             <svg xmlns="http://www.w3.org/2000/svg" width="24.235" height="34.735" viewBox="0 0 24.235 34.735">
                 <g id="Shopping-bag-icon" transform="translate(0 0)">
@@ -70,7 +70,7 @@
                         transform="translate(0 0)" />
                 </g>
             </svg>
-        </a>
+        </button>
         <a class="mobil-nav-item" href="#cart">
             <!-- Profil icon -->
             <svg xmlns="http://www.w3.org/2000/svg" width="34.416" height="34.937" viewBox="0 0 34.416 34.937">
@@ -154,7 +154,9 @@
         <nav class="menu-navigation">
             <!-- SOHO Logo -->
             <div class="menu-navigation-logo">
-                <img src="images/Logo.svg" alt="soho logotype">
+                <a href="/">
+                    <img src="images/Logo.svg" alt="soho logotype">
+                </a>
             </div>
 
             <ul class="menu-navigation-list">
@@ -319,7 +321,7 @@
             <h2 class="showcase-title">Mest populære</h2>
             <div class="splide" id="splide1">
                 <div class="splide__track">
-                    <ul class="splide__list">
+                    <ul class="splide__list" id="mostPopular">
                         <li class="splide__slide">
                             <div class="product">
                                 <a href="#" class="product-link">
@@ -409,10 +411,10 @@
             <h2 class="showcase-title">Lokale brands</h2>
             <div class="splide" id="splide2">
                 <div class="splide__track">
-                    <ul class="splide__list">
+                    <ul class="splide__list" id="localBrands">
                         <li class="splide__slide">
                             <div class="product">
-                                <a href="#" class="product-link">
+                                <a href="/pages/product.html?id=44" class="product-link">
                                     <img src="./images/products/soho-shirt.jpg" alt="t-shirt showcase">
                                     <p class="product-brand"><strong>H&M</strong> </p>
                                     <p class="product-title">T-shirt i bomuldsjersey</p>
@@ -422,7 +424,7 @@
                         </li>
                         <li class="splide__slide">
                             <div class="product">
-                                <a href="#" class="product-link">
+                                <a href="/pages/product.html?id=44" class="product-link">
                                     <img src="./images/products/soho-shirt.jpg" alt="t-shirt showcase">
                                     <p class="product-brand"><strong>H&M</strong> </p>
                                     <p class="product-title">T-shirt i bomuldsjersey</p>
@@ -432,37 +434,7 @@
                         </li>
                         <li class="splide__slide">
                             <div class="product">
-                                <a href="#" class="product-link">
-                                    <img src="./images/products/soho-shirt.jpg" alt="t-shirt showcase">
-                                    <p class="product-brand"><strong>H&M</strong> </p>
-                                    <p class="product-title">T-shirt i bomuldsjersey</p>
-                                    <p class="product-price">kr. 499.-</p>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="splide__slide">
-                            <div class="product">
-                                <a href="#" class="product-link">
-                                    <img src="./images/products/soho-shirt.jpg" alt="t-shirt showcase">
-                                    <p class="product-brand"><strong>H&M</strong> </p>
-                                    <p class="product-title">T-shirt i bomuldsjersey</p>
-                                    <p class="product-price">kr. 499.-</p>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="splide__slide">
-                            <div class="product">
-                                <a href="#" class="product-link">
-                                    <img src="./images/products/soho-shirt.jpg" alt="t-shirt showcase">
-                                    <p class="product-brand"><strong>H&M</strong> </p>
-                                    <p class="product-title">T-shirt i bomuldsjersey</p>
-                                    <p class="product-price">kr. 499.-</p>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="splide__slide">
-                            <div class="product">
-                                <a href="#" class="product-link">
+                                <a href="/pages/product.html?id=44" class="product-link">
                                     <img src="./images/products/soho-shirt.jpg" alt="t-shirt showcase">
                                     <p class="product-brand"><strong>H&M</strong> </p>
                                     <p class="product-title">T-shirt i bomuldsjersey</p>
@@ -565,8 +537,7 @@
                     <li class="list-item-help"><a href="#bestilling" class="footer-list-link">Bestilling</a></li>
                     <li class="list-item-help"><a href="#retunering" class="footer-list-link">Retunering</a></li>
                     <li class="list-item-help"><a href="#registrering" class="footer-list-link">Registrering</a></li>
-                    <li class="list-item-help"><a href="#tilmeld-nyhedsbrev" class="footer-list-link">Tilmeld
-                            nyhedsbrev</a></li>
+                    <li class="list-item-help"><a href="#tilmeld-nyhedsbrev" class="footer-list-link">Tilmeld nyhedsbrev</a></li>
                 </ul>
             </div>
             <hr class="row-seperator">
@@ -611,29 +582,11 @@
     </footer>
 
 
-    <!-- </div> End of body wrapper -->
-
-
     <!-- <script type="text/javascript" src="js/serviceWorkerHandler.js"></script> -->
     <script type="text/javascript" src="js/Cart.js"></script>
     <script type="text/javascript" src="js/header.js"></script>
-    <script>
-        new Splide('#splide1', {
-            type: 'loop',
-            perPage: 2,
-            perMove: 1,
-            pagination: true,
-            autoHeight: true,
-        }).mount();
+    <script type="text/javascript" src="js/forepage.js"></script>
 
-        new Splide('#splide2', {
-            type: 'loop',
-            perPage: 2,
-            perMove: 1,
-            pagination: true,
-            autoHeight: true,
-        }).mount();
-    </script>
 
 
 </html>

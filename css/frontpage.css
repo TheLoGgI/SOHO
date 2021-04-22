@@ -177,6 +177,9 @@
 
 .product img {
     width: 100%;
+    min-height: 300px;
+    object-fit: cover;
+    margin-bottom: .5em;
 }
 
 .product p {
@@ -299,7 +302,13 @@
 }
 
 .splide__slide {
-    max-width: 300px;
+    max-width: 500px;
+}
+
+.product img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
 }
 
 }

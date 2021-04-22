@@ -1,15 +1,23 @@
-// let isMobilNavigationShowing = false
 
 
+// Main navigation menu Button
 document.getElementById('menuIconButton').addEventListener('click', e => {
     document.getElementById('nav-icon').classList.toggle('open')
     toggleMainMenuNavigation()
   })
 
+// Search Button
 document.getElementById('searchMenuButton').addEventListener('click', e => {
     e.currentTarget.children[0].style.fill = '#dbac2b' /* Primary yellow */
     toggleSearchMenu(e.currentTarget.children[0])
-    document.getElementById('searchInput').focus()
+    
+  })
+
+//   Shopping Button
+document.getElementById('searchShoppingButton').addEventListener('click', e => {
+    e.currentTarget.children[0].style.fill = '#dbac2b' /* Primary yellow */
+    toggleSearchMenu(e.currentTarget.children[0])
+    
   })
 
 
@@ -26,7 +34,7 @@ function toggleMainMenuNavigation() {
 }
 
 function toggleSearchMenu(buttonTarget) {
-    const menu = document.getElementById('mobilSearchNav')
+    const menu = document.getElementById('shoppingCart')
     // hidden - off
     if (menu.style.transform === 'translateY(0%)') {
         buttonTarget.style.fill = '#000'
@@ -38,6 +46,23 @@ function toggleSearchMenu(buttonTarget) {
     buttonTarget.style.fill = '#dbac2b'
     menu.style.transform = `translateY(0%)`
     document.body.style.overflow = 'hidden'
+    document.getElementById('searchInput').focus()
+}
+
+function toggleShopppingMenu(buttonTarget) {
+    const menu = document.getElementById('searchShoppingButton')
+    // hidden - off
+    if (menu.style.transform === 'translateY(0%)') {
+        buttonTarget.style.fill = '#000'
+        menu.style.transform = `translateY(140%)`
+        document.body.style.overflow = 'auto'
+        return
+    }
+    // Showing - on
+    buttonTarget.style.fill = '#dbac2b'
+    menu.style.transform = `translateY(0%)`
+    document.body.style.overflow = 'hidden'
+    document.getElementById('searchInput').focus()
 }
 
 // Big Navigation Menu
@@ -104,42 +129,6 @@ updateBasket()
 basketTemplate()
 
 
-// function toggleMenuNavgation(show) {
-//     const mobilNav = document.getElementById('mobilNavigationToggle')
-//     const shadow = document.getElementById('shadowNav')
-//     isMobilNavigationShowing = show ?? !isMobilNavigationShowing // '??' Nullish coalescing operator - if not null or undefined use the show variable
-//     if (isMobilNavigationShowing) {
-//         mobilNav.style.transform = `translateX(20%)`
-//         shadow.style.transform = `translateX(0%)`
-//         return true
-//     } else {
-//         // Hides mobil navigation
-//         mobilNav.style.transform = `translateX(110%)`
-//         shadow.style.transform = `translateX(-100%)`
-//         return false
-//     }
-
-// }
-
-// window.addEventListener('resize', () => {
-
-//     const mobilNav = document.getElementById('mobilNavigationToggle')
-//     if (window.innerWidth >= 1200) {
-//         // mobilNav.style.transition = 'transform 0.3s ease-in-out 0s'
-//         mobilNav.style.transform = `translateX(0%)`
-//     } else {
-//         mobilNav.style.transition = 'all 0s ease 0s'
-//         mobilNav.style.transform = `translateX(110%)`
-        
-//         // Prevents 1 tick animation
-//         setTimeout(() => {
-//             mobilNav.style.transition = 'transform 0.3s ease-in-out 0s'
-//         }, 0)
-//     }
-
-// })
-
-
 function basketTemplate() {
     const basket = document.getElementById('shoppingCart')
     const cartItems = userCart.cart
@@ -161,12 +150,13 @@ function basketTemplate() {
     } 
 
     html += `
-    <div class="cart-total">
-            <p>Pris i alt (inkl. moms)</p>
-            <p class="cart-total-price"><span>${totalPrice},00</span> kr</p>
-        </div>
-    </div>
-    <a href="#kurv" class="shopping-btn btn">Indkøbskurv</a>`
+    
+        <div class="cart-total">
+                <p>Pris i alt (inkl. moms)</p>
+                <p class="cart-total-price"><span>${totalPrice},00</span> kr</p>
+            </div>
+            <a href="#kurv" class="shopping-btn btn">Indkøbskurv</a>
+            </div>`
 
     basket.innerHTML = html
 }
