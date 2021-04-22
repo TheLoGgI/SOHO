@@ -6,10 +6,7 @@ class Cart {
 
     initPreviousCart(previousCart) {
         if (!previousCart) return 
-        // const cart = previousCart
         window.localStorage.setItem('userCart', '[]')
-        // const local = localStorage.getItem('userCart')
-        // console.log('local: ', local);
         previousCart.forEach(cartItem =>  {
             this.add(cartItem)
         })
@@ -18,7 +15,6 @@ class Cart {
     isSameItem(cart, cartItem) {
         const size = cart.size === cartItem.size
         const color = cart.color === cartItem.color
-        console.log('size && color: ', size && color, size);
         return size && color
     }
 
@@ -33,7 +29,6 @@ class Cart {
     add(itemObject) {
         if (!itemObject) return false
         const {id, cartItem} = this.hasItem(itemObject)
-        console.log('cartItem: ', cartItem);
         
         if (cartItem) {
             this.updateItem(id, itemObject)
@@ -62,7 +57,6 @@ class Cart {
 
         while (true) {
             const obj = mapIterator.next().value
-            console.log('obj: ', obj);
             if (obj === undefined ) return false
             if (obj[1].id === itemObject.id) { 
                 
@@ -89,7 +83,6 @@ class Cart {
         const storage = JSON.parse(window.localStorage.getItem('userCart'))
         const index = storage.findIndex(value => value.key === key)
         storage.splice(index, 1)
-        console.log('storage: ', storage);
         window.localStorage.setItem('userCart', JSON.stringify(storage))
 
     }

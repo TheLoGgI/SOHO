@@ -25,18 +25,18 @@ function slideImages(product) {
 // https://blog.abelotech.com/posts/number-currency-formatting-javascript/
 function currencyFormat(num) {
     return Number(num.substring(0, num.length - 2)).toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
-  }
+}
 
-  function deliveryTime(params) {
+function deliveryTime(params) {
     const deliveryFrom = new Date()
     const deliveryTo = new Date()
     deliveryTo.setUTCDate(deliveryFrom.getDate() + 2)
 
-    return deliveryFrom.toLocaleDateString('da-DK', { weekday: 'short', month: 'short', day: 'numeric' }) + 
-    ' - ' + deliveryTo.toLocaleDateString('da-DK', { weekday: 'short', month: 'short', day: 'numeric' })
-  }
+    return deliveryFrom.toLocaleDateString('da-DK', { weekday: 'short', month: 'short', day: 'numeric' }) +
+        ' - ' + deliveryTo.toLocaleDateString('da-DK', { weekday: 'short', month: 'short', day: 'numeric' })
+}
 
-( async() => {
+(async () => {
     const paramId = getURLParam('id')
 
     // redirects to home page
@@ -44,7 +44,7 @@ function currencyFormat(num) {
     console.log(productData);
     const currentProduct = await (await fetch(`https://soho.lasseaakjaer.com/wp-json/wc/store/products/${paramId}`)).json()
     // console.log('currentProduct: ', currentProduct);
-    const target = document.getElementById('productData')    
+    const target = document.getElementById('productData')
 
     const template = `
     <!-- Slideshow -->
@@ -62,7 +62,7 @@ function currencyFormat(num) {
     <div class="item2">
         <form id="productForm">
         <section class="info">
-            <p>${currentProduct?.tags[0]?.name}</p>
+            <p>${currentProduct.tags[0] ? currentProduct.tags[0].name : ''}</p>
             <h2>${currentProduct.name}</h2>
             <p>kr. ${currencyFormat(currentProduct.prices.price)},- inkl. moms</p>
 
@@ -181,20 +181,58 @@ function currencyFormat(num) {
     target.innerHTML = template
     // currentProduct
     shopButtonHandler({
-            name: currentProduct.name,
-            id: currentProduct.id,
-            categories: currentProduct.categories,
-            tags: currentProduct.tags,
-            description: currentProduct.short_description,
-            images: currentProduct.images,
-            price: Number(currentProduct.prices.price.substring(0, currentProduct.prices.price.length - 2)),
-            color: null,
-            size: null,
-            amount: 1,
-            isFavorite: false,
-        })
+        name: currentProduct.name,
+        id: currentProduct.id,
+        categories: currentProduct.categories,
+        tags: currentProduct.tags,
+        description: currentProduct.short_description,
+        images: currentProduct.images,
+        price: Number(currentProduct.prices.price.substring(0, currentProduct.prices.price.length - 2)),
+        color: null,
+        size: null,
+        amount: 1,
+        isFavorite: false,
+    })
     showSlides(slideIndex);
 })()
+
+async function getProducts() {
+    const data = await (await fetch('https://soho.lasseaakjaer.com/wp-json/wc/store/products')).json()
+    console.log(data)
+    showProductList(data)
+    new Splide('#splide1', {
+        type: 'loop',
+        perPage: 3,
+        perMove: 1,
+        pagination: true,
+        autoHeight: true,
+    }).mount();
+}
+
+getProducts()
+
+const productList = document.getElementById("product-list")
+console.log(productList)
+
+function showProductList(array) {
+    let templet = ''
+    for (const item of array) {
+        templet += `<li class="splide__slide">
+        <div class="product">
+            <a href="${'/pages/product.html?id=' + item.id}" class="product-link">
+                <img src="${item?.images[1] ? item?.images[1].src : 'https://via.placeholder.com/300'
+            } " alt="t - shirt showcase">
+        <p class="product-brand"> <strong>${item.tags[0] ? item?.tags[0].name : ''}</strong> </p >
+            <p class="product-title">${item.name}</p>
+            <p class="product-price">kr. ${currencyFormat(item.prices.price)},-</p>
+                                </a >
+                            </div >
+                        </li > `
+    }
+    console.log(templet)
+    productList.innerHTML = templet
+
+}
 
 
 
