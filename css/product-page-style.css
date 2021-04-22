@@ -338,13 +338,16 @@
 
 /* Styling af individuel produktkort */
 
+.products-spawn-container {
+    margin: 20px;
+}
+
 .product-spawn {
     width: 100%;
     display: grid;
     grid-template-columns: auto auto;
     grid-column-gap: 6px;
     grid-row-gap: 16px;
-    padding: 20px;
 }
 
 .product-card {
