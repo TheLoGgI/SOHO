@@ -3,8 +3,9 @@ const cacheName = 'v1'
 
 const cacheAssets = [
     'index.html',
-    '/css/style.css',
-    '/js/main.js',
+    '/css/*',
+    '/js/*',
+    '/pages/*',
     '/favicons/*',
     'https://soho.lasseaakjaer.com/wp-json/wc/store/products'
 ]
