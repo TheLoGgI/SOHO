@@ -1,5 +1,5 @@
 .shopping-cart {
-    position: fixed;
+    position: absolute;
     top: 2rem;
     right: 0;
     background-color: white;
@@ -97,6 +97,7 @@
     .shopping-cart {
         top: 0rem;
         padding: 1rem;
+        position: fixed;
         min-width: auto;
         height: 85vh;
         display: flex;
