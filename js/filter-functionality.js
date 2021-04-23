@@ -100,6 +100,7 @@ function appendFilters(filters) {
     document.querySelector(".mobile-filter-subjects-window").innerHTML = htmlTemplate;
 };
 
+//mobil
 function loopFilterEmner(array) {
     let template = "";
     for (const listItem of array) {
@@ -160,7 +161,7 @@ function toggleDesktopBrandsFilters() {
     }
 }
 
-
+//desktop
 const desktopCategoriesFiltersList = document.querySelector("#desktop-categories-filter-list");
 const desktopBrandsFiltersList = document.querySelector("#desktop-brands-filter-list");
 
@@ -169,7 +170,7 @@ function appendDesktopFilters(filters, selector) {
     for (const filter of filters) {
         htmlTemplate += /*html*/ `
              <li class="filter-subject-list-item">
-                <input class="filter-subject-input-check" id="1${filter}" type="checkbox"/>
+                <input class="filter-subject-input-check" data-name="${filter}" id="1${filter}" type="checkbox"/>
                 <label for="1${filter}" class="filter-subject-name">${filter}</label>
             </li>
         `;
