@@ -1,5 +1,5 @@
 
-
+// Source: https://gist.github.com/prof3ssorSt3v3/ec11c6dfd64e7700b2918b3a52f4ddd4
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/cashe-worker.js', {
             scope: '/',
