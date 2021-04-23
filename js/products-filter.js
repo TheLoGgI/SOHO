@@ -56,8 +56,7 @@ function changeIcon(event) {
     const filledHeart = "icons/orange-heart-solid.svg";
     const outlineHeart = "icons/Heart-icon.svg";
     let image = event.currentTarget.children[0];
-    //console.dir(event.currentTarget);
-    //console.log(state);
+
     if (state === 'outline') {
         image.src = filledHeart;
         event.currentTarget.setAttribute('aria-label', 'filled');
@@ -95,7 +94,7 @@ async function filterProducts() {
     for (const product of products) {
 
         product.categories.forEach(category => {
-            console.log(category)
+            // console.log(category)
             if (filteredProducts.find(p => p.id === product.id) && filterArray.includes(category.name)) {
                 filteredProducts.push(product);
                 console.log("hej");

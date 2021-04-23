@@ -10,16 +10,21 @@ document.getElementById('menuIconButton').addEventListener('click', e => {
 document.getElementById('searchMenuButton').addEventListener('click', e => {
     e.currentTarget.children[0].style.fill = '#dbac2b' /* Primary yellow */
     toggleSearchMenu(e.currentTarget.children[0])
-    
+    console.log('Search menu');
   })
 
 //   Shopping Button
 document.getElementById('searchShoppingButton').addEventListener('click', e => {
     e.currentTarget.children[0].style.fill = '#dbac2b' /* Primary yellow */
-    toggleSearchMenu(e.currentTarget.children[0])
+    console.log('shoppping: ', e.currentTarget.children[0]);
+    toggleShopppingMenu(e.currentTarget.children[0])
     
   })
 
+
+// function toggleMobilMenu(icon, menu) {
+    
+// }
 
 function toggleMainMenuNavigation() {
     const menu = document.getElementById('mainMenuNav')
@@ -34,7 +39,7 @@ function toggleMainMenuNavigation() {
 }
 
 function toggleSearchMenu(buttonTarget) {
-    const menu = document.getElementById('shoppingCart')
+    const menu = document.getElementById('mobilSearchNav')
     // hidden - off
     if (menu.style.transform === 'translateY(0%)') {
         buttonTarget.style.fill = '#000'
@@ -50,11 +55,11 @@ function toggleSearchMenu(buttonTarget) {
 }
 
 function toggleShopppingMenu(buttonTarget) {
-    const menu = document.getElementById('searchShoppingButton')
+    const menu = document.getElementById('shoppingCart')
     // hidden - off
     if (menu.style.transform === 'translateY(0%)') {
         buttonTarget.style.fill = '#000'
-        menu.style.transform = `translateY(140%)`
+        menu.style.transform = `translateY(-140%)`
         document.body.style.overflow = 'auto'
         return
     }
@@ -70,7 +75,6 @@ const bigmenuBrand = document.getElementById('bigmenuBrand')
 const bigmenuCategory = document.getElementById('bigmenuCategory')
 const bigMenuHover = document.querySelectorAll('[data-template]')
 
-console.log('bigMenuHover: ', bigMenuHover);
 bigMenuHover.forEach(item => {
     item.addEventListener('mouseenter', e => {
         showBigMenu(item.dataset.template)
@@ -79,19 +83,19 @@ bigMenuHover.forEach(item => {
 
 
 bigmenuCategory.addEventListener('mouseleave', e => {
-    bigmenuCategory.style.transform = `translateY(-120%)`
+    bigmenuCategory.style.transform = `translateY(-140%)`
 })
 
 bigmenuBrand.addEventListener('mouseleave', e => {
-    bigmenuBrand.style.transform = `translateY(-120%)`
+    bigmenuBrand.style.transform = `translateY(-140%)`
 })
 
 function showBigMenu(changeTo) {
     if (changeTo === 'brands') {
-        bigmenuCategory.style.transform = `translateY(-120%)`
+        bigmenuCategory.style.transform = `translateY(-140%)`
         bigmenuBrand.style.transform = `translateY(0%)`
     } else if(changeTo === 'category') {
-        bigmenuBrand.style.transform = `translateY(-120%)`
+        bigmenuBrand.style.transform = `translateY(-140%)`
         bigmenuCategory.style.transform = `translateY(0%)`
     }
 
@@ -107,7 +111,7 @@ document.getElementById('cartIcon').addEventListener('click', () => {
         cart.setAttribute('aria-label', 'open')
     }
     else {
-        cart.style.transform = `translateY(-120%)`
+        cart.style.transform = `translateY(-140%)`
         cart.setAttribute('aria-label', 'closed')
     }
 })
@@ -115,7 +119,7 @@ document.getElementById('cartIcon').addEventListener('click', () => {
 
 
 cart.addEventListener('mouseleave', e => {
-    cart.style.transform = `translateY(-120%)`
+    cart.style.transform = `translateY(-140%)`
     cart.setAttribute('aria-label', 'closed')
 })
 

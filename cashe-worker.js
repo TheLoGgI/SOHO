@@ -50,7 +50,7 @@ self.addEventListener('activate', (e) => {
 })
 
 self.addEventListener('fetch', (fetchEvent) => {
-    console.log('Service Worker Fetched ', fetchEvent.request.destination)
+    // console.log('Service Worker Fetched ', fetchEvent.request.destination)
 
     // Looking for an image, check cache othervise fetch and put to cache
     if (fetchEvent.request.destination === 'image') {
