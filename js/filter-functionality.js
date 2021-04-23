@@ -4,9 +4,7 @@ let filterBGShadow = document.querySelector(".mobile-filter-bg-fill");
 let filterContainer = document.querySelector(".mobile-filter-container");
 
 function toggleFilterWindow() {
-
     const state = filterContainer.getAttribute('aria-label')
-    console.log('state: ', state);
     if (state === 'closed') {
         filterContainer.style.transform = `translateX(0vw)`
         filterContainer.setAttribute('aria-label', 'open')
@@ -128,7 +126,7 @@ function toggleDesktopCategoriesFilters() {
     const state = desktopCategoriesFilters.getAttribute('aria-label');
     console.log('state: ', state);
     if (state === 'closed') {
-        desktopCategoriesFilters.style.height = "330px";
+        desktopCategoriesFilters.style.height = "260px";
         desktopCategoriesFilters.setAttribute('aria-label', 'open');
         desktopBrandsFilters.style.height = "0vh";
         desktopBrandsFilters.setAttribute('aria-label', 'closed');
@@ -145,9 +143,9 @@ function toggleDesktopCategoriesFilters() {
 function toggleDesktopBrandsFilters() {
 
     const state = desktopBrandsFilters.getAttribute('aria-label');
-    console.log('state: ', state);
+    // console.log('state: ', state);
     if (state === 'closed') {
-        desktopBrandsFilters.style.height = "330px";
+        desktopBrandsFilters.style.height = "260px";
         desktopBrandsFilters.setAttribute('aria-label', 'open');
         desktopCategoriesFilters.style.height = "0vh";
         desktopCategoriesFilters.setAttribute('aria-label', 'closed');
@@ -155,7 +153,7 @@ function toggleDesktopBrandsFilters() {
         categoriesArrow.style.transform = "scaleY(1)";
     }
     else {
-        desktopBrandsFilters.style.height = "0vh";
+        desktopBrandsFilters.style.height = "0px";
         desktopBrandsFilters.setAttribute('aria-label', 'closed');
         brandArrow.style.transform = "scaleY(1)";
     }

@@ -1,9 +1,12 @@
+let prods = [] 
 async function getProducts() {
     return await (await fetch('https://soho.lasseaakjaer.com/wp-json/wc/store/products')).json()
 }
 
 (async function init() {
     const products = await getProducts()
+    prods = [...products]
+    console.log('prods: ', prods);
     createProductCard(products);
 })()
 
@@ -70,34 +73,31 @@ function changeIcon(event) {
 const filterArray = [];
 const desktopInputs = document.querySelectorAll("filter-subject-input-check");
 document.getElementById("desktop-categories-filter-list").addEventListener("click", (e) => {
+    if (e.target.tagName === "LABEL" || e.target.tagName === "UL") return;
     const filterName = e.target.getAttribute("data-name");
 
-    if (e.target.tagName === "LABEL") {
-        return;
-
-    }
     if (e.target.checked) {
         filterArray.push(filterName);
-    }
-    else {
+    } else {
         const index = filterArray.indexOf(filterName);
         filterArray.splice(index, 1);
     }
+    
     filterProducts();
 });
 
 async function filterProducts() {
     const filteredProducts = [];
-    const products = await getProducts()
-    //console.log(products);
-    //if (filterArray.length <= 0) return;
-    for (const product of products) {
+    if (filterArray.length <= 0) {
+        createProductCard(prods)
+        return
+    };
 
+    for (const product of prods) {
         product.categories.forEach(category => {
-            // console.log(category)
-            if (filteredProducts.find(p => p.id === product.id) && filterArray.includes(category.name)) {
-                filteredProducts.push(product);
-                console.log("hej");
+            const hasprod = filteredProducts.find(p => product.id === p.id)
+            if (hasprod === undefined && filterArray.includes(category.name)) {
+                    filteredProducts.push(product);
             }
         });
     }

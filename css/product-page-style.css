@@ -81,7 +81,7 @@
     cursor: pointer;
 }
 
-.filter-subject-summary::-webkit-details-marker {
+.filter-subject-summary::marker {
     display: none;
 }
 
