@@ -1,4 +1,4 @@
-let prods = [] 
+let prods = []
 async function getProducts() {
     return await (await fetch('https://soho.lasseaakjaer.com/wp-json/wc/store/products')).json()
 }
@@ -77,8 +77,6 @@ function eventFilterHandler() {
     filters.forEach(item => {
         item.addEventListener("click", filter)
     })
-
-    clearFilters(filters)
 }
 
 eventFilterHandler()
@@ -94,7 +92,7 @@ function filter(e) {
         const index = filterArray.indexOf(filterName.toLowerCase());
         filterArray.splice(index, 1);
     }
-    
+
     filterProducts();
 }
 
@@ -112,21 +110,21 @@ function filterProducts() {
         product.categories.forEach(category => {
             const hasprod = filteredProducts.find(p => product.id === p.id)
             if (hasprod === undefined && filterArray.includes(category.name.toLowerCase())) {
-                    filteredProducts.push(product);
+                filteredProducts.push(product);
             }
         });
-    
+
 
         for (const product of prods) {
             product.tags.forEach(tag => {
                 const hasprod = filteredProducts.find(p => product.id === p.id)
                 if (hasprod === undefined && filterArray.includes(tag.slug.toLowerCase())) {
-                        filteredProducts.push(product);
+                    filteredProducts.push(product);
                 }
             });
         }
 
-    }   
+    }
 
 
     sortProducts(filteredProducts)
@@ -140,26 +138,38 @@ function sortProducts(array) {
     const sortType = document.getElementById('sort-button').value
 
     return array.sort((item1, item2) => {
-        
+
         switch (sortType) {
             case 'raising':
-                return Number(item1.prices.price) - Number(item2.prices.price) 
-                
-            case 'falling': 
+                return Number(item1.prices.price) - Number(item2.prices.price)
+
+            case 'falling':
                 return Number(item2.prices.price) - Number(item1.prices.price)
-            
+
             case 'sale':
                 return item1.on_sale ? 1 : -1
-                
+
             default:
                 return array
         }
-                    
+
     })
 }
 
+const resetBtns = document.querySelectorAll(".desktop-reset-filter-btn, .reset-filters-btn")
+
+resetBtns.forEach(item => {
+    item.addEventListener("click", clearFilters)
+})
+
 function clearFilters(list) {
-    
+    const checkBokses = document.getElementsByClassName("filter-subject-input-check")
+    for (const checkBoks of checkBokses) {
+        console.log(checkBokses)
+        checkBoks.checked = false
+    }
+    filterArray.length = 0
+    filterProducts()
 }
 
 
