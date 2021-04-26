@@ -6,65 +6,28 @@ function currencyFormat(num) {
     return Number(num.substring(0, num.length - 2)).toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 }
 
-// window.addEventListener('resize', e => {
-//     console.log(e);
-//     if (e.target.innerWidth > 1200) {
-//          new Splide('#splide1', {
-//             type: 'loop',
-//             perPage: 3,
-//             perMove: 1,
-//             pagination: true,
-//             autoHeight: true,
-//         }).mount();
-//     }
-
-//     new Splide('#splide2', {
-//         type: 'loop',
-//         perPage: 3,
-//         perMove: 1,
-//         pagination: true,
-//         autoHeight: true,
-//     }).mount();
-// })
-
 function initSlides() {
-    console.log(window.innerHeight);
-    if (window.innerHeight < 1200) {
-        new Splide('#splide1', {
-            type: 'loop',
-            perPage: 2,
-            perMove: 1,
-            pagination: true,
-            autoHeight: true,
-        }).mount();
-    
-         new Splide('#splide2', {
-            type: 'loop',
-            perPage: 2,
-            perMove: 1,
-            pagination: true,
-            autoHeight: true,
-        }).mount();
 
-        return
+    const first = new Splide('#splide1', {
+        type: 'loop',
+        perPage: 2,
+        perMove: 1,
+        pagination: true,
+        autoHeight: true,
+    }).mount();
+
+     const secound = new Splide('#splide2', {
+        type: 'loop',
+        perPage: 2,
+        perMove: 1,
+        pagination: true,
+        autoHeight: true,
+    }).mount();
+
+    if (window.innerHeight > 800) {
+        first.options = {perPage: 3}
+        secound.options = {perPage: 3}
     }
-
-    new Splide('#splide1', {
-        type: 'loop',
-        perPage: 3,
-        perMove: 1,
-        pagination: true,
-        autoHeight: true,
-    }).mount();
-
-     new Splide('#splide2', {
-        type: 'loop',
-        perPage: 3,
-        perMove: 1,
-        pagination: true,
-        autoHeight: true,
-    }).mount();
-
 
 }
 
@@ -84,7 +47,6 @@ function displayProducts(arrayList) {
 
     const localBrandsList = ['lakor', 'garcia', 'revolution']
     for (const item of arrayList) {
-        console.log(item.tags[0].slug, localBrandsList.includes(item.tags[0].slug));
         if (localBrandsList.includes(item.tags[0].slug)) {
             local += `
             <li class="splide__slide">

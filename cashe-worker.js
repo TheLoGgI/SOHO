@@ -3,8 +3,9 @@ const cacheName = 'v1'
 
 const cacheAssets = [
     'index.html',
-    '/css/style.css',
-    '/js/main.js',
+    '/css/*',
+    '/js/*',
+    '/pages/*',
     '/favicons/*',
     'https://soho.lasseaakjaer.com/wp-json/wc/store/products'
 ]
@@ -38,7 +39,7 @@ self.addEventListener('activate', (e) => {
             return Promise.all(
                 cacheNames.map(cache => {
                     if (cache !== cacheName) {
-                        console.log('Clean Old Wervice Worker Cache')
+                        console.log('Clean Old Service Worker Cache')
                         return caches.delete(cache)
                     }
                 })
@@ -49,7 +50,7 @@ self.addEventListener('activate', (e) => {
 })
 
 self.addEventListener('fetch', (fetchEvent) => {
-    console.log('Service Worker Fetched ', fetchEvent.request.destination)
+    // console.log('Service Worker Fetched ', fetchEvent.request.destination)
 
     // Looking for an image, check cache othervise fetch and put to cache
     if (fetchEvent.request.destination === 'image') {

@@ -4,9 +4,7 @@ let filterBGShadow = document.querySelector(".mobile-filter-bg-fill");
 let filterContainer = document.querySelector(".mobile-filter-container");
 
 function toggleFilterWindow() {
-
     const state = filterContainer.getAttribute('aria-label')
-    console.log('state: ', state);
     if (state === 'closed') {
         filterContainer.style.transform = `translateX(0vw)`
         filterContainer.setAttribute('aria-label', 'open')
@@ -84,7 +82,6 @@ const filters = [
 ];
 
 
-const mobileFiltersWindow = document.querySelector(".mobile-filter-subjects-window");
 
 function appendFilters(filters) {
     let htmlTemplate = "";
@@ -100,12 +97,13 @@ function appendFilters(filters) {
     document.querySelector(".mobile-filter-subjects-window").innerHTML = htmlTemplate;
 };
 
+//mobil
 function loopFilterEmner(array) {
     let template = "";
     for (const listItem of array) {
         template += /*html*/ `
              <li class="filter-subject-list-item">
-                <input class="filter-subject-input-check" id="${listItem}" type="checkbox"/>
+                <input class="filter-subject-input-check" data-name="${listItem}" type="checkbox"/>
                 <label for="${listItem}" class="filter-subject-name">${listItem}</label>
             </li>
         `;
@@ -125,9 +123,8 @@ let brandArrow = document.querySelector("#desktop-brands-arrow");
 function toggleDesktopCategoriesFilters() {
 
     const state = desktopCategoriesFilters.getAttribute('aria-label');
-    console.log('state: ', state);
     if (state === 'closed') {
-        desktopCategoriesFilters.style.height = "330px";
+        desktopCategoriesFilters.style.height = "360px";
         desktopCategoriesFilters.setAttribute('aria-label', 'open');
         desktopBrandsFilters.style.height = "0vh";
         desktopBrandsFilters.setAttribute('aria-label', 'closed');
@@ -144,9 +141,9 @@ function toggleDesktopCategoriesFilters() {
 function toggleDesktopBrandsFilters() {
 
     const state = desktopBrandsFilters.getAttribute('aria-label');
-    console.log('state: ', state);
+    // console.log('state: ', state);
     if (state === 'closed') {
-        desktopBrandsFilters.style.height = "330px";
+        desktopBrandsFilters.style.height = "360px";
         desktopBrandsFilters.setAttribute('aria-label', 'open');
         desktopCategoriesFilters.style.height = "0vh";
         desktopCategoriesFilters.setAttribute('aria-label', 'closed');
@@ -154,13 +151,13 @@ function toggleDesktopBrandsFilters() {
         categoriesArrow.style.transform = "scaleY(1)";
     }
     else {
-        desktopBrandsFilters.style.height = "0vh";
+        desktopBrandsFilters.style.height = "0px";
         desktopBrandsFilters.setAttribute('aria-label', 'closed');
         brandArrow.style.transform = "scaleY(1)";
     }
 }
 
-
+//desktop
 const desktopCategoriesFiltersList = document.querySelector("#desktop-categories-filter-list");
 const desktopBrandsFiltersList = document.querySelector("#desktop-brands-filter-list");
 
@@ -169,7 +166,7 @@ function appendDesktopFilters(filters, selector) {
     for (const filter of filters) {
         htmlTemplate += /*html*/ `
              <li class="filter-subject-list-item">
-                <input class="filter-subject-input-check" id="1${filter}" type="checkbox"/>
+                <input class="filter-subject-input-check" data-name="${filter}" id="1${filter}" type="checkbox"/>
                 <label for="1${filter}" class="filter-subject-name">${filter}</label>
             </li>
         `;

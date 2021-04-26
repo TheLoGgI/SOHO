@@ -3,74 +3,78 @@
 // Main navigation menu Button
 document.getElementById('menuIconButton').addEventListener('click', e => {
     document.getElementById('nav-icon').classList.toggle('open')
-    toggleMainMenuNavigation()
+    toggleMobilMenu( 
+        null, 
+        document.getElementById('mainMenuNav'), // Menu Element
+        'left' // Menu direction
+    )
   })
 
 // Search Button
 document.getElementById('searchMenuButton').addEventListener('click', e => {
-    e.currentTarget.children[0].style.fill = '#dbac2b' /* Primary yellow */
-    toggleSearchMenu(e.currentTarget.children[0])
-    
+    toggleMobilMenu(
+        e.currentTarget.children[0], // icon path 
+        document.getElementById('mobilSearchNav'), // Menu Element
+        'down', // Menu direction
+        () => document.getElementById('searchInput').focus()
+    )
   })
 
 //   Shopping Button
 document.getElementById('searchShoppingButton').addEventListener('click', e => {
-    e.currentTarget.children[0].style.fill = '#dbac2b' /* Primary yellow */
-    toggleSearchMenu(e.currentTarget.children[0])
-    
+    toggleMobilMenu(
+            e.currentTarget.children[0], // icon path 
+            document.getElementById('shoppingCart'), // Menu Element
+            'up' // Menu direction
+        )
   })
 
 
-function toggleMainMenuNavigation() {
-    const menu = document.getElementById('mainMenuNav')
-    if (menu.style.transform === 'translateX(0%)') {
-        menu.style.transform = `translateX(-140%)`
-        document.body.style.overflow = 'auto'
-        return
+function toggleMobilMenu(icon, menu, direction, cb) {
+    const isShowing = menu.getAttribute('showing')
+    
+    // Show menu
+    if (isShowing === 'false' || isShowing === null ) {
+        
+        if (icon) icon.style.fill = '#dbac2b'
+        if (direction === 'up' || direction === 'down') {
+            menu.style.transform = `translateY(0%)`
+        } else if (direction === 'left' || direction === 'right') {
+            menu.style.transform = `translateX(0%)`
+        }
+        document.body.style.overflow = 'hidden'
+        menu.setAttribute('showing', true)
+        cb?.()
+        return true
     }
-
-    menu.style.transform = `translateX(0%)`
-    document.body.style.overflow = 'hidden'
+    
+    // Hide menu
+    switch (direction) {
+        case 'up': 
+            menu.style.transform = `translateY(-140%)`
+            break
+        case 'down': 
+            menu.style.transform = `translateY(140%)`
+            break
+        case 'left': 
+            menu.style.transform = `translateX(-140%)`
+            break
+        case 'right': 
+            menu.style.transform = `translateX(140%)`
+            break
+    }
+    menu.setAttribute('showing', false)
+    if (icon) icon.style.fill = '#000'
+    document.body.style.overflow = 'auto'
+    
 }
 
-function toggleSearchMenu(buttonTarget) {
-    const menu = document.getElementById('shoppingCart')
-    // hidden - off
-    if (menu.style.transform === 'translateY(0%)') {
-        buttonTarget.style.fill = '#000'
-        menu.style.transform = `translateY(140%)`
-        document.body.style.overflow = 'auto'
-        return
-    }
-    // Showing - on
-    buttonTarget.style.fill = '#dbac2b'
-    menu.style.transform = `translateY(0%)`
-    document.body.style.overflow = 'hidden'
-    document.getElementById('searchInput').focus()
-}
-
-function toggleShopppingMenu(buttonTarget) {
-    const menu = document.getElementById('searchShoppingButton')
-    // hidden - off
-    if (menu.style.transform === 'translateY(0%)') {
-        buttonTarget.style.fill = '#000'
-        menu.style.transform = `translateY(140%)`
-        document.body.style.overflow = 'auto'
-        return
-    }
-    // Showing - on
-    buttonTarget.style.fill = '#dbac2b'
-    menu.style.transform = `translateY(0%)`
-    document.body.style.overflow = 'hidden'
-    document.getElementById('searchInput').focus()
-}
 
 // Big Navigation Menu
 const bigmenuBrand = document.getElementById('bigmenuBrand')
 const bigmenuCategory = document.getElementById('bigmenuCategory')
 const bigMenuHover = document.querySelectorAll('[data-template]')
 
-console.log('bigMenuHover: ', bigMenuHover);
 bigMenuHover.forEach(item => {
     item.addEventListener('mouseenter', e => {
         showBigMenu(item.dataset.template)
@@ -79,19 +83,19 @@ bigMenuHover.forEach(item => {
 
 
 bigmenuCategory.addEventListener('mouseleave', e => {
-    bigmenuCategory.style.transform = `translateY(-120%)`
+    bigmenuCategory.style.transform = `translateY(-140%)`
 })
 
 bigmenuBrand.addEventListener('mouseleave', e => {
-    bigmenuBrand.style.transform = `translateY(-120%)`
+    bigmenuBrand.style.transform = `translateY(-140%)`
 })
 
 function showBigMenu(changeTo) {
     if (changeTo === 'brands') {
-        bigmenuCategory.style.transform = `translateY(-120%)`
+        bigmenuCategory.style.transform = `translateY(-140%)`
         bigmenuBrand.style.transform = `translateY(0%)`
     } else if(changeTo === 'category') {
-        bigmenuBrand.style.transform = `translateY(-120%)`
+        bigmenuBrand.style.transform = `translateY(-140%)`
         bigmenuCategory.style.transform = `translateY(0%)`
     }
 
@@ -107,7 +111,7 @@ document.getElementById('cartIcon').addEventListener('click', () => {
         cart.setAttribute('aria-label', 'open')
     }
     else {
-        cart.style.transform = `translateY(-120%)`
+        cart.style.transform = `translateY(-140%)`
         cart.setAttribute('aria-label', 'closed')
     }
 })
@@ -115,7 +119,7 @@ document.getElementById('cartIcon').addEventListener('click', () => {
 
 
 cart.addEventListener('mouseleave', e => {
-    cart.style.transform = `translateY(-120%)`
+    cart.style.transform = `translateY(-140%)`
     cart.setAttribute('aria-label', 'closed')
 })
 
