@@ -99,6 +99,7 @@
         padding: 1rem;
         position: fixed;
         min-width: auto;
+        width: 100%;
         height: 85vh;
         display: flex;
         flex-flow: column nowrap;

@@ -82,7 +82,6 @@ const filters = [
 ];
 
 
-const mobileFiltersWindow = document.querySelector(".mobile-filter-subjects-window");
 
 function appendFilters(filters) {
     let htmlTemplate = "";
@@ -104,7 +103,7 @@ function loopFilterEmner(array) {
     for (const listItem of array) {
         template += /*html*/ `
              <li class="filter-subject-list-item">
-                <input class="filter-subject-input-check" id="${listItem}" type="checkbox"/>
+                <input class="filter-subject-input-check" data-name="${listItem}" type="checkbox"/>
                 <label for="${listItem}" class="filter-subject-name">${listItem}</label>
             </li>
         `;
@@ -124,9 +123,8 @@ let brandArrow = document.querySelector("#desktop-brands-arrow");
 function toggleDesktopCategoriesFilters() {
 
     const state = desktopCategoriesFilters.getAttribute('aria-label');
-    console.log('state: ', state);
     if (state === 'closed') {
-        desktopCategoriesFilters.style.height = "260px";
+        desktopCategoriesFilters.style.height = "360px";
         desktopCategoriesFilters.setAttribute('aria-label', 'open');
         desktopBrandsFilters.style.height = "0vh";
         desktopBrandsFilters.setAttribute('aria-label', 'closed');
@@ -145,7 +143,7 @@ function toggleDesktopBrandsFilters() {
     const state = desktopBrandsFilters.getAttribute('aria-label');
     // console.log('state: ', state);
     if (state === 'closed') {
-        desktopBrandsFilters.style.height = "260px";
+        desktopBrandsFilters.style.height = "360px";
         desktopBrandsFilters.setAttribute('aria-label', 'open');
         desktopCategoriesFilters.style.height = "0vh";
         desktopCategoriesFilters.setAttribute('aria-label', 'closed');

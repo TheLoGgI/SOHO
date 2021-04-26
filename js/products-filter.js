@@ -6,7 +6,6 @@ async function getProducts() {
 (async function init() {
     const products = await getProducts()
     prods = [...products]
-    console.log('prods: ', prods);
     createProductCard(products);
 })()
 
@@ -19,13 +18,13 @@ function createProductCard(products) {
                     <button class="like-button" aria-label="outline">
                         <img class="favorite-icon-shop" src="icons/Heart-icon.svg" alt="Favorite-icon">
                     </button>
-                    <a href="${'/pages/product.html?id=' + product.id}">
+                    <a href="${'/pages/product.html?id=' + product.id}" target="_self">
                     <div class="product-image-container">
                         <img class="product-image" src="${product?.images[0]?.src}" alt="Product-image" width="150px" height="200px">
                     </div>
                     </a>
                 </div>
-                <a href="${'/pages/product.html?id=' + product.id}">
+                <a href="${'/pages/product.html?id=' + product.id} target="_self">
                 <div class="product-information">
                     <div class="product-text-container">
                         <p class="product-brand">${product?.tags[0]?.name}</p>
@@ -71,24 +70,40 @@ function changeIcon(event) {
 }
 
 const filterArray = [];
-const desktopInputs = document.querySelectorAll("filter-subject-input-check");
-document.getElementById("desktop-categories-filter-list").addEventListener("click", (e) => {
+
+function eventFilterHandler() {
+    const filters = document.querySelectorAll(".desktop-filter-list, .filter-subject-list")
+
+    filters.forEach(item => {
+        item.addEventListener("click", filter)
+    })
+
+    clearFilters(filters)
+}
+
+eventFilterHandler()
+
+
+function filter(e) {
     if (e.target.tagName === "LABEL" || e.target.tagName === "UL") return;
     const filterName = e.target.getAttribute("data-name");
 
     if (e.target.checked) {
-        filterArray.push(filterName);
+        filterArray.push(filterName.toLowerCase());
     } else {
-        const index = filterArray.indexOf(filterName);
+        const index = filterArray.indexOf(filterName.toLowerCase());
         filterArray.splice(index, 1);
     }
     
     filterProducts();
-});
+}
 
-async function filterProducts() {
+
+function filterProducts() {
     const filteredProducts = [];
     if (filterArray.length <= 0) {
+
+        sortProducts(prods)
         createProductCard(prods)
         return
     };
@@ -96,14 +111,56 @@ async function filterProducts() {
     for (const product of prods) {
         product.categories.forEach(category => {
             const hasprod = filteredProducts.find(p => product.id === p.id)
-            if (hasprod === undefined && filterArray.includes(category.name)) {
+            if (hasprod === undefined && filterArray.includes(category.name.toLowerCase())) {
                     filteredProducts.push(product);
             }
         });
-    }
-    createProductCard(filteredProducts);
-};
+    
 
+        for (const product of prods) {
+            product.tags.forEach(tag => {
+                const hasprod = filteredProducts.find(p => product.id === p.id)
+                if (hasprod === undefined && filterArray.includes(tag.slug.toLowerCase())) {
+                        filteredProducts.push(product);
+                }
+            });
+        }
+
+    }   
+
+
+    sortProducts(filteredProducts)
+    createProductCard(filteredProducts);
+}
+
+document.getElementById('sort-button').addEventListener('change', filterProducts)
+
+
+function sortProducts(array) {
+    const sortType = document.getElementById('sort-button').value
+
+    return array.sort((item1, item2) => {
+        
+        switch (sortType) {
+            case 'raising':
+                return Number(item1.prices.price) - Number(item2.prices.price) 
+                
+            case 'falling': 
+                return Number(item2.prices.price) - Number(item1.prices.price)
+            
+            case 'sale':
+                return item1.on_sale ? 1 : -1
+                
+            default:
+                return array
+        }
+                    
+    })
+}
+
+function clearFilters(list) {
+    
+}
 
 
 

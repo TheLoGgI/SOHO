@@ -34,6 +34,238 @@
 
 <body>
     <div class="body-wrapper">
+        
+        <nav class="mobil-bottom-nav">
+            <button id="menuIconButton" class="mobil-nav-item">
+                <div id="nav-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <button id="searchMenuButton" class="mobil-nav-item">
+                <!-- Search icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="26.866" height="31.234" viewBox="0 0 26.866 31.234">
+                    <g id="Search-icon" transform="translate(0 0)">
+                        <path id="Search-path"
+                            d="M27.035,30.264l-7.33-9.384a11.567,11.567,0,1,0-1.681,1.259l7.357,9.415a1.049,1.049,0,0,0,1.654-1.292ZM2.452,12.257a9.5,9.5,0,1,1,9.5,9.5,9.5,9.5,0,0,1-9.5-9.5Z"
+                            transform="translate(-0.391 -0.725)" />
+                    </g>
+                </svg>
+            </button>
+            <a class="mobil-nav-item" href="#favorites">
+                <!-- Heart icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="35.108" height="29.956" viewBox="0 0 35.108 29.956">
+                    <g id="Heart-icon" transform="translate(0 0)">
+                        <path id="Heart-shape"
+                            d="M17.511,29.955a1.531,1.531,0,0,1-1.08-.449L2.654,15.735A9.213,9.213,0,1,1,15.683,2.705L17.5,4.52l1.829-1.828a9.223,9.223,0,0,1,13.029,0l.013.013a9.223,9.223,0,0,1,0,13.029L18.6,29.506a1.532,1.532,0,0,1-1.086.449ZM9.168,2.213a7.007,7.007,0,0,0-4.956,11.96l13.3,13.3,13.3-13.3a7.017,7.017,0,0,0,0-9.913L30.8,4.251a7.018,7.018,0,0,0-9.913,0L18.355,6.78a1.212,1.212,0,0,1-1.713,0L14.124,4.262A6.988,6.988,0,0,0,9.168,2.213Z"
+                            transform="translate(0.045 0.002)" />
+                    </g>
+                </svg>
+            </a>
+            <button class="mobil-nav-item" id="searchShoppingButton">
+                <!-- Shopping bag icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24.235" height="34.735" viewBox="0 0 24.235 34.735">
+                    <g id="Shopping-bag-icon" transform="translate(0 0)">
+                        <path id="Shopping-bag-path"
+                            d="M23.157,8.592h-4V7.007a7.007,7.007,0,0,0-14.014,0V8.592H1.077A1.08,1.08,0,0,0,0,9.671V33.657a1.079,1.079,0,0,0,1.077,1.077h22.08a1.078,1.078,0,0,0,1.077-1.077V9.671a1.08,1.08,0,0,0-1.077-1.078ZM6.924,7.007a5.224,5.224,0,0,1,10.447,0V8.592H6.924ZM22.451,32.951H1.784V10.376H5.141v2.581a.892.892,0,0,0,1.784,0V10.376H17.372v2.581a.892.892,0,0,0,1.784,0V10.376h3.3Z"
+                            transform="translate(0 0)" />
+                    </g>
+                </svg>
+            </button>
+            <a class="mobil-nav-item" href="#cart">
+                <!-- Profil icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="34.416" height="34.937" viewBox="0 0 34.416 34.937">
+                    <g id="Profile-icon" transform="translate(0 0)">
+                        <path id="Profile-path"
+                            d="M34.357,33.7A17.473,17.473,0,0,0,22.292,19.849a10.6,10.6,0,1,0-10.258,0A17.473,17.473,0,0,0-.031,33.7a1.052,1.052,0,0,0,2.076.339,15.318,15.318,0,0,1,30.239-.005,1.05,1.05,0,0,0,2.073-.334ZM8.667,10.579a8.5,8.5,0,1,1,8.5,8.5A8.5,8.5,0,0,1,8.667,10.579Z"
+                            transform="translate(0.045 0.019)" />
+                    </g>
+                </svg>
+            </a>
+        </nav>
+    
+        <nav class="mobil-menu-nav" id="mainMenuNav">
+            <ul class="mobil-menu-nav-list">
+                <li class="menu-nav-item"><a href="/">Forside</a></li>
+                <li class="menu-nav-item"><a href="#nyheder">Nyheder</a></li>
+                <li class="menu-nav-item"><a href="/pages/products.html">
+                        <p>Kategorier</p>
+                        <img src="./images/Arrow-right.svg" alt="pil">
+                    </a></li>
+                <li class="menu-nav-item"><a href="/pages/products.html">
+                        <p>Brands</p>
+                        <img src="./images/Arrow-right.svg" alt="pil">
+                    </a></li>
+                <li class="menu-nav-item"><a href="#om-soho">Om Soho</a></li>
+                <li class="menu-nav-item"><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+    
+        <div class="mobil-search-menu" id="mobilSearchNav">
+            <div class="search-input">
+                <img src="./icons/Search-icon.svg" alt="search">
+                <input id="searchInput" type="text">
+            </div>
+            <div class="search-results"></div>
+        </div>
+        <header class="header">
+            <div class="info-bar">
+                <p class="info-bar-paragrath">Fri fragt ved ordre over 200.-</p>
+                <p class="info-bar-paragrath">Levering 1 - 2 hverdage</p>
+                <p class="info-bar-paragrath">30 dages returret</p>
+            </div>
+    
+            <div class="logo">
+                <a href="/">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="236" height="160.181" viewBox="0 0 236 160.181">
+                        <g id="Soho-logo-head-black" transform="translate(-382 -543)">
+                            <rect id="Rectangle_15" data-name="Rectangle 15" width="236" height="14" rx="7"
+                                transform="translate(382 613)" />
+                            <path id="Rectangle_17" data-name="Rectangle 17"
+                                d="M56,0h2a56,56,0,0,1,56,56v0a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0v0A56,56,0,0,1,56,0Z"
+                                transform="translate(443 543)" />
+                            <circle id="Ellipse_6" data-name="Ellipse 6" cx="12.5" cy="12.5" r="12.5"
+                                transform="translate(460 643)" />
+                            <circle id="Ellipse_7" data-name="Ellipse 7" cx="12.5" cy="12.5" r="12.5"
+                                transform="translate(515 643)" />
+                            <path id="Path_4" data-name="Path 4"
+                                d="M2650.542,686.275a16.15,16.15,0,0,1,12.069-5.363,18.584,18.584,0,0,1,12.931,5.363"
+                                transform="translate(-2190.542 -42.946)" fill="none" stroke="#000" stroke-linecap="round"
+                                stroke-width="4" />
+                            <path id="Path_5" data-name="Path 5"
+                                d="M2650.542,686.275a16.15,16.15,0,0,1,12.069-5.363,18.584,18.584,0,0,1,12.931,5.363"
+                                transform="translate(-2135.542 -42.946)" fill="none" stroke="#000" stroke-linecap="round"
+                                stroke-width="4" />
+                            <line id="Line_1" data-name="Line 1" y1="13" transform="translate(472.5 624.5)" fill="none"
+                                stroke="#000" stroke-width="2" />
+                            <line id="Line_2" data-name="Line 2" y1="13" transform="translate(527.5 624.5)" fill="none"
+                                stroke="#000" stroke-width="2" />
+                            <path id="Path_7" data-name="Path 7"
+                                d="M2709.394,154.572s-6.466-11.941-16.756-10.819-16.8,8.923-22.76,8.992-8.606.034-14.974-1.555,8.547,17.727,20.052,16.069,19.036-8.277,22.264-9.32a16.843,16.843,0,0,1,10.324-.731C2712.387,158.2,2709.394,154.572,2709.394,154.572Z"
+                                transform="translate(-2209.344 535.822)" />
+                            <path id="Path_54" data-name="Path 54"
+                                d="M2654.293,154.572s6.466-11.941,16.757-10.819,16.8,8.923,22.76,8.992,8.606.034,14.974-1.555-8.547,17.727-20.052,16.069-19.036-8.277-22.264-9.32a16.844,16.844,0,0,0-10.324-.731C2651.3,158.2,2654.293,154.572,2654.293,154.572Z"
+                                transform="translate(-2154.344 535.822)" />
+                        </g>
+                    </svg>
+    
+                </a>
+            </div>
+    
+            <nav class="menu-navigation">
+                <!-- SOHO Logo -->
+                <div class="menu-navigation-logo">
+                    <a href="/">
+                        <img src="images/Logo.svg" alt="soho logotype">
+                    </a>
+                </div>
+    
+                <ul class="menu-navigation-list">
+                    <li><a href="#" class="menu-navagation-link">Nyheder</a></li>
+                    <li><a href="/pages/products.html" class="menu-navagation-link" id="onHoverCategory"
+                            data-template="category">Kategorier</a></li>
+                    <li class="selected-page" id="onHoverBrand" data-template="brands">
+                        <a href="/pages/products.html" class="menu-navagation-link">Brands</a>
+                    </li>
+                    <li><a href="#" class="menu-navagation-link">Om Soho</a></li>
+                    <li><a href="#" class="menu-navagation-link">Kontakt</a></li>
+                </ul>
+                <div class="navigation-banner">
+                    <img src="./icons/Heart-icon.svg" alt="favoritter">
+                    <img src="./icons/Profile-icon.svg" alt="profil">
+                    <div class="menu-cart" id="cartIcon">
+                        <img src="./icons/Shopping-bag-icon.svg" alt="kurv">
+                        <div class="menu-cart-items" id="cartItems">0</div>
+                    </div>
+                </div>
+            </nav>
+    
+        </header>
+    
+        <div class="shopping-cart" id="shoppingCart" aria-label="closed">
+            <!-- Basket items -->
+        </div>
+    
+        <div class="bigmenu" id="bigmenuBrand" aria-label="Close" tabindex="-1">
+            <div class="bigmenu-col1">
+                <h2>Brands</h2>
+    
+                <a href="#/brands" class="bignav-links">Alle brands <img src="./images/arrow-right.svg" alt="arrow"></a>
+                <div class="bignav-links brands-link">
+                    <a href="#/brands/Anerkjendt" class="brand-link">Anerkjendt</a>
+                    <a href="#/brands/Borlemstock" class="brand-link">Borlemstock</a>
+                    <a href="#/brands/Clean Cut" class="brand-link">Clean Cut</a>
+                    <a href="#/brands/Dedicated" class="brand-link">Dedicated</a>
+                    <a href="#/brands/Egtved Soc" class="brand-link">Egtved Socks</a>
+                    <a href="#/brands/Elvine" class="brand-link">Elvine</a>
+                    <a href="#/brands/Fuza Wo" class="brand-link">Fuza Wool</a>
+                    <a href="#/brands/Garcia" class="brand-link">Garcia</a>
+    
+                    <a href="#/brands/Gola" class="brand-link">Gola</a>
+                    <a href="#/brands/JBS" class="brand-link">JBS</a>
+                    <a href="#/brands/KnowledgeCotton-Apparel" class="brand-link">KnowledgeCotton Apparel</a>
+                    <a href="#/brands/Laktor" class="brand-link">Laktor</a>
+                    <a href="#/brands/Mads-noregaard" class="brand-link">Mads Nøregaard</a>
+                    <a href="#/brands/Nature-footwear" class="brand-link">Nature Footwear</a>
+                    <a href="#/brands/ResterRöds" class="brand-link">ResterRöds</a>
+                    <a href="#/brands/Revolution" class="brand-link">Revolution</a>
+    
+                    <a href="#/brands/Royal-republicq" class="brand-link">Royal Republicq</a>
+                    <a href="#/brands/Scotch&soda" class="brand-link">Scotch & Soda</a>
+                    <a href="#/brands/Shoe-the-bear" class="brand-link">Shoe the Bear</a>
+                    <a href="#/brands/Suit" class="brand-link">Suit</a>
+                    <a href="#/brands/WareCPH" class="brand-link">WareCPH</a>
+                    <a href="#/brands/Wrangler" class="brand-link">Wrangler</a>
+                </div>
+            </div>
+            <div class="bigmenu-col2">
+                <h2>Lokale Brands: Lakor & Revolution</h2>
+                <div class="responsive-image">
+                    <a href="#">
+                        <img class="lakor-brand-image" id="lakorBrandImage"
+                            src="./images/lakor_CollectionCoverPC1_1920x.jpg" alt="Lakor collection cover">
+                    </a>
+                    <a href="#">
+                        <img class="revolution-brand-image" id="revolutionBrandImage"
+                            src="./images/spring-jackets-layers_1600w.jpg" alt="spring jacket Revolution">
+                    </a>
+                    <div class="line-seperator" id="imageSeperatorLine"></div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="bigmenu" id="bigmenuCategory" aria-label="Close" tabindex="-1">
+            <div class="bigmenu-col1">
+                <h2>Kategorier</h2>
+    
+                <a href="#/kategorier" class="bignav-links">Alle kategorier <img src="./images/arrow-right.svg"
+                        alt="arrow"></a>
+                <div class="bignav-links brands-link">
+                    <a href="#/kategorier/Bukser" class="brand-link">Bukser</a>
+                    <a href="#/kategorier/Habitter" class="brand-link">Habitter</a>
+                    <a href="#/kategorier/Jakker" class="brand-link">Jakker</a>
+                    <a href="#/kategorier/Jeans" class="brand-link">Jeans</a>
+                    <a href="#/kategorier/Shorts" class="brand-link">Shorts</a>
+                    <a href="#/kategorier/Sko" class="brand-link">Sko</a>
+                    <a href="#/kategorier/Strik" class="brand-link">Strik</a>
+                    <a href="#/kategorier/Strømper" class="brand-link">Strømper</a>
+                    <a href="#/kategorier/Underbukser" class="brand-link">Underbukser</a>
+                    <a href="#/kategorier/Accessories" class="brand-link">Accessories</a>
+                    <a href="#/kategorier/Bælter" class="brand-link">Bælter</a>
+                    <a href="#/kategorier/Hatte" class="brand-link">Hatte</a>
+                    <a href="#/kategorier/Huer" class="brand-link">Huer</a>
+                    <a href="#/kategorier/Tasker" class="brand-link">Tasker</a>
+                </div>
+            </div>
+            <div class="bigmenu-col2">
+                <h2>T-shirts</h2>
+                <a href="#">
+                    <img class="t-shirt-cover" src="./images/lakor-adventures.jpg" alt="Lakor collection cover">
+                </a>
+            </div>
+        </div>
 
         <!-- Mobile filter elements -->
         <div class="mobile-filter-container" aria-label="closed">
@@ -69,269 +301,6 @@
         </div>
         <div class="mobile-filter-bg-fill" onclick="toggleFilterWindow()"></div>
 
-        <!-- <div class="body-wrapper"> -->
-        <nav class="mobil-bottom-nav">
-            <button id="menuIconButton" class="mobil-nav-item">
-                <div id="nav-icon">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </button>
-            <button id="searchMenuButton" class="mobil-nav-item">
-                <!-- Search icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="26.866" height="31.234" viewBox="0 0 26.866 31.234">
-                    <g id="Search-icon" transform="translate(0 0)">
-                        <path id="Search-path"
-                            d="M27.035,30.264l-7.33-9.384a11.567,11.567,0,1,0-1.681,1.259l7.357,9.415a1.049,1.049,0,0,0,1.654-1.292ZM2.452,12.257a9.5,9.5,0,1,1,9.5,9.5,9.5,9.5,0,0,1-9.5-9.5Z"
-                            transform="translate(-0.391 -0.725)" />
-                    </g>
-                </svg>
-            </button>
-            <a class="mobil-nav-item" href="#favorites">
-                <!-- Heart icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="35.108" height="29.956" viewBox="0 0 35.108 29.956">
-                    <g id="Heart-icon" transform="translate(0 0)">
-                        <path id="Heart-shape"
-                            d="M17.511,29.955a1.531,1.531,0,0,1-1.08-.449L2.654,15.735A9.213,9.213,0,1,1,15.683,2.705L17.5,4.52l1.829-1.828a9.223,9.223,0,0,1,13.029,0l.013.013a9.223,9.223,0,0,1,0,13.029L18.6,29.506a1.532,1.532,0,0,1-1.086.449ZM9.168,2.213a7.007,7.007,0,0,0-4.956,11.96l13.3,13.3,13.3-13.3a7.017,7.017,0,0,0,0-9.913L30.8,4.251a7.018,7.018,0,0,0-9.913,0L18.355,6.78a1.212,1.212,0,0,1-1.713,0L14.124,4.262A6.988,6.988,0,0,0,9.168,2.213Z"
-                            transform="translate(0.045 0.002)" />
-                    </g>
-                </svg>
-            </a>
-            <a class="mobil-nav-item" href="#cart">
-                <!-- Shopping bag icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="24.235" height="34.735" viewBox="0 0 24.235 34.735">
-                    <g id="Shopping-bag-icon" transform="translate(0 0)">
-                        <path id="Shopping-bag-path"
-                            d="M23.157,8.592h-4V7.007a7.007,7.007,0,0,0-14.014,0V8.592H1.077A1.08,1.08,0,0,0,0,9.671V33.657a1.079,1.079,0,0,0,1.077,1.077h22.08a1.078,1.078,0,0,0,1.077-1.077V9.671a1.08,1.08,0,0,0-1.077-1.078ZM6.924,7.007a5.224,5.224,0,0,1,10.447,0V8.592H6.924ZM22.451,32.951H1.784V10.376H5.141v2.581a.892.892,0,0,0,1.784,0V10.376H17.372v2.581a.892.892,0,0,0,1.784,0V10.376h3.3Z"
-                            transform="translate(0 0)" />
-                    </g>
-                </svg>
-            </a>
-            <a class="mobil-nav-item" href="#cart">
-                <!-- Profil icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="34.416" height="34.937" viewBox="0 0 34.416 34.937">
-                    <g id="Profile-icon" transform="translate(0 0)">
-                        <path id="Profile-path"
-                            d="M34.357,33.7A17.473,17.473,0,0,0,22.292,19.849a10.6,10.6,0,1,0-10.258,0A17.473,17.473,0,0,0-.031,33.7a1.052,1.052,0,0,0,2.076.339,15.318,15.318,0,0,1,30.239-.005,1.05,1.05,0,0,0,2.073-.334ZM8.667,10.579a8.5,8.5,0,1,1,8.5,8.5A8.5,8.5,0,0,1,8.667,10.579Z"
-                            transform="translate(0.045 0.019)" />
-                    </g>
-                </svg>
-            </a>
-        </nav>
-
-        <nav class="mobil-menu-nav" id="mainMenuNav">
-            <ul class="mobil-menu-nav-list">
-                <li class="menu-nav-item"><a href="/">Forside</a></li>
-                <li class="menu-nav-item"><a href="#nyheder">Nyheder</a></li>
-                <li class="menu-nav-item"><a href="#kategorier">
-                        <p>Kategorier</p>
-                        <img src="images/Arrow-right.svg" alt="pil">
-                    </a></li>
-                <li class="menu-nav-item"><a href="#brands">
-                        <p>Brands</p>
-                        <img src="images/Arrow-right.svg" alt="pil">
-                    </a></li>
-                <li class="menu-nav-item"><a href="#om-soho">Om Soho</a></li>
-                <li class="menu-nav-item"><a href="#kontakt">Kontakt</a></li>
-            </ul>
-        </nav>
-
-        <div class="mobil-search-menu" id="mobilSearchNav">
-            <div class="search-input">
-                <img src="icons/Search-icon.svg" alt="search">
-                <input id="searchInput" type="text">
-            </div>
-            <div class="search-results"></div>
-        </div>
-        <header class="header">
-            <div class="info-bar">
-                <p class="info-bar-paragrath">Fri fragt ved ordre over 200.-</p>
-                <p class="info-bar-paragrath">Levering 1 - 2 hverdage</p>
-                <p class="info-bar-paragrath">30 dages returret</p>
-            </div>
-
-            <div class="logo">
-                <a href="/">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="236" height="160.181" viewBox="0 0 236 160.181">
-                        <g id="Soho-logo-head-black" transform="translate(-382 -543)">
-                            <rect id="Rectangle_15" data-name="Rectangle 15" width="236" height="14" rx="7"
-                                transform="translate(382 613)" />
-                            <path id="Rectangle_17" data-name="Rectangle 17"
-                                d="M56,0h2a56,56,0,0,1,56,56v0a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0v0A56,56,0,0,1,56,0Z"
-                                transform="translate(443 543)" />
-                            <circle id="Ellipse_6" data-name="Ellipse 6" cx="12.5" cy="12.5" r="12.5"
-                                transform="translate(460 643)" />
-                            <circle id="Ellipse_7" data-name="Ellipse 7" cx="12.5" cy="12.5" r="12.5"
-                                transform="translate(515 643)" />
-                            <path id="Path_4" data-name="Path 4"
-                                d="M2650.542,686.275a16.15,16.15,0,0,1,12.069-5.363,18.584,18.584,0,0,1,12.931,5.363"
-                                transform="translate(-2190.542 -42.946)" fill="none" stroke="#000"
-                                stroke-linecap="round" stroke-width="4" />
-                            <path id="Path_5" data-name="Path 5"
-                                d="M2650.542,686.275a16.15,16.15,0,0,1,12.069-5.363,18.584,18.584,0,0,1,12.931,5.363"
-                                transform="translate(-2135.542 -42.946)" fill="none" stroke="#000"
-                                stroke-linecap="round" stroke-width="4" />
-                            <line id="Line_1" data-name="Line 1" y1="13" transform="translate(472.5 624.5)" fill="none"
-                                stroke="#000" stroke-width="2" />
-                            <line id="Line_2" data-name="Line 2" y1="13" transform="translate(527.5 624.5)" fill="none"
-                                stroke="#000" stroke-width="2" />
-                            <path id="Path_7" data-name="Path 7"
-                                d="M2709.394,154.572s-6.466-11.941-16.756-10.819-16.8,8.923-22.76,8.992-8.606.034-14.974-1.555,8.547,17.727,20.052,16.069,19.036-8.277,22.264-9.32a16.843,16.843,0,0,1,10.324-.731C2712.387,158.2,2709.394,154.572,2709.394,154.572Z"
-                                transform="translate(-2209.344 535.822)" />
-                            <path id="Path_54" data-name="Path 54"
-                                d="M2654.293,154.572s6.466-11.941,16.757-10.819,16.8,8.923,22.76,8.992,8.606.034,14.974-1.555-8.547,17.727-20.052,16.069-19.036-8.277-22.264-9.32a16.844,16.844,0,0,0-10.324-.731C2651.3,158.2,2654.293,154.572,2654.293,154.572Z"
-                                transform="translate(-2154.344 535.822)" />
-                        </g>
-                    </svg>
-
-                </a>
-            </div>
-
-            <nav class="menu-navigation">
-                <!-- SOHO Logo -->
-                <div class="menu-navigation-logo">
-                    <img src="images/Logo.svg" alt="soho logotype">
-                </div>
-
-                <ul class="menu-navigation-list">
-                    <li><a href="#" class="menu-navagation-link">Nyheder</a></li>
-                    <li><a href="pages/products.html" class="menu-navagation-link" id="onHoverCategory"
-                            data-template="category">Kategorier</a></li>
-                    <li class="selected-page" id="onHoverBrand" data-template="brands">
-                        <a href="#" class="menu-navagation-link">Brands</a>
-                    </li>
-                    <li><a href="#" class="menu-navagation-link">Om Soho</a></li>
-                    <li><a href="#" class="menu-navagation-link">Kontakt</a></li>
-                </ul>
-                <div class="navigation-banner">
-                    <img src="icons/Heart-icon.svg" alt="favoritter">
-                    <img src="icons/Profile-icon.svg" alt="profil">
-                    <div class="menu-cart" id="cartIcon">
-                        <img src="icons/Shopping-bag-icon.svg" alt="kurv">
-                        <div class="menu-cart-items" id="cartItems">0</div>
-                    </div>
-                </div>
-            </nav>
-        </header>
-        <div class="shopping-cart" id="shoppingCart" aria-label="closed">
-            <p class="shopping-cart-title">Kurv <span>(0)</span></p>
-            <div class="cart-items">
-                <div class="cart-item">
-                    <div class="cart-product">
-                        <div class="cart-product-image">
-                            <img src="images/products/SBD-apparel-t-shirt-female.jpg" alt="product">
-                        </div>
-                        <div class="product-info">
-                            <p class="product-brand">Adidas</p>
-                            <p class="product-title">SBD Apperel T-shirt</p>
-                            <p class="product-price">Pris: <span> 379</span> kr</p>
-
-                            <div class="product-details">
-                                <p>Størrelse: <span> Large</span></p>
-                                <p>Farve: <span> Sort</span></p>
-                                <p>Antal: <span> 1</span></p>
-                            </div>
-                            <button class="remove-item">Fjern kurv</button>
-                        </div>
-                    </div>
-                </div>
-                <hr class="thematic-break">
-            </div>
-
-            <div class="shopping-cart-total">
-                <div class="cart-delevery">
-                    <p>Levering</p>
-                    <p class="delevery-fee"><span>29,00</span> kr</p>
-                </div>
-                <div class="cart-total">
-                    <p>Pris i alt (inkl. moms)</p>
-                    <p class="cart-total-price"><span>758,00</span> kr</p>
-                </div>
-            </div>
-            <hr class="thematic-break">
-            <button class="shopping-btn btn">Indkøbskurv</button>
-        </div>
-
-        <div class="bigmenu" id="bigmenuBrand" aria-label="Close" tabindex="-1">
-            <div class="bigmenu-col1">
-                <h2>Brands</h2>
-
-                <a href="#/brands" class="bignav-links">Alle brands <img src="images/arrow-right.svg" alt="arrow"></a>
-                <div class="bignav-links brands-link">
-                    <a href="#/brands/Anerkjendt" class="brand-link">Anerkjendt</a>
-                    <a href="#/brands/Borlemstock" class="brand-link">Borlemstock</a>
-                    <a href="#/brands/Clean Cut" class="brand-link">Clean Cut</a>
-                    <a href="#/brands/Dedicated" class="brand-link">Dedicated</a>
-                    <a href="#/brands/Egtved Soc" class="brand-link">Egtved Socks</a>
-                    <a href="#/brands/Elvine" class="brand-link">Elvine</a>
-                    <a href="#/brands/Fuza Wo" class="brand-link">Fuza Wool</a>
-                    <a href="#/brands/Garcia" class="brand-link">Garcia</a>
-
-                    <a href="#/brands/Gola" class="brand-link">Gola</a>
-                    <a href="#/brands/JBS" class="brand-link">JBS</a>
-                    <a href="#/brands/KnowledgeCotton-Apparel" class="brand-link">KnowledgeCotton Apparel</a>
-                    <a href="#/brands/Laktor" class="brand-link">Laktor</a>
-                    <a href="#/brands/Mads-noregaard" class="brand-link">Mads Nøregaard</a>
-                    <a href="#/brands/Nature-footwear" class="brand-link">Nature Footwear</a>
-                    <a href="#/brands/ResterRöds" class="brand-link">ResterRöds</a>
-                    <a href="#/brands/Revolution" class="brand-link">Revolution</a>
-
-                    <a href="#/brands/Royal-republicq" class="brand-link">Royal Republicq</a>
-                    <a href="#/brands/Scotch&soda" class="brand-link">Scotch & Soda</a>
-                    <a href="#/brands/Shoe-the-bear" class="brand-link">Shoe the Bear</a>
-                    <a href="#/brands/Suit" class="brand-link">Suit</a>
-                    <a href="#/brands/WareCPH" class="brand-link">WareCPH</a>
-                    <a href="#/brands/Wrangler" class="brand-link">Wrangler</a>
-                </div>
-            </div>
-            <div class="bigmenu-col2">
-                <h2>Lokale Brands: Lakor & Revolution</h2>
-                <div class="responsive-image">
-                    <a href="#">
-                        <img class="lakor-brand-image" id="lakorBrandImage"
-                            src="./images/lakor_CollectionCoverPC1_1920x.jpg" alt="Lakor collection cover">
-                    </a>
-                    <a href="#">
-                        <img class="revolution-brand-image" id="revolutionBrandImage"
-                            src="./images/spring-jackets-layers_1600w.jpg" alt="spring jacket Revolution">
-                    </a>
-                    <div class="line-seperator" id="imageSeperatorLine"></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="bigmenu" id="bigmenuCategory" aria-label="Close" tabindex="-1">
-            <div class="bigmenu-col1">
-                <h2>Kategorier</h2>
-
-                <a href="#/kategorier" class="bignav-links">Alle kategorier <img src="./images/arrow-right.svg"
-                        alt="arrow"></a>
-                <div class="bignav-links brands-link">
-                    <a href="#/kategorier/Bukser" class="brand-link">Bukser</a>
-                    <a href="#/kategorier/Habitter" class="brand-link">Habitter</a>
-                    <a href="#/kategorier/Jakker" class="brand-link">Jakker</a>
-                    <a href="#/kategorier/Jeans" class="brand-link">Jeans</a>
-                    <a href="#/kategorier/Shorts" class="brand-link">Shorts</a>
-                    <a href="#/kategorier/Sko" class="brand-link">Sko</a>
-                    <a href="#/kategorier/Strik" class="brand-link">Strik</a>
-                    <a href="#/kategorier/Strømper" class="brand-link">Strømper</a>
-                    <a href="#/kategorier/Underbukser" class="brand-link">Underbukser</a>
-                    <a href="#/kategorier/Accessories" class="brand-link">Accessories</a>
-                    <a href="#/kategorier/Bælter" class="brand-link">Bælter</a>
-                    <a href="#/kategorier/Hatte" class="brand-link">Hatte</a>
-                    <a href="#/kategorier/Huer" class="brand-link">Huer</a>
-                    <a href="#/kategorier/Tasker" class="brand-link">Tasker</a>
-                </div>
-            </div>
-            <div class="bigmenu-col2">
-                <h2>T-shirts</h2>
-                <a href="#">
-                    <img class="t-shirt-cover" src="./images/lakor-adventures.jpg" alt="Lakor collection cover">
-                </a>
-            </div>
-        </div>
 
         <main>
             <!-- <div class="navigation-path-container"></div> -->
@@ -344,51 +313,51 @@
                     <h3 class="side-menu-heading">Kategorier</h3>
                     <a href="#/kategorier" class="side-menu-arrow-link">Vis alle</a>
                     <ul class="side-menu-list">
-                        <li><a href="#/kategorier/Bukser" class="side-menu-link">Bukser</a></li>
-                        <li><a href="#/kategorier/Habitter" class="side-menu-link">Habitter</a></li>
-                        <li><a href="#/kategorier/Jakker" class="side-menu-link">Jakker</a></li>
-                        <li><a href="#/kategorier/Jeans" class="side-menu-link">Jeans</a></li>
-                        <li><a href="#/kategorier/Shorts" class="side-menu-link">Shorts</a></li>
-                        <li><a href="#/kategorier/Sko" class="side-menu-link">Sko</a></li>
-                        <li><a href="#/kategorier/Strik" class="side-menu-link">Strik</a></li>
-                        <li><a href="#/kategorier/Strømper" class="side-menu-link">Strømper</a></li>
-                        <li><a href="#/kategorier/Underbukser" class="side-menu-link">Underbukser</a></li>
-                        <li><a href="#/kategorier/Accessories" class="side-menu-link">Accessories</a></li>
-                        <li><a href="#/kategorier/Bælter" class="side-menu-link">Bælter</a></li>
-                        <li><a href="#/kategorier/Hatte" class="side-menu-link">Hatte</a></li>
-                        <li><a href="#/kategorier/Huer" class="side-menu-link">Huer</a></li>
-                        <li><a href="#/kategorier/Tasker" class="side-menu-link">Tasker</a></li>
+                        <li><a href="pages/products.html#/kategorier/Bukser" target="_self" class="side-menu-link">Bukser</a></li>
+                        <li><a href="pages/products.html#/kategorier/Habitter" target="_self" class="side-menu-link">Habitter</a></li>
+                        <li><a href="pages/products.html#/kategorier/Jakker" target="_self" class="side-menu-link">Jakker</a></li>
+                        <li><a href="pages/products.html#/kategorier/Jeans" target="_self" class="side-menu-link">Jeans</a></li>
+                        <li><a href="pages/products.html#/kategorier/Shorts" target="_self" class="side-menu-link">Shorts</a></li>
+                        <li><a href="pages/products.html#/kategorier/Sko" target="_self" class="side-menu-link">Sko</a></li>
+                        <li><a href="pages/products.html#/kategorier/Strik" target="_self" class="side-menu-link">Strik</a></li>
+                        <li><a href="pages/products.html#/kategorier/Strømper" target="_self" class="side-menu-link">Strømper</a></li>
+                        <li><a href="pages/products.html#/kategorier/Underbukser" target="_self" class="side-menu-link">Underbukser</a></li>
+                        <li><a href="pages/products.html#/kategorier/Accessories" target="_self" class="side-menu-link">Accessories</a></li>
+                        <li><a href="pages/products.html#/kategorier/Bælter" target="_self" class="side-menu-link">Bælter</a></li>
+                        <li><a href="pages/products.html#/kategorier/Hatte target="_self"" class="side-menu-link">Hatte</a></li>
+                        <li><a href="pages/products.html#/kategorier/Huer" target="_self" class="side-menu-link">Huer</a></li>
+                        <li><a href="pages/products.html#/kategorier/Tasker" target="_self" class="side-menu-link">Tasker</a></li>
                     </ul>
 
                     <h3 class="side-menu-heading">Brands</h3>
                     <a href="#/brands" class="side-menu-arrow-link">Vis alle</a>
                     <ul class="side-menu-list">
-                        <li><a href="#/brands/Anerkjendt" class="side-menu-link">Anerkjendt</a></li>
-                        <li><a href="#/brands/Borlemstock" class="side-menu-link">Borlemstock</a></li>
-                        <li><a href="#/brands/Clean Cut" class="side-menu-link">Clean Cut</a></li>
-                        <li><a href="#/brands/Dedicated" class="side-menu-link">Dedicated</a></li>
-                        <li><a href="#/brands/Egtved Soc" class="side-menu-link">Egtved Socks</a></li>
-                        <li><a href="#/brands/Elvine" class="side-menu-link">Elvine</a></li>
-                        <li><a href="#/brands/Fuza Wo" class="side-menu-link">Fuza Wool</a></li>
-                        <li><a href="#/brands/Garcia" class="side-menu-link">Garcia</a></li>
-                        <li><a href="#/brands/Gola" class="side-menu-link">Gola</a></li>
-                        <li><a href="#/brands/JBS" class="side-menu-link">JBS</a></li>
+                        <li><a href="pages/products.html#/brands/Anerkjendt" class="side-menu-link">Anerkjendt</a></li>
+                        <li><a href="pages/products.html#/brands/Borlemstock" class="side-menu-link">Borlemstock</a></li>
+                        <li><a href="pages/products.html#/brands/Clean Cut" class="side-menu-link">Clean Cut</a></li>
+                        <li><a href="pages/products.html#/brands/Dedicated" class="side-menu-link">Dedicated</a></li>
+                        <li><a href="pages/products.html#/brands/Egtved Soc" class="side-menu-link">Egtved Socks</a></li>
+                        <li><a href="pages/products.html#/brands/Elvine" class="side-menu-link">Elvine</a></li>
+                        <li><a href="pages/products.html#/brands/Fuza Wo" class="side-menu-link">Fuza Wool</a></li>
+                        <li><a href="pages/products.html#/brands/Garcia" class="side-menu-link">Garcia</a></li>
+                        <li><a href="pages/products.html#/brands/Gola" class="side-menu-link">Gola</a></li>
+                        <li><a href="pages/products.html#/brands/JBS" class="side-menu-link">JBS</a></li>
                         <li>
-                            <a href="#/brands/KnowledgeCotton-Apparel" class="side-menu-link">
+                            <a href="pages/products.html#/brands/KnowledgeCotton-Apparel" class="side-menu-link">
                                 KnowledgeCotton Apparel
                             </a>
                         </li>
-                        <li><a href="#/brands/Laktor" class="side-menu-link">Laktor</a></li>
-                        <li><a href="#/brands/Mads-noregaard" class="side-menu-link">Mads Nøregaard</a></li>
-                        <li><a href="#/brands/Nature-footwear" class="side-menu-link">Nature Footwear</a></li>
-                        <li><a href="#/brands/ResterRöds" class="side-menu-link">ResterRöds</a></li>
-                        <li><a href="#/brands/Revolution" class="side-menu-link">Revolution</a></li>
-                        <li><a href="#/brands/Royal-republicq" class="side-menu-link">Royal Republicq</a></li>
-                        <li><a href="#/brands/Scotch&soda" class="side-menu-link">Scotch & Soda</a></li>
-                        <li><a href="#/brands/Shoe-the-bear" class="side-menu-link">Shoe the Bear</a></li>
-                        <li><a href="#/brands/Suit" class="side-menu-link">Suit</a></li>
-                        <li><a href="#/brands/WareCPH" class="side-menu-link">WareCPH</a></li>
-                        <li><a href="#/brands/Wrangler" class="side-menu-link">Wrangler</a></li>
+                        <li><a href="pages/products.html#/brands/Laktor" class="side-menu-link">Laktor</a></li>
+                        <li><a href="pages/products.html#/brands/Mads-noregaard" class="side-menu-link">Mads Nøregaard</a></li>
+                        <li><a href="pages/products.html#/brands/Nature-footwear" class="side-menu-link">Nature Footwear</a></li>
+                        <li><a href="pages/products.html#/brands/ResterRöds" class="side-menu-link">ResterRöds</a></li>
+                        <li><a href="pages/products.html#/brands/Revolution" class="side-menu-link">Revolution</a></li>
+                        <li><a href="pages/products.html#/brands/Royal-republicq" class="side-menu-link">Royal Republicq</a></li>
+                        <li><a href="pages/products.html#/brands/Scotch&soda" class="side-menu-link">Scotch & Soda</a></li>
+                        <li><a href="pages/products.html#/brands/Shoe-the-bear" class="side-menu-link">Shoe the Bear</a></li>
+                        <li><a href="pages/products.html#/brands/Suit" class="side-menu-link">Suit</a></li>
+                        <li><a href="pages/products.html#/brands/WareCPH" class="side-menu-link">WareCPH</a></li>
+                        <li><a href="pages/products.html#/brands/Wrangler" class="side-menu-link">Wrangler</a></li>
                     </ul>
 
                 </div>
@@ -414,11 +383,11 @@
                             </button>
                         </div>
                         <div class="filters-devider">
-                            <select name="sorter" id="sort-button" class="filter-buttons">
-                                <option value="sorter efter">Sorter efter</option>
-                                <option value="nyheder">Nyheder</option>
-                                <option value="pris-faldende">Pris(Faldende)</option>
-                                <option value="pris-stigende">Pris(Stigende)</option>
+                            <select name="sorter" id="sort-button" class="filter-buttons" >
+                                <option value="" selected >Sorter efter</option>
+                                <option value="sale">Nyheder</option>
+                                <option value="falling">Pris(Faldende)</option>
+                                <option value="raising">Pris(Stigende)</option>
                             </select>
                         </div>
                     </div>
@@ -590,7 +559,8 @@
     </div> <!-- End of body wrapper -->
 
 
-    <!-- <script type="text/javascript" src="js/serviceWorkerHandler.js"></script> -->
+    <script type="text/javascript" src="js/serviceWorkerHandler.js"></script>
+    <script type="text/javascript" src="js/Cart.js"></script>
     <script type="text/javascript" src="js/header.js"></script>
     <script type="text/javascript" src="js/filter-functionality.js"></script>
     <script type="text/javascript" src="js/products-filter.js"></script>
