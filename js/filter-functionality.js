@@ -1,4 +1,84 @@
-// mobile filter show and hide function
+let categories, brands
+
+(() => {
+    
+function appendFilters(filters) {
+    let htmlTemplate = "";
+    for (const filter of filters) {
+        htmlTemplate += /*html*/`
+            <details class="filter-subject-expand-container">
+                <summary class="filter-subject-summary">${filter.name}</summary>
+                <ul class="filter-subject-list">${loopFilterEmner(filter.filterType)}</ul>
+            </details>
+            <div class="filter-line-devider"></div>
+        `;
+    }
+    document.querySelector(".mobile-filter-subjects-window").innerHTML = htmlTemplate;
+};
+
+//mobil
+function loopFilterEmner(array) {
+    let template = "";
+    for (const listItem of array) {
+        if (listItem === 'uncategorized') continue
+        template += /*html*/ `
+             <li class="filter-subject-list-item">
+                <input class="filter-subject-input-check" data-name="${listItem.replaceAll(' ', '-')}" type="checkbox"/>
+                <label for="${listItem.replaceAll(' ', '-')}" class="filter-subject-name">${listItem}</label>
+            </li>
+        `;
+    }
+    return template;
+}
+
+async function fetchCategoriesAndTags() {
+
+    const categoriesData = await (await fetch('https://soho.lasseaakjaer.com/wp-json/wc/store/products/categories')).json()
+    const brandsData = await (await fetch('https://soho.lasseaakjaer.com/wp-json/wc/store/products/tags')).json()
+    
+    Promise.allSettled([categoriesData, brandsData]).
+    then((results) => {
+        categories = results[0].value.map(item => item.name.toLowerCase())
+        brands = results[1].value.map(item => item.name.toLowerCase())
+
+        const filters = [
+            {
+                name: "Brands",
+                filterType: brands
+            },
+            {
+                name: "Categories",
+                filterType: categories
+            }
+        ]
+        
+        appendFilters(filters);
+        appendDesktopFilters(categories, "#desktop-categories-filter-list");
+        appendDesktopFilters(brands, "#desktop-brands-filter-list");
+        eventFilterHandler()
+    })
+    
+    
+}
+
+
+function appendDesktopFilters(filters, selector) {
+    let htmlTemplate = "";
+    for (const filter of filters) {
+        if (filter === 'uncategorized') continue
+        htmlTemplate += /*html*/ `
+             <li class="filter-subject-list-item">
+                <input class="filter-subject-input-check" data-name="${filter.replaceAll(' ', '-')}" id="1${filter.replaceAll(' ', '-')}" type="checkbox"/>
+                <label for="1${filter.replaceAll(' ', '-')}" class="filter-subject-name">${filter}</label>
+            </li>
+        `;
+    }
+    document.querySelector(selector).innerHTML = htmlTemplate;
+}
+
+fetchCategoriesAndTags()
+})()
+
 
 let filterBGShadow = document.querySelector(".mobile-filter-bg-fill");
 let filterContainer = document.querySelector(".mobile-filter-container");
@@ -27,91 +107,52 @@ function toggleFilterWindow() {
 
 // filters array
 
-const brands = [
-    "Anerkjendt",
-    "Birkenstock",
-    "Clean Cut",
-    "Dedicated",
-    "Egtved Socks",
-    "Elvine",
-    "Fuza Wool",
-    "Garcia",
-    "Gola",
-    "JBS",
-    "KnowledgeCotton Apparel",
-    "Lakor",
-    "Mads Nørgaard",
-    "Nature Footwear",
-    "Resteröds",
-    "Revolution",
-    "Royal Republiq",
-    "Scotch&Soda",
-    "Shoe the Bear",
-    "Suit",
-    "Warecph",
-    "Wrangler"
-];
+// const brands = [
+//     "Anerkjendt",
+//     "Birkenstock",
+//     "Clean Cut",
+//     "Dedicated",
+//     "Egtved Socks",
+//     "Elvine",
+//     "Fuza Wool",
+//     "Garcia",
+//     "Gola",
+//     "JBS",
+//     "KnowledgeCotton Apparel",
+//     "Lakor",
+//     "Mads Nørgaard",
+//     "Nature Footwear",
+//     "Resteröds",
+//     "Revolution",
+//     "Royal Republiq",
+//     "Scotch&Soda",
+//     "Shoe the Bear",
+//     "Suit",
+//     "Warecph",
+//     "Wrangler"
+// ];
 
-const categories = [
-    "Bukser",
-    "Habitter",
-    "Jakker",
-    "Jeans",
-    "Shorts",
-    "Sko",
-    "Strik",
-    "Strømper",
-    "Trøjer",
-    "Underbukser",
-    "Accessories",
-    "Bælter",
-    "Hatte",
-    "Huer",
-    "Tasker"
-];
-
-const filters = [
-    {
-        name: "Brands",
-        filterType: brands
-    },
-    {
-        name: "Categories",
-        filterType: categories
-    }
-];
+// const categories = [
+//     "Bukser",
+//     "Habitter",
+//     "Jakker",
+//     "Jeans",
+//     "Shorts",
+//     "Sko",
+//     "Strik",
+//     "Strømper",
+//     "Trøjer",
+//     "Underbukser",
+//     "Accessories",
+//     "Bælter",
+//     "Hatte",
+//     "Huer",
+//     "Tasker"
+// ];
 
 
 
-function appendFilters(filters) {
-    let htmlTemplate = "";
-    for (const filter of filters) {
-        htmlTemplate += /*html*/`
-            <details class="filter-subject-expand-container">
-                <summary class="filter-subject-summary">${filter.name}</summary>
-                <ul class="filter-subject-list">${loopFilterEmner(filter.filterType)}</ul>
-            </details>
-            <div class="filter-line-devider"></div>
-        `;
-    }
-    document.querySelector(".mobile-filter-subjects-window").innerHTML = htmlTemplate;
-};
 
-//mobil
-function loopFilterEmner(array) {
-    let template = "";
-    for (const listItem of array) {
-        template += /*html*/ `
-             <li class="filter-subject-list-item">
-                <input class="filter-subject-input-check" data-name="${listItem}" type="checkbox"/>
-                <label for="${listItem}" class="filter-subject-name">${listItem}</label>
-            </li>
-        `;
-    }
-    return template;
-}
-
-appendFilters(filters);
 
 // desktop filters
 
@@ -158,23 +199,8 @@ function toggleDesktopBrandsFilters() {
 }
 
 //desktop
-const desktopCategoriesFiltersList = document.querySelector("#desktop-categories-filter-list");
-const desktopBrandsFiltersList = document.querySelector("#desktop-brands-filter-list");
+// const desktopCategoriesFiltersList = document.querySelector("#desktop-categories-filter-list");
+// const desktopBrandsFiltersList = document.querySelector("#desktop-brands-filter-list");
 
-function appendDesktopFilters(filters, selector) {
-    let htmlTemplate = "";
-    for (const filter of filters) {
-        htmlTemplate += /*html*/ `
-             <li class="filter-subject-list-item">
-                <input class="filter-subject-input-check" data-name="${filter}" id="1${filter}" type="checkbox"/>
-                <label for="1${filter}" class="filter-subject-name">${filter}</label>
-            </li>
-        `;
-    }
-    document.querySelector(selector).innerHTML = htmlTemplate;
-}
-
-appendDesktopFilters(categories, "#desktop-categories-filter-list");
-appendDesktopFilters(brands, "#desktop-brands-filter-list");
 
 

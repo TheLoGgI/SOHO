@@ -73,13 +73,19 @@ const filterArray = [];
 
 function eventFilterHandler() {
     const filters = document.querySelectorAll(".desktop-filter-list, .filter-subject-list")
-
+    console.log('filters: ', filters);
+    const filterBtns = document.querySelectorAll(".reset-filters-btn")
+    
     filters.forEach(item => {
         item.addEventListener("click", filter)
     })
-}
+    // Clear buttons
+    filterBtns.forEach(item => {
+        item.addEventListener("click", clearFilters)
+    })
 
-eventFilterHandler()
+    
+}
 
 
 function filter(e) {
@@ -113,19 +119,15 @@ function filterProducts() {
                 filteredProducts.push(product);
             }
         });
-
-
-        for (const product of prods) {
-            product.tags.forEach(tag => {
-                const hasprod = filteredProducts.find(p => product.id === p.id)
-                if (hasprod === undefined && filterArray.includes(tag.slug.toLowerCase())) {
+    
+        product.tags.forEach(tag => {
+            const hasprod = filteredProducts.find(p => product.id === p.id)
+            if (hasprod === undefined && filterArray.includes(tag.slug.toLowerCase())) {
                     filteredProducts.push(product);
-                }
-            });
-        }
-
-    }
-
+            }
+        });
+    
+    }   
 
     sortProducts(filteredProducts)
     createProductCard(filteredProducts);
@@ -156,18 +158,13 @@ function sortProducts(array) {
     })
 }
 
-const resetBtns = document.querySelectorAll(".desktop-reset-filter-btn, .reset-filters-btn")
 
-resetBtns.forEach(item => {
-    item.addEventListener("click", clearFilters)
-})
+function clearFilters() {
+    const checkboxes =  document.querySelectorAll('.filter-subject-input-check')
+    checkboxes.forEach(checkbox => {
+        checkbox.checked = false
+    })
 
-function clearFilters(list) {
-    const checkBokses = document.getElementsByClassName("filter-subject-input-check")
-    for (const checkBoks of checkBokses) {
-        console.log(checkBokses)
-        checkBoks.checked = false
-    }
     filterArray.length = 0
     filterProducts()
 }

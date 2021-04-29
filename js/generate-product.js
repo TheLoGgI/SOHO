@@ -41,13 +41,12 @@ function deliveryTime(params) {
 
     // redirects to home page
     if (!paramId) window.location.pathname = ''
-    console.log(productData);
+
     const currentProduct = await (await fetch(`https://soho.lasseaakjaer.com/wp-json/wc/store/products/${paramId}`)).json()
-    // console.log('currentProduct: ', currentProduct);
+
     const target = document.getElementById('productData')
 
     const template = `
-    <!-- Slideshow -->
     <div class="item1">
         <div class="slideshow-container">
             ${slideImages(currentProduct)}
