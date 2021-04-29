@@ -10,9 +10,14 @@
 
 .video {
     width: 100%;
-    height: 100%;
+    height: 120%;
     background-color: rgb(197, 101, 101);
     position: relative;
+    overflow: hidden;
+}
+
+.video video {
+    width: 100%;
 }
 
 .cta {
@@ -20,6 +25,8 @@
     top: 40%;
     left: 50%;
     transform: translateX(-50%);
+    font-size: var(--fs-lg);
+    padding: .5em 1em;
 }
 
 .cta:hover {
@@ -35,6 +42,7 @@
     flex-flow: row wrap;
     padding: 1rem 0rem;
     margin: 0 calc(var(--pd-desktop) * .5);
+    
     background-color: var(--clr-body-bg);
     border-radius: 5px;
 }
@@ -209,9 +217,10 @@
 .details {
     display: flex;
     justify-content: space-evenly;
-    padding: 2rem 0rem;
-    width: calc(100% - var(--pd-desktop) * 2);
-    margin: 0 var(--pd-desktop);
+    padding: 0rem 0rem;
+    width: calc(80% - var(--pd-desktop) * 2);
+    margin: 0 auto;
+    margin-top: 7rem;
     background-color: var(--clr-body-bg);
     /* position: relative; */
     transform: translateY(-6rem);
