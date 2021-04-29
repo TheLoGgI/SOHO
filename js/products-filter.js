@@ -73,15 +73,19 @@ const filterArray = [];
 
 function eventFilterHandler() {
     const filters = document.querySelectorAll(".desktop-filter-list, .filter-subject-list")
-
+    console.log('filters: ', filters);
+    const filterBtns = document.querySelectorAll(".reset-filters-btn")
+    
     filters.forEach(item => {
         item.addEventListener("click", filter)
     })
+    // Clear buttons
+    filterBtns.forEach(item => {
+        item.addEventListener("click", clearFilters)
+    })
 
-    clearFilters(filters)
+    
 }
-
-eventFilterHandler()
 
 
 function filter(e) {
@@ -116,18 +120,14 @@ function filterProducts() {
             }
         });
     
-
-        for (const product of prods) {
-            product.tags.forEach(tag => {
-                const hasprod = filteredProducts.find(p => product.id === p.id)
-                if (hasprod === undefined && filterArray.includes(tag.slug.toLowerCase())) {
-                        filteredProducts.push(product);
-                }
-            });
-        }
-
+        product.tags.forEach(tag => {
+            const hasprod = filteredProducts.find(p => product.id === p.id)
+            if (hasprod === undefined && filterArray.includes(tag.slug.toLowerCase())) {
+                    filteredProducts.push(product);
+            }
+        });
+    
     }   
-
 
     sortProducts(filteredProducts)
     createProductCard(filteredProducts);
@@ -158,8 +158,16 @@ function sortProducts(array) {
     })
 }
 
-function clearFilters(list) {
-    
+
+
+function clearFilters() {
+    const checkboxes =  document.querySelectorAll('.filter-subject-input-check')
+    checkboxes.forEach(checkbox => {
+        checkbox.checked = false
+    })
+
+    filterArray.length = 0
+    filterProducts()
 }
 
 

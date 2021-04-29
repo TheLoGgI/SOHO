@@ -35,7 +35,6 @@ class Cart {
             return false
         }
 
-
         const key = this.randomKey
         const item = {...itemObject, key} 
         this.addToStorage(item)
