@@ -331,6 +331,19 @@
     width: 20px;
 }
 
+.desktop-reset-filter-btn {
+    font-size: 16px;
+    font-family: var(--ff-body);
+    border-style: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: #6d6c6c;
+    cursor: pointer;
+    height: 48px;
+    padding-left: 16px;
+    padding-right: 16px;
+    white-space: nowrap;
+}
+
 .desktop-filter-container {
     display: none;
 }
