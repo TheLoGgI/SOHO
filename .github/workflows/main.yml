@@ -14,4 +14,4 @@ jobs:
       with:
         server: ftp.lasseaakjaer.com
         username: sohouser@soho.lasseaakjaer.com
-        password: ${{ secrets.ftp_password }}
+        password: ${{ secrets.password }}
