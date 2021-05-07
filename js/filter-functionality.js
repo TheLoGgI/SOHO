@@ -1,82 +1,82 @@
-let categories, brands
+
 
 (() => {
-    
-function appendFilters(filters) {
-    let htmlTemplate = "";
-    for (const filter of filters) {
-        htmlTemplate += /*html*/`
+
+    function appendFilters(filters) {
+        let htmlTemplate = "";
+        for (const filter of filters) {
+            htmlTemplate += /*html*/`
             <details class="filter-subject-expand-container">
                 <summary class="filter-subject-summary">${filter.name}</summary>
                 <ul class="filter-subject-list">${loopFilterEmner(filter.filterType)}</ul>
             </details>
             <div class="filter-line-devider"></div>
         `;
-    }
-    document.querySelector(".mobile-filter-subjects-window").innerHTML = htmlTemplate;
-};
+        }
+        document.querySelector(".mobile-filter-subjects-window").innerHTML = htmlTemplate;
+    };
 
-//mobil
-function loopFilterEmner(array) {
-    let template = "";
-    for (const listItem of array) {
-        if (listItem === 'uncategorized') continue
-        template += /*html*/ `
+    //mobil
+    function loopFilterEmner(array) {
+        let template = "";
+        for (const listItem of array) {
+            if (listItem === 'uncategorized') continue
+            template += /*html*/ `
              <li class="filter-subject-list-item">
                 <input class="filter-subject-input-check" data-name="${listItem.replaceAll(' ', '-')}" type="checkbox"/>
                 <label for="${listItem.replaceAll(' ', '-')}" class="filter-subject-name">${listItem}</label>
             </li>
         `;
+        }
+        return template;
     }
-    return template;
-}
 
-async function fetchCategoriesAndTags() {
+    async function fetchCategoriesAndTags() {
 
-    const categoriesData = await (await fetch('https://soho.lasseaakjaer.com/wp-json/wc/store/products/categories')).json()
-    const brandsData = await (await fetch('https://soho.lasseaakjaer.com/wp-json/wc/store/products/tags')).json()
-    
-    Promise.allSettled([categoriesData, brandsData]).
-    then((results) => {
-        categories = results[0].value.map(item => item.name.toLowerCase())
-        brands = results[1].value.map(item => item.name.toLowerCase())
+        const categoriesData = await (await fetch('https://soho.lasseaakjaer.com/wp-json/wc/store/products/categories')).json()
+        const brandsData = await (await fetch('https://soho.lasseaakjaer.com/wp-json/wc/store/products/tags')).json()
 
-        const filters = [
-            {
-                name: "Brands",
-                filterType: brands
-            },
-            {
-                name: "Categories",
-                filterType: categories
-            }
-        ]
-        
-        appendFilters(filters);
-        appendDesktopFilters(categories, "#desktop-categories-filter-list");
-        appendDesktopFilters(brands, "#desktop-brands-filter-list");
-        eventFilterHandler()
-    })
-    
-    
-}
+        Promise.allSettled([categoriesData, brandsData]).
+            then((results) => {
+                const categories = results[0].value.map(item => item.name.toLowerCase())
+                const brands = results[1].value.map(item => item.name.toLowerCase())
+
+                const filters = [
+                    {
+                        name: "Brands",
+                        filterType: brands
+                    },
+                    {
+                        name: "Categories",
+                        filterType: categories
+                    }
+                ]
+
+                appendFilters(filters);
+                appendDesktopFilters(categories, "#desktop-categories-filter-list");
+                appendDesktopFilters(brands, "#desktop-brands-filter-list");
+                eventFilterHandler()
+            })
 
 
-function appendDesktopFilters(filters, selector) {
-    let htmlTemplate = "";
-    for (const filter of filters) {
-        if (filter === 'uncategorized') continue
-        htmlTemplate += /*html*/ `
+    }
+
+
+    function appendDesktopFilters(filters, selector) {
+        let htmlTemplate = "";
+        for (const filter of filters) {
+            if (filter === 'uncategorized') continue
+            htmlTemplate += /*html*/ `
              <li class="filter-subject-list-item">
                 <input class="filter-subject-input-check" data-name="${filter.replaceAll(' ', '-')}" id="1${filter.replaceAll(' ', '-')}" type="checkbox"/>
                 <label for="1${filter.replaceAll(' ', '-')}" class="filter-subject-name">${filter}</label>
             </li>
         `;
+        }
+        document.querySelector(selector).innerHTML = htmlTemplate;
     }
-    document.querySelector(selector).innerHTML = htmlTemplate;
-}
 
-fetchCategoriesAndTags()
+    fetchCategoriesAndTags()
 })()
 
 
