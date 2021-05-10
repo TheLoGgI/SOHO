@@ -66,6 +66,25 @@ a {
     cursor: pointer;
 }
 
+.loading {
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #f3efe9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading img {
+    width: clamp(20vw, 400px, 35%);
+    margin: 1rem;
+}
+
 /* Desktop */
 
 @media screen and (min-width: 1200px) {
@@ -94,21 +113,12 @@ a {
         max-width: 1200px;
         min-height: 100vh;
     }
-    .loading {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        margin-top: 10%;
-    }
+
     a:hover {
         text-decoration: underline;
     }
-    .loading i {
-        font-size: 4rem;
-        color: lightsalmon;
-        animation: rotate-loading 3.5s ease-in-out 0s infinite normal forwards;
-    }
+
+
     @keyframes rotate-loading {
         0% {
             transform: rotate(0deg);

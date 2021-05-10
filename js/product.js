@@ -1,6 +1,10 @@
 
 
-
+/**
+ * Handler for adding items to the basket with DOM form data
+ * @param {Object} - new item object details 
+ * @return {Null} 
+ */
 function shopButtonHandler(newItem) {
     
     document.getElementById('productForm').addEventListener('submit', (e) => {

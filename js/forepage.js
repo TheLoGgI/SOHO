@@ -2,11 +2,20 @@
 const localBrands = document.getElementById('localBrands')
 const mostPopular = document.getElementById('mostPopular')
 
+/** Source: https://blog.abelotech.com/posts/number-currency-formatting-javascript/
+ *  Changes format on currency totals
+ * @param {Number} - Number to format
+ * @return {Number} formated number 
+ */
 function currencyFormat(num) {
     return Number(num.substring(0, num.length - 2)).toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 }
 
-function initSlides() {
+/**
+ * Adjusts Splide carrousel for the device and video
+ * @return {null} 
+ */
+function init() {
 
     const first = new Splide('#splide1', {
         type: 'loop',
@@ -24,23 +33,35 @@ function initSlides() {
         autoHeight: true,
     }).mount();
 
-    if (window.innerHeight > 800) {
+    if (window.innerWidth > 800) {
         first.options = {perPage: 3}
         secound.options = {perPage: 3}
+        const video = document.getElementById('heroVideo')
+        video.setAttribute('autoplay', 'autoplay')
+        video.setAttribute('preload', 'auto')
     }
 
 }
 
-
+/**
+ * Fetching products from the API, and initializing functions
+ * @return {null} 
+ */
 (async function getProducts() {
     const data = await (await fetch('https://soho.lasseaakjaer.com/wp-json/wc/store/products')).json()
     displayProducts(data)
     
-    initSlides()
+    init()
+    removeLoading()
 })()
 
-const productList = document.getElementById("product-list")
 
+/**
+ * Displaying products on the page from Api
+ * @param  {Array} - Array of products to be displayed
+ * @return {null} 
+ */
+const productList = document.getElementById("product-list")
 function displayProducts(arrayList) {
     let popular = ''
     let local = ''
@@ -77,5 +98,7 @@ function displayProducts(arrayList) {
     
     localBrands.innerHTML = local
     mostPopular.innerHTML = popular
-
 }
+
+
+

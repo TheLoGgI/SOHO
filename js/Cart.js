@@ -1,3 +1,7 @@
+
+/**
+ * Custom Cart Class for implimenting shopping cart methodes
+ */
 class Cart {
     constructor(previousCart) {
         this.cartItems = new Map()
@@ -99,7 +103,6 @@ class Cart {
 
 }
 
-// Init class
-
+// Getting previus shopping items from localstorage and initing the Cart Object
 const cartStorage = JSON.parse(localStorage.getItem('userCart'))
 const userCart = new Cart(cartStorage)

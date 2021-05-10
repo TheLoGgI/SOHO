@@ -145,9 +145,10 @@ a.mobil-nav-item,
   border-radius: 50%;
 
   position: absolute;
-  background-color: var(--clr-primary);
-  top: 1em;
-  left: 1em;
+  top: .4em;
+  font-weight: bold;
+  color: black;
+
 }
 
 .bigmenu {

@@ -29,7 +29,10 @@
 </head>
 
 <body>
-
+    <div class="loading" id="loading">
+        <img src="./gif/loading-animation.gif" alt="loading">
+        Vi indlæser siden for dig..
+    </div>
     <nav class="mobil-bottom-nav">
         <button id="menuIconButton" class="mobil-nav-item">
             <div id="nav-icon">
@@ -59,7 +62,7 @@
                 </g>
             </svg>
         </a>
-        <button class="mobil-nav-item" >
+        <button class="mobil-nav-item" id="searchShoppingButton">
             <!-- Shopping bag icon -->
             <svg xmlns="http://www.w3.org/2000/svg" width="24.235" height="34.735" viewBox="0 0 24.235 34.735">
                 <g id="Shopping-bag-icon" transform="translate(0 0)">
@@ -152,17 +155,17 @@
         <nav class="menu-navigation">
             <!-- SOHO Logo -->
             <div class="menu-navigation-logo">
-                <a href="/">
+                <a href="/" target="_self">
                     <img src="images/Logo.svg" alt="soho logotype">
                 </a>
             </div>
 
             <ul class="menu-navigation-list">
                 <li><a href="#" class="menu-navagation-link">Nyheder</a></li>
-                <li><a href="/pages/products.html" class="menu-navagation-link" id="onHoverCategory"
+                <li><a href="./pages/products.html" target="_self" class="menu-navagation-link" id="onHoverCategory"
                         data-template="category">Kategorier</a></li>
                 <li class="selected-page" id="onHoverBrand" data-template="brands">
-                    <a href="#" class="menu-navagation-link">Brands</a>
+                    <a href="./pages/products.html" target="_self" class="menu-navagation-link">Brands</a>
                 </li>
                 <li><a href="#" class="menu-navagation-link">Om Soho</a></li>
                 <li><a href="#" class="menu-navagation-link">Kontakt</a></li>

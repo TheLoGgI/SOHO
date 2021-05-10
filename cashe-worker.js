@@ -1,16 +1,15 @@
 const cacheName = 'v1'
 
-
+// Source: https://gist.github.com/prof3ssorSt3v3/ec11c6dfd64e7700b2918b3a52f4ddd4
 const cacheAssets = [
     'index.html',
     '/css/*',
     '/js/*',
     '/pages/*',
     '/favicons/*',
-    'https://soho.lasseaakjaer.com/wp-json/wc/store/products'
+    // 'https://soho.lasseaakjaer.com/wp-json/wc/store/products'
 ]
 
-console.log('caches ', caches)
 
 // Install Event
 self.addEventListener('install', (e) => {

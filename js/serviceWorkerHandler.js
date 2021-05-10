@@ -25,6 +25,7 @@
                     // logState(e.target.state);
                 });
             }
+            
         }).catch (function (error) {
             // console.error('error: ', error);
             // Something went wrong during registration. The service-worker.js file

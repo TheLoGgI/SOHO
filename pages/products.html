@@ -23,7 +23,6 @@
 
     <title>Soho - En unik tøjstil med mere</title>
     <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/css/splide.min.css" rel="stylesheet" />
-    <!-- <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/css/splide-core.min.css" rel="stylesheet" /> -->
     <link href="css/style.css" rel="stylesheet" />
     <link href="css/footer.css" rel="stylesheet" />
     <link href="css/header.css" rel="stylesheet" />
@@ -33,6 +32,10 @@
 </head>
 
 <body>
+    <div class="loading" id="loading">
+        <img src="./gif/loading-animation.gif" alt="loading">
+        Vi indlæser siden for dig..
+    </div>
     <div class="body-wrapper">
 
         <nav class="mobil-bottom-nav">
@@ -157,17 +160,17 @@
             <nav class="menu-navigation">
                 <!-- SOHO Logo -->
                 <div class="menu-navigation-logo">
-                    <a href="/">
+                    <a href="/" target="_self">
                         <img src="images/Logo.svg" alt="soho logotype">
                     </a>
                 </div>
 
                 <ul class="menu-navigation-list">
                     <li><a href="#" class="menu-navagation-link">Nyheder</a></li>
-                    <li><a href="/pages/products.html" class="menu-navagation-link" id="onHoverCategory"
+                    <li><a href="./pages/products.html" target="_self" class="menu-navagation-link" id="onHoverCategory"
                             data-template="category">Kategorier</a></li>
                     <li class="selected-page" id="onHoverBrand" data-template="brands">
-                        <a href="/pages/products.html" class="menu-navagation-link">Brands</a>
+                        <a href="./pages/products.html" target="_self" class="menu-navagation-link">Brands</a>
                     </li>
                     <li><a href="#" class="menu-navagation-link">Om Soho</a></li>
                     <li><a href="#" class="menu-navagation-link">Kontakt</a></li>
@@ -280,16 +283,7 @@
 
                 <!-- Filter indhold -->
                 <div class="mobile-filter-subjects-window">
-                    <!-- Filter emne 1 -->
-                    <!--<details class="filter-subject-expand-container">
-                        <summary class="filter-subject-summary">Brands</summary>
-                        <ul class="filter-subject-list">
-                            <li class="filter-subject-list-item"><input class="filter-subject-input-check" id="brand-1"
-                                    type="checkbox">
-                                <label for="brand-1" class="filter-subject-name">Anerkjendt</label>
-                            </li>
-                        </ul>
-                    </details> -->
+
                     <div class="filter-line-devider"></div>
                 </div>
                 <div class="reset-filters-container">
@@ -303,7 +297,6 @@
 
 
         <main>
-            <!-- <div class="navigation-path-container"></div> -->
             <div class="product-page-container">
                 <div class="side-menu">
 
@@ -424,24 +417,6 @@
                     <!-- Product cards -->
                     <div class="products-spawn-container">
                         <div class="product-spawn">
-
-                            <!-- <div class="product-card">
-                            <div class="product-image-container">
-                                <button class="like-button">
-                                    <img class="favorite-icon-shop" src="icons/Heart-icon.svg" alt="Favorite-icon">
-                                </button>
-                                <img class="product-image" src="images/jakket-lakor.jpg" alt="">
-                            </div>
-                            <div class="product-information">
-                                <div class="product-text-container">
-                                    <p class="product-brand">Adidas</p>
-                                    <p class="product-title">Sort T-shirt</p>
-                                </div>
-                                <div class="product-price-container">
-                                    <p class="product-price">500 kr</p>
-                                </div>
-                            </div>
-                        </div> -->
 
                         </div>
                     </div>

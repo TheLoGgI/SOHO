@@ -1,14 +1,27 @@
 let prods = []
+/**
+ * Fetcing API data from wordpress
+ * @return {Array} - Wordpress API data for Products 
+ */
 async function getProducts() {
     return await (await fetch('https://soho.lasseaakjaer.com/wp-json/wc/store/products')).json()
 }
 
+/**
+ * Initial run of functions
+ * @return {Null}
+ */
 (async function init() {
     const products = await getProducts()
     prods = [...products]
-    createProductCard(products);
+    createProductCard(products)
 })()
 
+/**
+ * Displaying product card for each product
+ * @param {Array} - List of products
+ * @return {Null} 
+ */
 function createProductCard(products) {
     let htmlTemplate = "";
     for (const product of products) {
@@ -20,7 +33,7 @@ function createProductCard(products) {
                     </button>
                     <a href="${'/pages/product.html?id=' + product.id}" target="_self">
                     <div class="product-image-container">
-                        <img class="product-image" src="${product?.images[0]?.src}" alt="Product-image" width="150px" height="200px">
+                        <img class="product-image" src="${product?.images[0] ? product?.images[0].src : 'https://via.placeholder.com/300'}" alt="Product-image" width="150px" height="200px">
                     </div>
                     </a>
                 </div>
@@ -42,10 +55,19 @@ function createProductCard(products) {
     handelFavoriteIconClick();
 }
 
+/** Source: https://blog.abelotech.com/posts/number-currency-formatting-javascript/
+ *  Changes format on currency totals
+ * @param {Number} - Number to format
+ * @return {Number} formated number 
+ */
 function currencyFormat(num) {
     return Number(num.substring(0, num.length - 2)).toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 }
 
+/**
+ * Handle like buttons clike - on/off
+ * @return {Null} 
+ */
 function handelFavoriteIconClick() {
     const favoriteButtons = document.querySelectorAll(".like-button");
     for (const button of favoriteButtons) {
@@ -53,6 +75,11 @@ function handelFavoriteIconClick() {
     }
 };
 
+/**
+ * Change like icon on toggle
+ * @param {Event} - Click event from cliked button
+ * @return {Null} 
+ */
 function changeIcon(event) {
     const state = event.currentTarget.ariaLabel;
     const filledHeart = "icons/orange-heart-solid.svg";
@@ -71,9 +98,12 @@ function changeIcon(event) {
 
 const filterArray = [];
 
+/**
+ * Handler for enabled filters
+ * @return {Null} 
+ */
 function eventFilterHandler() {
     const filters = document.querySelectorAll(".desktop-filter-list, .filter-subject-list")
-    console.log('filters: ', filters);
     const filterBtns = document.querySelectorAll(".reset-filters-btn")
     
     filters.forEach(item => {

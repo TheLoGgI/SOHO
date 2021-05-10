@@ -1,145 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="845" height="271" viewBox="0 0 845 271">
-  <defs>
-    <filter id="Rectangle_15" x="0" y="100" width="290" height="34" filterUnits="userSpaceOnUse">
-      <feOffset dy="3" input="SourceAlpha"/>
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feFlood flood-opacity="0.161"/>
-      <feComposite operator="in" in2="blur"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
-    <filter id="Rectangle_17" x="70" y="19" width="149" height="83" filterUnits="userSpaceOnUse">
-      <feOffset dy="3" input="SourceAlpha"/>
-      <feGaussianBlur stdDeviation="3" result="blur-2"/>
-      <feFlood flood-opacity="0.161"/>
-      <feComposite operator="in" in2="blur-2"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
-    <filter id="Rectangle_16" x="70" y="84" width="149" height="34" filterUnits="userSpaceOnUse">
-      <feOffset dy="3" input="SourceAlpha"/>
-      <feGaussianBlur stdDeviation="3" result="blur-3"/>
-      <feFlood flood-opacity="0.161"/>
-      <feComposite operator="in" in2="blur-3"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
-    <filter id="Ellipse_6" x="90" y="135" width="46" height="47" filterUnits="userSpaceOnUse">
-      <feOffset dy="3" input="SourceAlpha"/>
-      <feGaussianBlur stdDeviation="3" result="blur-4"/>
-      <feFlood flood-opacity="0.161"/>
-      <feComposite operator="in" in2="blur-4"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
-    <filter id="Ellipse_7" x="154" y="135" width="46" height="47" filterUnits="userSpaceOnUse">
-      <feOffset dy="3" input="SourceAlpha"/>
-      <feGaussianBlur stdDeviation="3" result="blur-5"/>
-      <feFlood flood-opacity="0.161"/>
-      <feComposite operator="in" in2="blur-5"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
-    <filter id="Path_4" x="86.935" y="127.003" width="52.455" height="29.007" filterUnits="userSpaceOnUse">
-      <feOffset dy="3" input="SourceAlpha"/>
-      <feGaussianBlur stdDeviation="3" result="blur-6"/>
-      <feFlood flood-opacity="0.161"/>
-      <feComposite operator="in" in2="blur-6"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
-    <filter id="Path_5" x="150.338" y="127.003" width="52.455" height="29.007" filterUnits="userSpaceOnUse">
-      <feOffset dy="3" input="SourceAlpha"/>
-      <feGaussianBlur stdDeviation="3" result="blur-7"/>
-      <feFlood flood-opacity="0.161"/>
-      <feComposite operator="in" in2="blur-7"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
-    <filter id="Line_1" x="103.155" y="113.479" width="20" height="32.986" filterUnits="userSpaceOnUse">
-      <feOffset dy="3" input="SourceAlpha"/>
-      <feGaussianBlur stdDeviation="3" result="blur-8"/>
-      <feFlood flood-opacity="0.161"/>
-      <feComposite operator="in" in2="blur-8"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
-    <filter id="Line_2" x="166.557" y="113.479" width="20" height="32.986" filterUnits="userSpaceOnUse">
-      <feOffset dy="3" input="SourceAlpha"/>
-      <feGaussianBlur stdDeviation="3" result="blur-9"/>
-      <feFlood flood-opacity="0.161"/>
-      <feComposite operator="in" in2="blur-9"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
-    <filter id="Rectangle_12" x="566" y="116" width="128" height="40" filterUnits="userSpaceOnUse">
-      <feOffset dy="3" input="SourceAlpha"/>
-      <feGaussianBlur stdDeviation="3" result="blur-10"/>
-      <feFlood flood-opacity="0.161"/>
-      <feComposite operator="in" in2="blur-10"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
-    <filter id="Rectangle_10" x="561" y="0" width="40" height="271" filterUnits="userSpaceOnUse">
-      <feOffset dy="3" input="SourceAlpha"/>
-      <feGaussianBlur stdDeviation="3" result="blur-11"/>
-      <feFlood flood-opacity="0.161"/>
-      <feComposite operator="in" in2="blur-11"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
-    <filter id="Rectangle_181" x="659" y="0" width="40" height="271" filterUnits="userSpaceOnUse">
-      <feOffset dy="3" input="SourceAlpha"/>
-      <feGaussianBlur stdDeviation="3" result="blur-12"/>
-      <feFlood flood-opacity="0.161"/>
-      <feComposite operator="in" in2="blur-12"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
-  </defs>
-  <g id="Logo" transform="translate(-508 -1283)">
-    <g id="Dude_man" data-name="Dude man" transform="translate(134.824 765.536)">
-      <g transform="matrix(1, 0, 0, 1, 373.18, 517.46)" filter="url(#Rectangle_15)">
-        <rect id="Rectangle_15-2" data-name="Rectangle 15" width="272" height="16" rx="7" transform="translate(9 106)"/>
-      </g>
-      <g transform="matrix(1, 0, 0, 1, 373.18, 517.46)" filter="url(#Rectangle_17)">
-        <path id="Rectangle_17-2" data-name="Rectangle 17" d="M65,0h1a65,65,0,0,1,65,65v0a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0v0A65,65,0,0,1,65,0Z" transform="translate(79 25)"/>
-      </g>
-      <g transform="matrix(1, 0, 0, 1, 373.18, 517.46)" filter="url(#Rectangle_16)">
-        <rect id="Rectangle_16-2" data-name="Rectangle 16" width="131" height="16" transform="translate(79 90)" fill="#fff"/>
-      </g>
-      <g transform="matrix(1, 0, 0, 1, 373.18, 517.46)" filter="url(#Ellipse_6)">
-        <ellipse id="Ellipse_6-2" data-name="Ellipse 6" cx="14" cy="14.5" rx="14" ry="14.5" transform="translate(99 141)"/>
-      </g>
-      <g transform="matrix(1, 0, 0, 1, 373.18, 517.46)" filter="url(#Ellipse_7)">
-        <ellipse id="Ellipse_7-2" data-name="Ellipse 7" cx="14" cy="14.5" rx="14" ry="14.5" transform="translate(163 141)"/>
-      </g>
-      <g transform="matrix(1, 0, 0, 1, 373.18, 517.46)" filter="url(#Path_4)">
-        <path id="Path_4-2" data-name="Path 4" d="M2650.542,687.094a18.617,18.617,0,0,1,13.913-6.182,21.423,21.423,0,0,1,14.906,6.182" transform="translate(-2551.8 -545.91)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="4"/>
-      </g>
-      <g transform="matrix(1, 0, 0, 1, 373.18, 517.46)" filter="url(#Path_5)">
-        <path id="Path_5-2" data-name="Path 5" d="M2650.542,687.094a18.617,18.617,0,0,1,13.913-6.182,21.423,21.423,0,0,1,14.906,6.182" transform="translate(-2488.39 -545.91)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="4"/>
-      </g>
-      <g transform="matrix(1, 0, 0, 1, 373.18, 517.46)" filter="url(#Line_1)">
-        <line id="Line_1-2" data-name="Line 1" y1="14.986" transform="translate(113.15 119.48)" fill="none" stroke="#000" stroke-width="2"/>
-      </g>
-      <g transform="matrix(1, 0, 0, 1, 373.18, 517.46)" filter="url(#Line_2)">
-        <line id="Line_2-2" data-name="Line 2" y1="14.986" transform="translate(176.56 119.48)" fill="none" stroke="#000" stroke-width="2"/>
-      </g>
-      <path id="Path_7" data-name="Path 7" d="M2717.952,156.236s-7.454-13.766-19.316-12.472-19.369,10.286-26.238,10.366-9.921.039-17.261-1.793,9.853,20.435,23.116,18.524,19.722-9.457,25.665-10.744,9.04-1.594,13.64-.838S2717.952,156.236,2717.952,156.236Z" transform="translate(-2200.311 556.668)"/>
-      <path id="Path_10" data-name="Path 10" d="M2655.137,156.236s7.454-13.766,19.316-12.472,19.368,10.286,26.237,10.366,9.921.039,17.261-1.793-9.853,20.435-23.116,18.524-19.722-9.457-25.665-10.744-9.041-1.594-13.641-.838S2655.137,156.236,2655.137,156.236Z" transform="translate(-2136.715 556.668)"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="754.309" height="174.467" viewBox="0 0 754.309 174.467">
+  <g id="Logo-soho" transform="translate(9561.686 2386.912)">
+    <g id="Soho-logo-head-black" transform="translate(-9561.686 -2380)">
+      <path id="soho-head-hat-buttom-black" d="M236.681,77.02a7.02,7.02,0,0,1-7.02,7.02H146.923v9.026a20.439,20.439,0,0,1,12.947,5.9,2.007,2.007,0,1,1-2.828,2.848,16.548,16.548,0,0,0-11.563-4.734h-.06a14.191,14.191,0,0,0-10.55,4.714,2.013,2.013,0,1,1-2.979-2.708,18.162,18.162,0,0,1,13.037-6.017V84.04H91.774v9.026a20.439,20.439,0,0,1,12.947,5.9,2.007,2.007,0,0,1-2.828,2.848A16.548,16.548,0,0,0,90.32,97.078h0a14.191,14.191,0,0,0-10.55,4.714,2.035,2.035,0,1,1-3.039-2.708,18.373,18.373,0,0,1,13.037-6.017V84.04H7.02A7.02,7.02,0,0,1,7.02,70H229.66a7.02,7.02,0,0,1,7.02,7.02Z" transform="translate(0 0.202)"/>
+      <path id="soho-head-hat-top-black" d="M117.162,0h2.006a56.162,56.162,0,0,1,56.162,56.162H61A56.162,56.162,0,0,1,117.162,0Z" transform="translate(0.176)"/>
+      <circle id="soho-head-eye-left-black" cx="12.743" cy="12.743" r="12.743" transform="translate(77.939 100.073)"/>
+      <circle id="soho-head-eye-right-black" cx="12.743" cy="12.743" r="12.743" transform="translate(133.28 100.073)"/>
+      <path id="soho-head-mustache-black" d="M152.651,160.148c-11.543-1.665-19.055-8.3-22.334-9.347a16.859,16.859,0,0,0-10.35-.762,11.674,11.674,0,0,1-3.61,0,16.859,16.859,0,0,0-10.35.732c-3.239,1-10.791,7.682-22.334,9.347S57.176,142.407,63.614,144s9.026,1.635,15.043,1.564,12.506-7.893,22.826-9.026c9.828-1.083,16.177,9.718,16.758,10.761.582-1,6.93-11.844,16.758-10.761,10.32,1.123,16.848,8.946,22.826,9.026A48.2,48.2,0,0,0,172.869,144C179.287,142.437,164.184,161.813,152.651,160.148Z" transform="translate(0.179 0.394)"/>
     </g>
-    <g id="Text" transform="translate(901 1119.5)">
-      <g id="Soho-logo-lettering" transform="translate(-263 -541.5)">
-        <g id="H">
-          <g transform="matrix(1, 0, 0, 1, -130, 705)" filter="url(#Rectangle_12)">
-            <rect id="Rectangle_12-2" data-name="Rectangle 12" width="110" height="22" transform="translate(575 122)"/>
-          </g>
-          <g transform="matrix(1, 0, 0, 1, -130, 705)" filter="url(#Rectangle_10)">
-            <rect id="Rectangle_10-2" data-name="Rectangle 10" width="253" height="22" transform="translate(592 6) rotate(90)"/>
-          </g>
-          <g transform="matrix(1, 0, 0, 1, -130, 705)" filter="url(#Rectangle_181)">
-            <rect id="Rectangle_181-2" data-name="Rectangle 181" width="253" height="22" transform="translate(690 6) rotate(90)"/>
-          </g>
-        </g>
-        <g id="o" transform="translate(577 763)" fill="none" stroke="#000" stroke-width="22">
-          <circle cx="69" cy="69" r="69" stroke="none"/>
-          <circle cx="69" cy="69" r="58" fill="none"/>
-        </g>
-        <g id="O-2" data-name="O" transform="translate(286 763)" fill="none" stroke="#000" stroke-width="22">
-          <circle cx="69" cy="69" r="69" stroke="none"/>
-          <circle cx="69" cy="69" r="58" fill="none"/>
-        </g>
-        <path id="S" d="M2542.648,199.009c-10.738-11.06-46.616-23.657-60.463,4.589-3.6,7.344-3.77,13.37-1.945,18.555,4.793,13.647,25,18.435,25,18.435S2551.3,252.7,2533.6,282.214s-58.228,14.5-69.051,2.443" transform="translate(-2271.648 589.111)" fill="none" stroke="#000" stroke-width="22"/>
-      </g>
+    <g id="Soho-logo-letters-black" transform="translate(-9999.36 -3272.752)">
+      <path id="Path_230" data-name="Path 230" d="M1096.568,885.84v174.467h-18.815V982.481h-65v77.826H993.94V885.84h18.815v77.826h65V885.84Z" transform="translate(-37.145)"/>
+      <path id="Path_231" data-name="Path 231" d="M1189.951,1024.865a59.011,59.011,0,1,1,59.011-59.011A59.078,59.078,0,0,1,1189.951,1024.865Zm0-99.207a40.2,40.2,0,1,0,40.2,40.2A40.241,40.241,0,0,0,1189.951,925.658Z" transform="translate(-56.978 -3.041)"/>
+      <path id="Path_232" data-name="Path 232" d="M898.952,1024.865a59.011,59.011,0,1,1,59.011-59.011A59.077,59.077,0,0,1,898.952,1024.865Zm0-99.207a40.2,40.2,0,1,0,40.2,40.2A40.241,40.241,0,0,0,898.952,925.658Z" transform="translate(-14.85 -3.041)"/>
+      <path id="Path_233" data-name="Path 233" d="M816.725,992.68a30.755,30.755,0,0,1-10.554,23.365c-7.372,6.5-17.823,9.929-30.215,9.929-22.031,0-34.466-9.835-37.758-12.846l-.838-.77,11.05-15.539,1.069.889c6.243,5.234,15.1,11.238,28.265,11.238,12.136,0,19.679-5.858,19.679-15.292,0-9.715-10.126-14.282-21.851-19.576-14.9-6.731-31.78-14.351-31.78-35.022,0-19.012,15.916-32.807,37.853-32.807,18.541,0,28.992,8.475,31.746,11.075l.864.813-11.648,14.471-1.009-.872c-4.105-3.558-10.767-8.3-21.09-8.3-10.673,0-17.566,5.687-17.566,14.479,0,9.929,10.263,14.6,22.142,20C799.912,964.654,816.725,972.291,816.725,992.68Z" transform="translate(0 -2.955)"/>
     </g>
   </g>
 </svg>

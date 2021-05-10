@@ -29,7 +29,14 @@ document.getElementById('searchShoppingButton').addEventListener('click', e => {
         )
   })
 
-
+/**
+ * Toggle mobil menu
+ * @param  {Element} - Icon path on menu button
+ * @param  {Element} - Mobil Menu element to target 
+ * @param  {String} - Direction of element to appear
+ * @param  {Function} - Function is called when menu appears
+ * @return {Null}
+ */
 function toggleMobilMenu(icon, menu, direction, cb) {
     const isShowing = menu.getAttribute('showing')
     
@@ -45,7 +52,7 @@ function toggleMobilMenu(icon, menu, direction, cb) {
         document.body.style.overflow = 'hidden'
         menu.setAttribute('showing', true)
         cb?.()
-        return true
+        return
     }
     
     // Hide menu
@@ -63,6 +70,7 @@ function toggleMobilMenu(icon, menu, direction, cb) {
             menu.style.transform = `translateX(140%)`
             break
     }
+
     menu.setAttribute('showing', false)
     if (icon) icon.style.fill = '#000'
     document.body.style.overflow = 'auto'
@@ -81,7 +89,6 @@ bigMenuHover.forEach(item => {
     })
 })
 
-
 bigmenuCategory.addEventListener('mouseleave', e => {
     bigmenuCategory.style.transform = `translateY(-140%)`
 })
@@ -90,6 +97,11 @@ bigmenuBrand.addEventListener('mouseleave', e => {
     bigmenuBrand.style.transform = `translateY(-140%)`
 })
 
+/**
+ * Toggling Big menu, menus for which to be enabled
+ * @param  {String} - Targeted menu
+ * @return {Null} 
+ */
 function showBigMenu(changeTo) {
     if (changeTo === 'brands') {
         bigmenuCategory.style.transform = `translateY(-140%)`
@@ -103,7 +115,7 @@ function showBigMenu(changeTo) {
 
 const cart = document.getElementById('shoppingCart')
 document.getElementById('cartIcon').addEventListener('click', () => {
-    // cart.style.transform = `translateY(-120%)`
+
     const state = cart.getAttribute('aria-label')
     console.log('state: ', state);
     if (state === 'closed') {
@@ -116,6 +128,15 @@ document.getElementById('cartIcon').addEventListener('click', () => {
     }
 })
 
+/**
+ * Removes loading screen
+ * @return {Null} 
+ */
+function removeLoading() {
+    const loadingScene = document.getElementById('loading')
+    loadingScene.remove()
+}
+
 
 
 cart.addEventListener('mouseleave', e => {
@@ -123,6 +144,10 @@ cart.addEventListener('mouseleave', e => {
     cart.setAttribute('aria-label', 'closed')
 })
 
+/**
+ * Updates basket counter
+ * @return {Null} 
+ */
 function updateBasket() {
     const headerCartItems = document.getElementById('cartItems')
     headerCartItems.textContent = userCart.cart.length
@@ -132,7 +157,10 @@ function updateBasket() {
 updateBasket()
 basketTemplate()
 
-
+/**
+ * Displays basket items, price and amount
+ * @return {Null} 
+ */
 function basketTemplate() {
     const basket = document.getElementById('shoppingCart')
     const cartItems = userCart.cart
@@ -165,6 +193,12 @@ function basketTemplate() {
     basket.innerHTML = html
 }
 
+/**
+ * Displays basket items, price and amount
+ * @param {Array} - array of cart items
+ * @param {Array} - unique item key for removal 
+ * @return {Null} 
+ */
 function basketItemTemplate(items, key) {
     return items.reduce((acc, val) => {
         return acc += `
@@ -190,13 +224,17 @@ function basketItemTemplate(items, key) {
      
 }
 
+/**
+ * Removing shopping item from basket and DOM
+ * @param {Element} - Button clicked
+ * @return {Null} 
+ */
 function removeShoppingItem(target) {
     const key = target.getAttribute('data-key')
     userCart.remove(key)
     const cartItem = target.parentNode.parentNode
 
     cartItem.style.transform = `translateX(-120%)`
-    console.dir(cartItem);
     setTimeout(() => {
         basketTemplate()
     }, 300);
@@ -204,7 +242,7 @@ function removeShoppingItem(target) {
 }
 
 
-// Animate hover fancy image
+// Fancy image hover animation for desktop Brands Bigmenu
 const lakorBrandImage = document.getElementById('lakorBrandImage')
 const revolutionBrandImage = document.getElementById('revolutionBrandImage')
 const imageSeperatorLine = document.getElementById('imageSeperatorLine')

@@ -1,14 +1,19 @@
 
-// https://soho.lasseaakjaer.com/wp-json/wc/store/products/categories
-// https://soho.lasseaakjaer.com/wp-json/wc/store/products/tags
-// https://soho.lasseaakjaer.com/wp-json/wc/store/products/62
-
-
+/**
+ * Getting parameter from URL
+ * @param  {String} - URL parameter to get
+ * @return {String} - Value of URL key
+ */
 function getURLParam(param) {
     const urlParams = new URLSearchParams(location.search)
     return urlParams.get(param)
 }
 
+/**
+ * Append images for image slider
+ * @param  {Object} - Product object with images
+ * @return {String} - HTML string of slides
+ */
 function slideImages(product) {
     let imageHTML = ''
     for (const image in product.images) {
@@ -22,12 +27,20 @@ function slideImages(product) {
 
 }
 
-// https://blog.abelotech.com/posts/number-currency-formatting-javascript/
+/** Source: https://blog.abelotech.com/posts/number-currency-formatting-javascript/
+ *  Changes format on currency totals
+ * @param {Number} - Number to format
+ * @return {Number} formated number 
+ */
 function currencyFormat(num) {
     return Number(num.substring(0, num.length - 2)).toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 }
 
-function deliveryTime(params) {
+/**
+ * Time span of delevery
+ * @return {String} - returns time span of 2 days from current day
+ */
+function deliveryTime() {
     const deliveryFrom = new Date()
     const deliveryTo = new Date()
     deliveryTo.setUTCDate(deliveryFrom.getDate() + 2)
@@ -36,6 +49,10 @@ function deliveryTime(params) {
         ' - ' + deliveryTo.toLocaleDateString('da-DK', { weekday: 'short', month: 'short', day: 'numeric' })
 }
 
+/**
+ * Render product part of the page and 
+ * @return {String} - HTML string of slides
+ */
 (async () => {
     const paramId = getURLParam('id')
 
@@ -193,32 +210,44 @@ function deliveryTime(params) {
         isFavorite: false,
     })
     showSlides(slideIndex);
+    removeLoading()
 })()
 
+/**
+ * Fetching data from APi and inits SplideJs
+ * @return {null}
+ */
 async function getProducts() {
     const data = await (await fetch('https://soho.lasseaakjaer.com/wp-json/wc/store/products')).json()
-    console.log(data)
     showProductList(data)
-    new Splide('#splide1', {
+    const splideSlider = new Splide('#splide1', {
         type: 'loop',
-        perPage: 3,
+        perPage: 2,
         perMove: 1,
         pagination: true,
         autoHeight: true,
     }).mount();
+
+    if (window.innerWidth > 800) {
+        splideSlider.options = {perPage: 3}
+    }
 }
 
 getProducts()
 
 const productList = document.getElementById("product-list")
-console.log(productList)
 
+/**
+ * Appends product images for SplideJs tracker
+ * @param  {Array} - List of products from API
+ * @return {null}
+ */
 function showProductList(array) {
     let templet = ''
     for (const item of array) {
         templet += `<li class="splide__slide">
         <div class="product">
-            <a href="${'/pages/product.html?id=' + item.id}" class="product-link">
+            <a href="${'/pages/product.html?id=' + item.id}" class="product-link" target="_self">
                 <img src="${item?.images[1] ? item?.images[1].src : 'https://via.placeholder.com/300'
             } " alt="t - shirt showcase">
         <p class="product-brand"> <strong>${item.tags[0] ? item?.tags[0].name : ''}</strong> </p >
@@ -228,7 +257,7 @@ function showProductList(array) {
                             </div >
                         </li > `
     }
-    console.log(templet)
+
     productList.innerHTML = templet
 
 }

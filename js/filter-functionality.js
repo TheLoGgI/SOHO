@@ -1,83 +1,66 @@
 
 
-(() => {
-
-    function appendFilters(filters) {
-        let htmlTemplate = "";
-        for (const filter of filters) {
-            htmlTemplate += /*html*/`
-            <details class="filter-subject-expand-container">
-                <summary class="filter-subject-summary">${filter.name}</summary>
-                <ul class="filter-subject-list">${loopFilterEmner(filter.filterType)}</ul>
-            </details>
-            <div class="filter-line-devider"></div>
-        `;
-        }
-        document.querySelector(".mobile-filter-subjects-window").innerHTML = htmlTemplate;
-    };
-
-    //mobil
-    function loopFilterEmner(array) {
-        let template = "";
-        for (const listItem of array) {
-            if (listItem === 'uncategorized') continue
-            template += /*html*/ `
-             <li class="filter-subject-list-item">
-                <input class="filter-subject-input-check" data-name="${listItem.replaceAll(' ', '-')}" type="checkbox"/>
-                <label for="${listItem.replaceAll(' ', '-')}" class="filter-subject-name">${listItem}</label>
-            </li>
-        `;
-        }
-        return template;
+/**
+ * Appending filter names, to be displayed
+ * @param  {Array} - Custom Filters obejct from API data
+ * @return {null} 
+ */
+function appendFilters(filters) {
+    let htmlTemplate = "";
+    for (const filter of filters) {
+        htmlTemplate += /*html*/`
+        <details class="filter-subject-expand-container">
+            <summary class="filter-subject-summary">${filter.name}</summary>
+            <ul class="filter-subject-list">${loopFilterEmner(filter.filterType)}</ul>
+        </details>
+        <div class="filter-line-devider"></div>
+    `;
     }
+    document.querySelector(".mobile-filter-subjects-window").innerHTML = htmlTemplate;
+};
 
-    async function fetchCategoriesAndTags() {
-
-        const categoriesData = await (await fetch('https://soho.lasseaakjaer.com/wp-json/wc/store/products/categories')).json()
-        const brandsData = await (await fetch('https://soho.lasseaakjaer.com/wp-json/wc/store/products/tags')).json()
-
-        Promise.allSettled([categoriesData, brandsData]).
-            then((results) => {
-                const categories = results[0].value.map(item => item.name.toLowerCase())
-                const brands = results[1].value.map(item => item.name.toLowerCase())
-
-                const filters = [
-                    {
-                        name: "Brands",
-                        filterType: brands
-                    },
-                    {
-                        name: "Categories",
-                        filterType: categories
-                    }
-                ]
-
-                appendFilters(filters);
-                appendDesktopFilters(categories, "#desktop-categories-filter-list");
-                appendDesktopFilters(brands, "#desktop-brands-filter-list");
-                eventFilterHandler()
-            })
-
-
+/**
+ * Appending filter to filter lists
+ * @param  {Array} - Filters array from API data
+ * @return {HTMLString} - List items of filter names 
+ */
+function loopFilterEmner(filterList) {
+    let template = "";
+    for (const listItem of filterList) {
+        if (listItem === 'uncategorized') continue
+        template += /*html*/ `
+            <li class="filter-subject-list-item">
+            <input class="filter-subject-input-check" data-name="${listItem.replaceAll(' ', '-')}" type="checkbox"/>
+            <label for="${listItem.replaceAll(' ', '-')}" class="filter-subject-name">${listItem}</label>
+        </li>
+    `;
     }
+    return template;
+}
 
 
-    function appendDesktopFilters(filters, selector) {
-        let htmlTemplate = "";
-        for (const filter of filters) {
-            if (filter === 'uncategorized') continue
-            htmlTemplate += /*html*/ `
-             <li class="filter-subject-list-item">
-                <input class="filter-subject-input-check" data-name="${filter.replaceAll(' ', '-')}" id="1${filter.replaceAll(' ', '-')}" type="checkbox"/>
-                <label for="1${filter.replaceAll(' ', '-')}" class="filter-subject-name">${filter}</label>
-            </li>
-        `;
-        }
-        document.querySelector(selector).innerHTML = htmlTemplate;
+/**
+ * Appending filter to filter lists
+ * @param  {Array} - Filters array from API data
+ * @param  {String} - Targeted element selector string
+ * @return {null}
+ */
+ function appendDesktopFilters(filters, selector) {
+    let htmlTemplate = "";
+    for (const filter of filters) {
+        if (filter === 'uncategorized') continue
+        htmlTemplate += /*html*/ `
+        <li class="filter-subject-list-item">
+            <input class="filter-subject-input-check" data-name="${filter.replaceAll(' ', '-')}" id="1${filter.replaceAll(' ', '-')}" type="checkbox"/>
+            <label for="1${filter.replaceAll(' ', '-')}" class="filter-subject-name">${filter}</label>
+        </li>
+    `;
     }
+    document.querySelector(selector).innerHTML = htmlTemplate;
+}
 
-    fetchCategoriesAndTags()
-})()
+
+
 
 
 let filterBGShadow = document.querySelector(".mobile-filter-bg-fill");
@@ -105,62 +88,15 @@ function toggleFilterWindow() {
 }
 
 
-// filters array
-
-// const brands = [
-//     "Anerkjendt",
-//     "Birkenstock",
-//     "Clean Cut",
-//     "Dedicated",
-//     "Egtved Socks",
-//     "Elvine",
-//     "Fuza Wool",
-//     "Garcia",
-//     "Gola",
-//     "JBS",
-//     "KnowledgeCotton Apparel",
-//     "Lakor",
-//     "Mads Nørgaard",
-//     "Nature Footwear",
-//     "Resteröds",
-//     "Revolution",
-//     "Royal Republiq",
-//     "Scotch&Soda",
-//     "Shoe the Bear",
-//     "Suit",
-//     "Warecph",
-//     "Wrangler"
-// ];
-
-// const categories = [
-//     "Bukser",
-//     "Habitter",
-//     "Jakker",
-//     "Jeans",
-//     "Shorts",
-//     "Sko",
-//     "Strik",
-//     "Strømper",
-//     "Trøjer",
-//     "Underbukser",
-//     "Accessories",
-//     "Bælter",
-//     "Hatte",
-//     "Huer",
-//     "Tasker"
-// ];
-
-
-
-
-
-// desktop filters
-
 let desktopCategoriesFilters = document.querySelector("#desktop-categories-filters");
 let desktopBrandsFilters = document.querySelector("#desktop-brands-filters");
 let categoriesArrow = document.querySelector("#desktop-categories-arrow");
 let brandArrow = document.querySelector("#desktop-brands-arrow");
 
+/**
+ * Toggle filter menu for categories on desktop
+ * @return {null}
+ */
 function toggleDesktopCategoriesFilters() {
 
     const state = desktopCategoriesFilters.getAttribute('aria-label');
@@ -171,18 +107,20 @@ function toggleDesktopCategoriesFilters() {
         desktopBrandsFilters.setAttribute('aria-label', 'closed');
         categoriesArrow.style.transform = "scaleY(-1)";
         brandArrow.style.transform = "scaleY(1)";
-    }
-    else {
+    } else {
         desktopCategoriesFilters.style.height = "0vh";
         desktopCategoriesFilters.setAttribute('aria-label', 'closed');
         categoriesArrow.style.transform = "scaleY(1)";
     }
 }
 
+/**
+ * Toggle filter menu for brands on desktop
+ * @return {null}
+ */
 function toggleDesktopBrandsFilters() {
 
     const state = desktopBrandsFilters.getAttribute('aria-label');
-    // console.log('state: ', state);
     if (state === 'closed') {
         desktopBrandsFilters.style.height = "360px";
         desktopBrandsFilters.setAttribute('aria-label', 'open');
@@ -190,17 +128,51 @@ function toggleDesktopBrandsFilters() {
         desktopCategoriesFilters.setAttribute('aria-label', 'closed');
         brandArrow.style.transform = "scaleY(-1)";
         categoriesArrow.style.transform = "scaleY(1)";
-    }
-    else {
+    } else {
         desktopBrandsFilters.style.height = "0px";
         desktopBrandsFilters.setAttribute('aria-label', 'closed');
         brandArrow.style.transform = "scaleY(1)";
     }
 }
 
-//desktop
-// const desktopCategoriesFiltersList = document.querySelector("#desktop-categories-filter-list");
-// const desktopBrandsFiltersList = document.querySelector("#desktop-brands-filter-list");
+
+/**
+ * Fetching Categories and tags from API
+ * @return {null}
+ */
+ async function fetchCategoriesAndTags() {
+
+    // Fetching data from Wordpress API
+    const categoriesData = await (await fetch('https://soho.lasseaakjaer.com/wp-json/wc/store/products/categories')).json()
+    const brandsData = await (await fetch('https://soho.lasseaakjaer.com/wp-json/wc/store/products/tags')).json()
+
+    // Checking when both responses has come back as resolved
+    Promise.allSettled([categoriesData, brandsData]).
+        then((results) => {
+            const categories = results[0].value.map(item => item.name.toLowerCase())
+            const brands = results[1].value.map(item => item.name.toLowerCase())
+
+            const filters = [
+                {
+                    name: "Brands",
+                    filterType: brands
+                },
+                {
+                    name: "Categories",
+                    filterType: categories
+                }
+            ]
+
+            // Initializing element dependent on the api data
+            appendFilters(filters);
+            appendDesktopFilters(categories, "#desktop-categories-filter-list");
+            appendDesktopFilters(brands, "#desktop-brands-filter-list");
+            eventFilterHandler()
+            removeLoading()
+        })
+
+}
 
 
 
+fetchCategoriesAndTags()
