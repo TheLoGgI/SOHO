@@ -17,7 +17,6 @@ function getURLParam(param) {
 function slideImages(product) {
     let imageHTML = ''
     for (const image in product.images) {
-        console.log('image: ', image);
         imageHTML += `
             <div class="mySlides">
                 <img src="${product.images[image].src}">

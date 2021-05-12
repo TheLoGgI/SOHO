@@ -90,7 +90,11 @@
     font-weight: 600;
     display: block;
     text-align: center;
+}
 
+.shopping-btn:hover,
+.shopping-btn:active {
+    background-color: #f1bb26;
 }
 
 @media screen and (max-width: 1200px){
@@ -100,7 +104,7 @@
         position: fixed;
         min-width: auto;
         width: 100%;
-        height: 85vh;
+        /* height: 85vh; */
         display: flex;
         flex-flow: column nowrap;
         justify-content: space-between;

@@ -134,3 +134,10 @@ a {
         }
     }
 }
+
+@media screen and (min-width: 1650px) { 
+    :root {
+        --pd-desktop: 0rem;
+
+    }
+}

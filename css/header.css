@@ -178,6 +178,7 @@ a.mobil-nav-item,
     display: flex;
     align-items: center;
     padding: .5rem var(--pd-desktop);
+    margin: 0 auto;
   }
 
   .menu-navigation-logo {
@@ -234,6 +235,12 @@ a.mobil-nav-item,
     font-size: 0.875rem;
     width: 100%;
     padding: 0.5rem var(--pd-desktop);
+    display: block;
+  }
+
+  .info-bar > .content-wrapper {
+    margin: 0 auto;
+    max-width: 1600px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -289,15 +296,22 @@ a.mobil-nav-item,
   .bigmenu {
     width: 100%;
     background-color: #fff;
+    transition: transform .5s ease-in-out;
+    transform: translateY(-140%);
+    font-size: var(--fs-sm);
+    position: absolute;
+    z-index: 1;
+    display: block;
+  }
+
+  .bigmenu > .content-wrapper {
     display: grid;
     grid-template-columns: 1fr minmax(40%, 1fr);
     padding: 2rem var(--pd-desktop);
-    position: absolute;
     column-gap: 1rem;
-    z-index: 1;
-    transition: transform .5s ease-in-out;
-    transform: translateY(-120%);
-    font-size: var(--fs-sm);
+   
+    
+    
   }
 
 

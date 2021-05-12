@@ -9,12 +9,11 @@ footer {
     background-color: var(--clr-footer);
     color: white;
     padding: var(--pd-mobil) var(--pd-mobil) 5rem var(--pd-mobil);
-    /* 5rem is more then the height of mobil nav */
 }
 
 hr {
     margin: 1rem 0;
-    border-color: rgb(192, 192, 192);
+    border-color: rgba(192, 192, 192, .2);
     /* border-width: .5px; */
 }
 
@@ -102,10 +101,12 @@ hr {
         width: 100%;
         padding: 2rem;
         display: grid;
-        grid-template-columns: repeat(5, minmax(calc(1600px / 5px), 1fr));
         column-gap: 2rem;
-        /* row-gap: 2rem; */
-        grid-template-areas: "address opening help ... ..." "hr hr hr hr hr" "logo ... socials ... payments";
+        grid-template-areas: 
+            "address opening help ... ..." 
+            "hr hr hr hr hr" 
+            "logo socials socials socials payments";
+        margin-top: 2rem;
     }
     .footer-opening-section, .footer-address-section, .footer-helping-section {
         margin-top: 0rem;
@@ -118,10 +119,21 @@ hr {
     .footer-logo {
         width: 150px;
         align-self: center;
+        padding-top: 0px;
+        margin: 0;
     }
     .socials-footer {
         margin: 0;
         align-self: center;
     }
-    .socials-footer img {}
+    .socials-footer img + img {
+        margin-left: 2rem;
+    }
+}
+
+@media screen and (min-width: 1650px) { 
+    .footer-wrapper {
+        padding: 2rem 0;
+    }
+
 }

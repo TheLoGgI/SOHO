@@ -29,14 +29,16 @@
   top: 40%;
   left: 50%;
   transform: translateX(-50%);
-  font-size: var(--fs-lg);
+  font-size: var(--fs-nm);
   padding: 0.5em 1em;
+  transition: transform .3s, box-shadow .3s, background-color .2s;
 }
 
 .cta:hover {
+  text-decoration: none;
   transform: translate(-50%, -2px);
   box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.4);
-  background-color: #ce9c12;
+  background-color: #f1bb26;
 }
 
 /* Details section */
@@ -281,7 +283,7 @@
   }
 
   .customer-club {
-    padding: var(--pd-desktop);
+    padding: 4rem;
     background-size: 100%;
   }
 
@@ -294,6 +296,7 @@
 
   .customer-club-form .btn {
     font-size: var(--fs-sm);
+    appearance: none;
   }
 
   .customer-club-paragraph {

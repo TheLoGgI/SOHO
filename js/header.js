@@ -117,7 +117,6 @@ const cart = document.getElementById('shoppingCart')
 document.getElementById('cartIcon').addEventListener('click', () => {
 
     const state = cart.getAttribute('aria-label')
-    console.log('state: ', state);
     if (state === 'closed') {
         cart.style.transform = `translateY(0%)`
         cart.setAttribute('aria-label', 'open')
@@ -248,7 +247,6 @@ const revolutionBrandImage = document.getElementById('revolutionBrandImage')
 const imageSeperatorLine = document.getElementById('imageSeperatorLine')
 
 lakorBrandImage.addEventListener('mouseover', e => {
-    console.log(e.currentTarget)
     revolutionBrandImage.style.clipPath =`polygon(100% 0, 55% 0, 36% 100%, 100% 100%)`
     imageSeperatorLine.style.transform = `translateX(11%) rotate(-70deg)`
 })
@@ -258,7 +256,6 @@ lakorBrandImage.addEventListener('mouseleave', e => {
 })
 
 revolutionBrandImage.addEventListener('mouseover', e => {
-    console.log(e.currentTarget)
     imageSeperatorLine.style.transform = `translateX(-29%) rotate(-70deg)`
 })
 revolutionBrandImage.addEventListener('mouseleave', e => {

@@ -13,32 +13,27 @@ const cacheAssets = [
 
 // Install Event
 self.addEventListener('install', (e) => {
-    console.log('Service Worker Installed')
-
-    console.log('installed event', e);
+    // Service Worker Installed
     e.waitUntil(
         caches.open(cacheName)
         .then(cache => {
-            console.log('Caching files: ', cache)
+            // Adding files to cache
             cache.addAll(cacheAssets)
         })
         .then(() => self.skipWaiting()) 
-        // clients.claim()
     )
 
 })
 
 // Activate Event - clean up old cache
 self.addEventListener('activate', (e) => {
-    console.log('Service Worker Activated')
-
-    console.log('Activated event', e);
+    // Service Worker Activated
     e.waitUntil(
         caches.keys().then(cacheNames => {
             return Promise.all(
                 cacheNames.map(cache => {
                     if (cache !== cacheName) {
-                        console.log('Clean Old Service Worker Cache')
+                        // Clean Old Service Worker Cache
                         return caches.delete(cache)
                     }
                 })
@@ -49,7 +44,6 @@ self.addEventListener('activate', (e) => {
 })
 
 self.addEventListener('fetch', (fetchEvent) => {
-    // console.log('Service Worker Fetched ', fetchEvent.request.destination)
 
     // Looking for an image, check cache othervise fetch and put to cache
     if (fetchEvent.request.destination === 'image') {
@@ -76,7 +70,6 @@ self.addEventListener('fetch', (fetchEvent) => {
     }
 
     if (fetchEvent.request.methode === "POST") {
-        console.log('fetchEvent methode: ', fetchEvent.request.methode);
         return 
     }
 
