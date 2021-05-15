@@ -122,6 +122,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: color .3s ease;
 }
 
 .add-to-cart:hover,

@@ -31,6 +31,7 @@
   transform: translateX(-50%);
   font-size: var(--fs-nm);
   padding: 0.5em 1em;
+  min-width: 20ch;
   transition: transform .3s, box-shadow .3s, background-color .2s;
 }
 
@@ -128,10 +129,10 @@
 }
 
 .customer-club-form {
-  display: flex;
-  align-items: flex-end;
+  display: block;
+  /* align-items: flex-end;
   flex-flow: row wrap;
-  gap: 1rem;
+  gap: 1rem; */
   margin: 1rem 0;
 }
 
@@ -139,11 +140,14 @@
   display: inline-flex;
   align-items: stretch;
   flex-flow: column nowrap;
+  margin-top: .5rem;
 }
 
 .customer-club-form .btn {
   padding: 0.4rem 2em;
   box-shadow: none;
+  font-size: var(--fs-sm);
+  margin-top: 1rem;
 }
 
 /* clothing showcase */
@@ -211,16 +215,6 @@
 
 /* Desktop */
 @media screen and (min-width: 1200px) {
-  /* .video {
-    width: 100%;
-    height: 120%;
-    background-color: rgb(197, 101, 101);
-    overflow: hidden;
-    background-image: url("../images/banner-image.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  } */
 
   .video video {
     width: 100%;
@@ -235,11 +229,8 @@
     margin: 0 auto;
     margin-top: 7rem;
     background-color: var(--clr-body-bg);
-    /* position: relative; */
     transform: translateY(-6rem);
     font-size: var(--fs-lg);
-    /* bottom: 6rem; */
-    /* border-radius: 5px; */
   }
 
   .detail {
@@ -296,7 +287,7 @@
 
   .customer-club-form .btn {
     font-size: var(--fs-sm);
-    appearance: none;
+    margin-top: 1rem;
   }
 
   .customer-club-paragraph {

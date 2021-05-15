@@ -49,7 +49,7 @@ function toggleMobilMenu(icon, menu, direction, cb) {
         } else if (direction === 'left' || direction === 'right') {
             menu.style.transform = `translateX(0%)`
         }
-        document.body.style.overflow = 'hidden'
+        document.body.classList.add('disabledScroll')
         menu.setAttribute('showing', true)
         cb?.()
         return
@@ -73,7 +73,7 @@ function toggleMobilMenu(icon, menu, direction, cb) {
 
     menu.setAttribute('showing', false)
     if (icon) icon.style.fill = '#000'
-    document.body.style.overflow = 'auto'
+    document.body.classList.remove('disabledScroll')
     
 }
 

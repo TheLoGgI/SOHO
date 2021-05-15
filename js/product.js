@@ -21,12 +21,32 @@ function shopButtonHandler(newItem) {
             amount: 1,
             isFavorite: formObject.favorite ? true : false
         })
-
+        
+        productResponse()
         updateBasket()
         basketTemplate()
 
     
     })
+}
+
+function productResponse() {
+    const btn = document.getElementById('addToCart')
+    const itemCount = document.getElementById('cartItems')
+    const initialText = btn.innerText
+    const activeColor = '#5a858b'
+
+    btn.childNodes[2].nodeValue = 'Produktet tiltøjet til kurv'
+    btn.style.color = activeColor
+    itemCount.style.transform = 'scale(1.2)'
+    itemCount.style.color = activeColor
+    
+    setTimeout(() => {
+        btn.childNodes[2].nodeValue = initialText
+        btn.style.color = 'initial'
+        itemCount.style.transform = 'initial'
+        itemCount.style.color = 'initial'
+    }, 500)
 }
 
 

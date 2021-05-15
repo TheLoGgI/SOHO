@@ -115,10 +115,7 @@ function deliveryTime() {
         </select>
 
         <div class="basket-button">
-            <button class="add-to-cart" id="addToCart" type="submit">
-                <img class="shopping-bag-icon" src="icons/Shopping-bag-icon.svg">
-                Tilføj til kurven
-            </button>
+            <button class="add-to-cart" id="addToCart" type="submit"> <img class="shopping-bag-icon" src="icons/Shopping-bag-icon.svg"> Tilføj til kurven</button>
             
             <div class="heart-cheackbox">
                 <input id="heart" type="checkbox" name="favorite"/>
