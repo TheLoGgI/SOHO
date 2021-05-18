@@ -7,7 +7,7 @@ const cacheAssets = [
     '/js/*',
     '/pages/*',
     '/favicons/*',
-    // 'https://soho.lasseaakjaer.com/wp-json/wc/store/products'
+    'https://soho.lasseaakjaer.com/wp-json/wc/store/products'
 ]
 
 

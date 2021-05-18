@@ -94,6 +94,7 @@
   z-index: 5;
   font-weight: bold;
   color: white;
+  font-size: 160%;
 }
 
 .menutopic-image {
@@ -153,6 +154,11 @@
 /* clothing showcase */
 .clothing-showcase {
   padding: 2rem var(--pd-mobil);
+  /* max-height: 36rem; */
+}
+
+.loaded .clothing-showcase {
+  /* max-height: initial; */
 }
 
 .showcase-title {
@@ -213,6 +219,14 @@
   background-color: black;
 }
 
+.product-empty {
+  width: 10rem;
+  height: 20rem;
+  background-color: #f0f0f0;
+  margin-right: -2rem;
+}
+
+
 /* Desktop */
 @media screen and (min-width: 1200px) {
 
@@ -260,7 +274,6 @@
     position: absolute;
     bottom: 5%;
     left: 5%;
-    font-size: var(--fs-xx);
     z-index: 5;
     color: white;
   }
@@ -316,9 +329,15 @@
     max-width: 500px;
   }
 
+  .product-empty {
+    width: 16rem;
+    height: 20rem;
+  }
+
   .product img {
     width: 100%;
     height: 500px;
     object-fit: cover;
   }
 }
+

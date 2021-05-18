@@ -46,7 +46,7 @@ function productResponse() {
         btn.style.color = 'initial'
         itemCount.style.transform = 'initial'
         itemCount.style.color = 'initial'
-    }, 500)
+    }, 1000)
 }
 
 

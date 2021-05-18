@@ -143,38 +143,16 @@ function deliveryTime() {
             <div class="dropdown2">
                 <button onclick="dropdownFunction2()" class="info-dropdown">Materiale og vaskeanvisninger<img
                         class="arrow-down" src="images/arrow-down.png" alt="arrow" width="15px"></button>
-                <!-- <div id="myDropdown2" class="dropdown-content2">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore
-                        et dolore magna
-                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                        ex ea
-                        commodo consequat.</p>
-                </div> -->
             </div>
             <div class="dropdown3">
                 <button onclick="dropdownFunction3()" class="info-dropdown">Information og produkt<img class="arrow-down"
                         src="images/arrow-down.png" alt="arrow" width="15px"></button>
-                <!-- <div id="myDropdown3" class="dropdown-content3">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore
-                        et dolore magna
-                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                        ex ea
-                        commodo consequat.</p>
-                </div> -->
+
             </div>
             <div class="dropdown4">
                 <button onclick="dropdownFunction4()" class="info-dropdown">Pasform<img class="arrow-down"
                         src="images/arrow-down.png" alt="arrow" width="15px"></button>
-                <!-- <div id="myDropdown4" class="dropdown-content4">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore
-                        et dolore magna
-                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                        ex ea
-                        commodo consequat.</p>
-                </div> -->
+
             </div>
         </section>
 

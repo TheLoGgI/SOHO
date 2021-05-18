@@ -1,10 +1,40 @@
 let prods = []
+const filterArray = [];
+
+// Adjusting product filter on hach change
+window.addEventListener('hashchange', urlHashFilter)
+
+function urlHashFilter() {
+    location.hash = location.hash.toLowerCase()
+    const regex = /(\w+?-\w+|(\w+))/g
+    const urlHashFilter = location.hash.match(regex)
+    urlHashFilter?.shift()
+
+    if (urlHashFilter?.length > 0 && urlHashFilter != null) {
+        filterArray.length = 0
+        filterArray.push(...urlHashFilter)
+    } else {
+        filterArray.length = 0
+    }
+    filterProducts()
+}
+
+
+// function filterQuery() {
+//     const q = filterArray.reduce((acc, value) => {
+//         if (acc !== '') return `${acc}+${value.replaceAll(' ', '-')}`
+//             else return value.replaceAll(' ', '-')
+//     }, '')
+
+//     location.hash = `filter=${q}`
+// }
+
 /**
  * Fetcing API data from wordpress
  * @return {Array} - Wordpress API data for Products 
  */
 async function getProducts() {
-    return await (await fetch('https://soho.lasseaakjaer.com/wp-json/wc/store/products')).json()
+    return await (await fetch('https://soho.lasseaakjaer.com/wp-json/wc/store/products?per_page=30')).json()
 }
 
 /**
@@ -15,6 +45,7 @@ async function getProducts() {
     const products = await getProducts()
     prods = [...products]
     createProductCard(products)
+    urlHashFilter()
 })()
 
 /**
@@ -96,7 +127,7 @@ function changeIcon(event) {
     }
 }
 
-const filterArray = [];
+
 
 /**
  * Handler for enabled filters
@@ -118,6 +149,11 @@ function eventFilterHandler() {
 }
 
 
+/**
+ * Checking checkboxes for filter settings
+ * @param {Event} - Click event from cliked checkbox
+ * @return {Null} 
+ */
 function filter(e) {
     if (e.target.tagName === "LABEL" || e.target.tagName === "UL") return;
     const filterName = e.target.getAttribute("data-name");
@@ -132,9 +168,14 @@ function filter(e) {
     filterProducts();
 }
 
-
+/**
+ * Applying sorting and filters for product display
+ * @return {Null} 
+ */
 function filterProducts() {
     const filteredProducts = [];
+
+    // Default display of products, if no filter is selected
     if (filterArray.length <= 0) {
 
         sortProducts(prods)
@@ -142,21 +183,15 @@ function filterProducts() {
         return
     };
 
+
     for (const product of prods) {
-        product.categories.forEach(category => {
+        [...product.categories, ...product.tags].forEach(category => {
+            // Checks if for dublikations and 
             const hasprod = filteredProducts.find(p => product.id === p.id)
-            if (hasprod === undefined && filterArray.includes(category.name.toLowerCase())) {
+            if (hasprod === undefined && filterArray.includes(category.slug.toLowerCase())) {
                 filteredProducts.push(product);
             }
         });
-    
-        product.tags.forEach(tag => {
-            const hasprod = filteredProducts.find(p => product.id === p.id)
-            if (hasprod === undefined && filterArray.includes(tag.slug.toLowerCase())) {
-                    filteredProducts.push(product);
-            }
-        });
-    
     }   
 
     sortProducts(filteredProducts)

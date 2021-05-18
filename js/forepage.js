@@ -17,6 +17,9 @@ function currencyFormat(num) {
  */
 function init() {
 
+    document.body.classList.add('loaded')
+    
+
     const first = new Splide('#splide1', {
         type: 'loop',
         perPage: 2,
@@ -49,8 +52,8 @@ function init() {
  */
 (async function getProducts() {
     const data = await (await fetch('https://soho.lasseaakjaer.com/wp-json/wc/store/products')).json()
+    document.querySelectorAll('.splide').forEach( el => {delete el}) // removes "dummy" splide content
     displayProducts(data)
-    
     init()
     removeLoading()
 })()

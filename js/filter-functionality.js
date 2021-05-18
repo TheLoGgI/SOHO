@@ -1,6 +1,45 @@
 
 
 /**
+ * Fetching Categories and tags from API
+ * @return {null}
+ */
+ async function fetchCategoriesAndTags() {
+
+    // Fetching data from Wordpress API
+    const categoriesData = await (await fetch('https://soho.lasseaakjaer.com/wp-json/wc/store/products/categories?per_page=30')).json()
+    const brandsData = await (await fetch('https://soho.lasseaakjaer.com/wp-json/wc/store/products/tags?per_page=30')).json()
+
+    // Checking when both responses has come back as resolved
+    Promise.allSettled([categoriesData, brandsData]).
+        then((results) => {
+            const categories = results[0].value.map(item => item.name.toLowerCase())
+            const brands = results[1].value.map(item => item.name.toLowerCase())
+
+            const filters = [
+                {
+                    name: "Brands",
+                    filterType: brands
+                },
+                {
+                    name: "Categories",
+                    filterType: categories
+                }
+            ]
+
+            // Initializing element dependent on the api data
+            appendFilters(filters);
+            appendDesktopFilters(categories, "#desktop-categories-filter-list");
+            appendDesktopFilters(brands, "#desktop-brands-filter-list");
+            eventFilterHandler()
+            removeLoading()
+        })
+
+}
+
+fetchCategoriesAndTags()
+
+/**
  * Appending filter names, to be displayed
  * @param  {Array} - Custom Filters obejct from API data
  * @return {null} 
@@ -58,9 +97,6 @@ function loopFilterEmner(filterList) {
     }
     document.querySelector(selector).innerHTML = htmlTemplate;
 }
-
-
-
 
 
 let filterBGShadow = document.querySelector(".mobile-filter-bg-fill");
@@ -136,43 +172,4 @@ function toggleDesktopBrandsFilters() {
 }
 
 
-/**
- * Fetching Categories and tags from API
- * @return {null}
- */
- async function fetchCategoriesAndTags() {
 
-    // Fetching data from Wordpress API
-    const categoriesData = await (await fetch('https://soho.lasseaakjaer.com/wp-json/wc/store/products/categories')).json()
-    const brandsData = await (await fetch('https://soho.lasseaakjaer.com/wp-json/wc/store/products/tags')).json()
-
-    // Checking when both responses has come back as resolved
-    Promise.allSettled([categoriesData, brandsData]).
-        then((results) => {
-            const categories = results[0].value.map(item => item.name.toLowerCase())
-            const brands = results[1].value.map(item => item.name.toLowerCase())
-
-            const filters = [
-                {
-                    name: "Brands",
-                    filterType: brands
-                },
-                {
-                    name: "Categories",
-                    filterType: categories
-                }
-            ]
-
-            // Initializing element dependent on the api data
-            appendFilters(filters);
-            appendDesktopFilters(categories, "#desktop-categories-filter-list");
-            appendDesktopFilters(brands, "#desktop-brands-filter-list");
-            eventFilterHandler()
-            removeLoading()
-        })
-
-}
-
-
-
-fetchCategoriesAndTags()

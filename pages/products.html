@@ -32,10 +32,6 @@
 </head>
 
 <body>
-    <div class="loading" id="loading">
-        <img src="./gif/loading-animation.gif" alt="loading">
-        Vi indlæser siden for dig..
-    </div>
     <div class="body-wrapper">
 
         <nav class="mobil-bottom-nav">
@@ -171,8 +167,8 @@
                     <li><a href="#" class="menu-navagation-link">Nyheder</a></li>
                     <li><a href="./pages/products.html" target="_self" class="menu-navagation-link" id="onHoverCategory"
                             data-template="category">Kategorier</a></li>
-                    <li class="selected-page" id="onHoverBrand" data-template="brands">
-                        <a href="./pages/products.html" target="_self" class="menu-navagation-link">Brands</a>
+                    <li class="selected-page" id="onHoverBrand" >
+                        <a href="./pages/products.html" target="_self" data-template="brands" class="menu-navagation-link">Brands</a>
                     </li>
                     <li><a href="#" class="menu-navagation-link">Om Soho</a></li>
                     <li><a href="#" class="menu-navagation-link">Kontakt</a></li>
@@ -182,7 +178,11 @@
                     <img src="./icons/Heart-icon.svg" alt="favoritter">
                     <img src="./icons/Profile-icon.svg" alt="profil">
                     <div class="menu-cart" id="cartIcon">
-                        <img src="./icons/Shopping-bag-icon.svg" alt="kurv">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24.235" height="30" viewBox="0 0 24.235 34.735">
+                            <g id="Shopping-bag-icon" transform="translate(0 0)">
+                              <path id="Shopping-bag-path" d="M23.157,8.592h-4V7.007a7.007,7.007,0,0,0-14.014,0V8.592H1.077A1.08,1.08,0,0,0,0,9.671V33.657a1.079,1.079,0,0,0,1.077,1.077h22.08a1.078,1.078,0,0,0,1.077-1.077V9.671a1.08,1.08,0,0,0-1.077-1.078ZM6.924,7.007a5.224,5.224,0,0,1,10.447,0V8.592H6.924ZM22.451,32.951H1.784V10.376H5.141v2.581a.892.892,0,0,0,1.784,0V10.376H17.372v2.581a.892.892,0,0,0,1.784,0V10.376h3.3Z" transform="translate(0 0)"/>
+                            </g>
+                          </svg>
                         <div class="menu-cart-items" id="cartItems">0</div>
                     </div>
                 </div>
@@ -249,23 +249,23 @@
                 <div class="bigmenu-col1">
                     <h2>Kategorier</h2>
         
-                    <a href="./pages/products.html#/kategorier" target="_self" class="bignav-links">Alle kategorier <img src="./images/arrow-right.svg"
+                    <a href="./pages/products.html#" target="_self" class="bignav-links">Alle kategorier <img src="./images/arrow-right.svg"
                             alt="arrow"></a>
                     <div class="bignav-links brands-link">
-                        <a href="./pages/products.html#/kategorier/Bukser" target="_self" class="brand-link">Bukser</a>
-                        <a href="./pages/products.html#/kategorier/Habitter" target="_self" class="brand-link">Habitter</a>
-                        <a href="./pages/products.html#/kategorier/Jakker" target="_self" class="brand-link">Jakker</a>
-                        <a href="./pages/products.html#/kategorier/Jeans" target="_self" class="brand-link">Jeans</a>
-                        <a href="./pages/products.html#/kategorier/Shorts" target="_self" class="brand-link">Shorts</a>
-                        <a href="./pages/products.html#/kategorier/Sko" target="_self" class="brand-link">Sko</a>
-                        <a href="./pages/products.html#/kategorier/Strik" target="_self" class="brand-link">Strik</a>
-                        <a href="./pages/products.html#/kategorier/Strømper" target="_self" class="brand-link">Strømper</a>
-                        <a href="./pages/products.html#/kategorier/Underbukser" target="_self" class="brand-link">Underbukser</a>
-                        <a href="./pages/products.html#/kategorier/Accessories" target="_self" class="brand-link">Accessories</a>
-                        <a href="./pages/products.html#/kategorier/Bælter" target="_self" class="brand-link">Bælter</a>
-                        <a href="./pages/products.html#/kategorier/Hatte" target="_self" class="brand-link">Hatte</a>
-                        <a href="./pages/products.html#/kategorier/Huer" target="_self" class="brand-link">Huer</a>
-                        <a href="./pages/products.html#/kategorier/Tasker" target="_self" class="brand-link">Tasker</a>
+                        <a href="./pages/products.html##filter=Bukser" target="_self" class="brand-link">Bukser</a>
+                        <a href="./pages/products.html##filter=Habitter" target="_self" class="brand-link">Habitter</a>
+                        <a href="./pages/products.html##filter=Jakker" target="_self" class="brand-link">Jakker</a>
+                        <a href="./pages/products.html##filter=Jeans" target="_self" class="brand-link">Jeans</a>
+                        <a href="./pages/products.html##filter=Shorts" target="_self" class="brand-link">Shorts</a>
+                        <a href="./pages/products.html##filter=Sko" target="_self" class="brand-link">Sko</a>
+                        <a href="./pages/products.html##filter=Strik" target="_self" class="brand-link">Strik</a>
+                        <a href="./pages/products.html##filter=Stromper" target="_self" class="brand-link">Strømper</a>
+                        <a href="./pages/products.html##filter=Underbukser" target="_self" class="brand-link">Underbukser</a>
+                        <a href="./pages/products.html##filter=Accessories" target="_self" class="brand-link">Accessories</a>
+                        <a href="./pages/products.html##filter=Balter" target="_self" class="brand-link">Bælter</a>
+                        <a href="./pages/products.html##filter=Hatte" target="_self" class="brand-link">Hatte</a>
+                        <a href="./pages/products.html##filter=Huer" target="_self" class="brand-link">Huer</a>
+                        <a href="./pages/products.html##filter=Tasker" target="_self" class="brand-link">Tasker</a>
                     </div>
                 </div>
                 <div class="bigmenu-col2">
@@ -308,77 +308,77 @@
                 <div class="side-menu">
 
                     <h3 class="side-menu-heading" id="side-menu-heading-1">Nyheder</h3>
-                    <a href="#" class="side-menu-arrow-link">Vis alle</a>
+                    <a href="pages/products.html#" class="side-menu-arrow-link" target="_self">Vis alle</a>
 
                     <h3 class="side-menu-heading">Kategorier</h3>
-                    <a href="#/kategorier" class="side-menu-arrow-link">Vis alle</a>
+                    <a href="pages/products.html#" class="side-menu-arrow-link" target="_self">Vis alle</a>
                     <ul class="side-menu-list">
-                        <li><a href="pages/products.html#/kategorier/Bukser" target="_self"
+                        <li><a href="pages/products.html#filter=Bukser" target="_self"
                                 class="side-menu-link">Bukser</a></li>
-                        <li><a href="pages/products.html#/kategorier/Habitter" target="_self"
+                        <li><a href="pages/products.html#filter=Habitter" target="_self"
                                 class="side-menu-link">Habitter</a></li>
-                        <li><a href="pages/products.html#/kategorier/Jakker" target="_self"
+                        <li><a href="pages/products.html#filter=Jakker" target="_self"
                                 class="side-menu-link">Jakker</a></li>
-                        <li><a href="pages/products.html#/kategorier/Jeans" target="_self"
+                        <li><a href="pages/products.html#filter=Jeans" target="_self"
                                 class="side-menu-link">Jeans</a></li>
-                        <li><a href="pages/products.html#/kategorier/Shorts" target="_self"
+                        <li><a href="pages/products.html#filter=Shorts" target="_self"
                                 class="side-menu-link">Shorts</a></li>
-                        <li><a href="pages/products.html#/kategorier/Sko" target="_self" class="side-menu-link">Sko</a>
+                        <li><a href="pages/products.html#filter=Sko" target="_self" class="side-menu-link">Sko</a>
                         </li>
-                        <li><a href="pages/products.html#/kategorier/Strik" target="_self"
+                        <li><a href="pages/products.html#filter=Strik" target="_self"
                                 class="side-menu-link">Strik</a></li>
-                        <li><a href="pages/products.html#/kategorier/Strømper" target="_self"
+                        <li><a href="pages/products.html#filter=Stromper" target="_self"
                                 class="side-menu-link">Strømper</a></li>
-                        <li><a href="pages/products.html#/kategorier/Underbukser" target="_self"
+                        <li><a href="pages/products.html#filter=Underbukser" target="_self"
                                 class="side-menu-link">Underbukser</a></li>
-                        <li><a href="pages/products.html#/kategorier/Accessories" target="_self"
+                        <li><a href="pages/products.html#filter=Accessories" target="_self"
                                 class="side-menu-link">Accessories</a></li>
-                        <li><a href="pages/products.html#/kategorier/Bælter" target="_self"
+                        <li><a href="pages/products.html#filter=Balter" target="_self"
                                 class="side-menu-link">Bælter</a></li>
-                        <li><a href="pages/products.html#/kategorier/Hatte target=" _self""
+                        <li><a href="pages/products.html#filter=Hatte" target="_self"
                                 class="side-menu-link">Hatte</a></li>
-                        <li><a href="pages/products.html#/kategorier/Huer" target="_self"
+                        <li><a href="pages/products.html#filter=Huer" target="_self"
                                 class="side-menu-link">Huer</a></li>
-                        <li><a href="pages/products.html#/kategorier/Tasker" target="_self"
+                        <li><a href="pages/products.html#filter=Tasker" target="_self"
                                 class="side-menu-link">Tasker</a></li>
                     </ul>
 
                     <h3 class="side-menu-heading">Brands</h3>
-                    <a href="#/brands" class="side-menu-arrow-link">Vis alle</a>
+                    <a href="pages/products.html#" class="side-menu-arrow-link" target="_self">Vis alle</a>
                     <ul class="side-menu-list">
-                        <li><a href="pages/products.html#/brands/Anerkjendt" class="side-menu-link">Anerkjendt</a></li>
-                        <li><a href="pages/products.html#/brands/Borlemstock" class="side-menu-link">Borlemstock</a>
+                        <li><a href="pages/products.html#filter=anerkjendt" target="_self" class="side-menu-link">Anerkjendt</a></li>
+                        <li><a href="pages/products.html#filter=borlemstock" target="_self" class="side-menu-link">Borlemstock</a>
                         </li>
-                        <li><a href="pages/products.html#/brands/Clean Cut" class="side-menu-link">Clean Cut</a></li>
-                        <li><a href="pages/products.html#/brands/Dedicated" class="side-menu-link">Dedicated</a></li>
-                        <li><a href="pages/products.html#/brands/Egtved Soc" class="side-menu-link">Egtved Socks</a>
+                        <li><a href="pages/products.html#filter=clean Cut" target="_self" class="side-menu-link">Clean Cut</a></li>
+                        <li><a href="pages/products.html#filter=dedicated" target="_self" class="side-menu-link">Dedicated</a></li>
+                        <li><a href="pages/products.html#filter=egtved Soc" target="_self" class="side-menu-link">Egtved Socks</a>
                         </li>
-                        <li><a href="pages/products.html#/brands/Elvine" class="side-menu-link">Elvine</a></li>
-                        <li><a href="pages/products.html#/brands/Fuza Wo" class="side-menu-link">Fuza Wool</a></li>
-                        <li><a href="pages/products.html#/brands/Garcia" class="side-menu-link">Garcia</a></li>
-                        <li><a href="pages/products.html#/brands/Gola" class="side-menu-link">Gola</a></li>
-                        <li><a href="pages/products.html#/brands/JBS" class="side-menu-link">JBS</a></li>
+                        <li><a href="pages/products.html#filter=elvine" target="_self" class="side-menu-link">Elvine</a></li>
+                        <li><a href="pages/products.html#filter=fuza-Wo" target="_self" class="side-menu-link">Fuza Wool</a></li>
+                        <li><a href="pages/products.html#filter=garcia" target="_self" class="side-menu-link">Garcia</a></li>
+                        <li><a href="pages/products.html#filter=gola" target="_self" class="side-menu-link">Gola</a></li>
+                        <li><a href="pages/products.html#filter=jbs" target="_self" class="side-menu-link">JBS</a></li>
                         <li>
-                            <a href="pages/products.html#/brands/KnowledgeCotton-Apparel" class="side-menu-link">
+                            <a href="pages/products.html#filter=KnowledgeCotton-Apparel" target="_self" class="side-menu-link">
                                 KnowledgeCotton Apparel
                             </a>
                         </li>
-                        <li><a href="pages/products.html#/brands/Laktor" class="side-menu-link">Laktor</a></li>
-                        <li><a href="pages/products.html#/brands/Mads-noregaard" class="side-menu-link">Mads
+                        <li><a href="pages/products.html#filter=laktor" target="_self" class="side-menu-link">Laktor</a></li>
+                        <li><a href="pages/products.html#filter=mads-noregaard" target="_self" class="side-menu-link">Mads
                                 Nøregaard</a></li>
-                        <li><a href="pages/products.html#/brands/Nature-footwear" class="side-menu-link">Nature
+                        <li><a href="pages/products.html#filter=nature-footwear" target="_self" class="side-menu-link">Nature
                                 Footwear</a></li>
-                        <li><a href="pages/products.html#/brands/ResterRöds" class="side-menu-link">ResterRöds</a></li>
-                        <li><a href="pages/products.html#/brands/Revolution" class="side-menu-link">Revolution</a></li>
-                        <li><a href="pages/products.html#/brands/Royal-republicq" class="side-menu-link">Royal
+                        <li><a href="pages/products.html#filter=resterRöds" target="_self" class="side-menu-link">ResterRöds</a></li>
+                        <li><a href="pages/products.html#filter=revolution" target="_self" class="side-menu-link">Revolution</a></li>
+                        <li><a href="pages/products.html#filter=royal-republicq" target="_self" class="side-menu-link">Royal
                                 Republicq</a></li>
-                        <li><a href="pages/products.html#/brands/Scotch&soda" class="side-menu-link">Scotch & Soda</a>
+                        <li><a href="pages/products.html#filter=scotch&soda" target="_self" class="side-menu-link">Scotch & Soda</a>
                         </li>
-                        <li><a href="pages/products.html#/brands/Shoe-the-bear" class="side-menu-link">Shoe the Bear</a>
+                        <li><a href="pages/products.html#filter=shoe-the-bear" target="_self" class="side-menu-link">Shoe the Bear</a>
                         </li>
-                        <li><a href="pages/products.html#/brands/Suit" class="side-menu-link">Suit</a></li>
-                        <li><a href="pages/products.html#/brands/WareCPH" class="side-menu-link">WareCPH</a></li>
-                        <li><a href="pages/products.html#/brands/Wrangler" class="side-menu-link">Wrangler</a></li>
+                        <li><a href="pages/products.html#filter=suit" target="_self" class="side-menu-link">Suit</a></li>
+                        <li><a href="pages/products.html#filter=wareCPH" target="_self" class="side-menu-link">WareCPH</a></li>
+                        <li><a href="pages/products.html#filter=wrangler" target="_self" class="side-menu-link">Wrangler</a></li>
                     </ul>
 
                 </div>
@@ -424,7 +424,124 @@
                     <!-- Product cards -->
                     <div class="products-spawn-container">
                         <div class="product-spawn">
+                            <div class="product-card">
+                                <div class="product-image-container">
+                                    <a href="#" target="_self">
+                                    <div class="product-empty prod"></div>
+                                    </a>
+                                </div>
+                                <a href="${'/pages/product.html?id=' + product.id} target="_self">
+                                <div class="product-information">
+                                    <div class="product-text-container">
+                                        <div class="product-empty p"></div>
+                                        <div class="product-empty p"></div>
+                                    </div>
 
+                                </div>
+                                </a>
+                            </div>
+
+                            <div class="product-card">
+                                <div class="product-image-container">
+                                    <a href="#" target="_self">
+                                    <div class="product-empty prod"></div>
+                                    </a>
+                                </div>
+                                <a href="${'/pages/product.html?id=' + product.id} target="_self">
+                                <div class="product-information">
+                                    <div class="product-text-container">
+                                        <div class="product-empty p"></div>
+                                        <div class="product-empty p"></div>
+                                    </div>
+
+                                </div>
+                                </a>
+                            </div>
+                            
+                            <div class="product-card">
+                                <div class="product-image-container">
+                                    <a href="#" target="_self">
+                                    <div class="product-empty prod"></div>
+                                    </a>
+                                </div>
+                                <a href="${'/pages/product.html?id=' + product.id} target="_self">
+                                <div class="product-information">
+                                    <div class="product-text-container">
+                                        <div class="product-empty p"></div>
+                                        <div class="product-empty p"></div>
+                                    </div>
+
+                                </div>
+                                </a>
+                            </div>
+
+                            <div class="product-card">
+                                <div class="product-image-container">
+                                    <a href="#" target="_self">
+                                    <div class="product-empty prod"></div>
+                                    </a>
+                                </div>
+                                <a href="${'/pages/product.html?id=' + product.id} target="_self">
+                                <div class="product-information">
+                                    <div class="product-text-container">
+                                        <div class="product-empty p"></div>
+                                        <div class="product-empty p"></div>
+                                    </div>
+
+                                </div>
+                                </a>
+                            </div>
+
+                            <div class="product-card">
+                                <div class="product-image-container">
+                                    <a href="#" target="_self">
+                                    <div class="product-empty prod"></div>
+                                    </a>
+                                </div>
+                                <a href="${'/pages/product.html?id=' + product.id} target="_self">
+                                <div class="product-information">
+                                    <div class="product-text-container">
+                                        <div class="product-empty p"></div>
+                                        <div class="product-empty p"></div>
+                                    </div>
+
+                                </div>
+                                </a>
+                            </div>
+
+                            <div class="product-card">
+                                <div class="product-image-container">
+                                    <a href="#" target="_self">
+                                    <div class="product-empty prod"></div>
+                                    </a>
+                                </div>
+                                <a href="${'/pages/product.html?id=' + product.id} target="_self">
+                                <div class="product-information">
+                                    <div class="product-text-container">
+                                        <div class="product-empty p"></div>
+                                        <div class="product-empty p"></div>
+                                    </div>
+
+                                </div>
+                                </a>
+                            </div>
+
+                            <div class="product-card">
+                                <div class="product-image-container">
+                                    <a href="#" target="_self">
+                                    <div class="product-empty prod"></div>
+                                    </a>
+                                </div>
+                                <a href="${'/pages/product.html?id=' + product.id} target="_self">
+                                <div class="product-information">
+                                    <div class="product-text-container">
+                                        <div class="product-empty p"></div>
+                                        <div class="product-empty p"></div>
+                                    </div>
+
+                                </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

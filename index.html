@@ -28,10 +28,6 @@
 </head>
 
 <body>
-    <div class="loading" id="loading">
-        <img src="./gif/loading-animation.gif" alt="loading">
-        Vi indlæser siden for dig..
-    </div>
     <nav class="mobil-bottom-nav">
         <button id="menuIconButton" class="mobil-nav-item">
             <div id="nav-icon">
@@ -165,8 +161,8 @@
                 <li><a href="#" class="menu-navagation-link">Nyheder</a></li>
                 <li><a href="./pages/products.html" target="_self" class="menu-navagation-link" id="onHoverCategory"
                         data-template="category">Kategorier</a></li>
-                <li class="selected-page" id="onHoverBrand" data-template="brands">
-                    <a href="./pages/products.html" target="_self" class="menu-navagation-link">Brands</a>
+                <li class="selected-page" id="onHoverBrand" >
+                    <a href="./pages/products.html" target="_self" data-template="brands" class="menu-navagation-link">Brands</a>
                 </li>
                 <li><a href="#" class="menu-navagation-link">Om Soho</a></li>
                 <li><a href="#" class="menu-navagation-link">Kontakt</a></li>
@@ -176,7 +172,11 @@
                 <img src="./icons/Heart-icon.svg" alt="favoritter">
                 <img src="./icons/Profile-icon.svg" alt="profil">
                 <div class="menu-cart" id="cartIcon">
-                    <img src="./icons/Shopping-bag-icon.svg" alt="kurv">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24.235" height="30" viewBox="0 0 24.235 34.735">
+                        <g id="Shopping-bag-icon" transform="translate(0 0)">
+                          <path id="Shopping-bag-path" d="M23.157,8.592h-4V7.007a7.007,7.007,0,0,0-14.014,0V8.592H1.077A1.08,1.08,0,0,0,0,9.671V33.657a1.079,1.079,0,0,0,1.077,1.077h22.08a1.078,1.078,0,0,0,1.077-1.077V9.671a1.08,1.08,0,0,0-1.077-1.078ZM6.924,7.007a5.224,5.224,0,0,1,10.447,0V8.592H6.924ZM22.451,32.951H1.784V10.376H5.141v2.581a.892.892,0,0,0,1.784,0V10.376H17.372v2.581a.892.892,0,0,0,1.784,0V10.376h3.3Z" transform="translate(0 0)"/>
+                        </g>
+                      </svg>
                     <div class="menu-cart-items" id="cartItems">0</div>
                 </div>
             </div>
@@ -195,28 +195,28 @@
     
                 <a href="./pages/products.html#/brands" class="bignav-links">Alle brands <img src="./images/arrow-right.svg" alt="arrow"></a>
                 <div class="bignav-links brands-link">
-                    <a href="./pages/products.html#/brands/Anerkjendt" class="brand-link">Anerkjendt</a>
-                    <a href="./pages/products.html#/brands/Borlemstock" class="brand-link">Borlemstock</a>
-                    <a href="./pages/products.html#/brands/Clean Cut" class="brand-link">Clean Cut</a>
-                    <a href="./pages/products.html#/brands/Dedicated" class="brand-link">Dedicated</a>
-                    <a href="./pages/products.html#/brands/Egtved Soc" class="brand-link">Egtved Socks</a>
-                    <a href="./pages/products.html#/brands/Elvine" class="brand-link">Elvine</a>
-                    <a href="./pages/products.html#/brands/Fuza Wo" class="brand-link">Fuza Wool</a>
-                    <a href="./pages/products.html#/brands/Garcia" class="brand-link">Garcia</a>
-                    <a href="./pages/products.html#/brands/Gola" class="brand-link">Gola</a>
-                    <a href="./pages/products.html#/brands/JBS" class="brand-link">JBS</a>
-                    <a href="./pages/products.html#/brands/KnowledgeCotton-Apparel" class="brand-link">KnowledgeCotton Apparel</a>
-                    <a href="./pages/products.html#/brands/Laktor" class="brand-link">Laktor</a>
-                    <a href="./pages/products.html#/brands/Mads-noregaard" class="brand-link">Mads Nøregaard</a>
-                    <a href="./pages/products.html#/brands/Nature-footwear" class="brand-link">Nature Footwear</a>
-                    <a href="./pages/products.html#/brands/ResterRöds" class="brand-link">ResterRöds</a>
-                    <a href="./pages/products.html#/brands/Revolution" class="brand-link">Revolution</a>
-                    <a href="./pages/products.html#/brands/Royal-republicq" class="brand-link">Royal Republicq</a>
-                    <a href="./pages/products.html#/brands/Scotch&soda" class="brand-link">Scotch & Soda</a>
-                    <a href="./pages/products.html#/brands/Shoe-the-bear" class="brand-link">Shoe the Bear</a>
-                    <a href="./pages/products.html#/brands/Suit" class="brand-link">Suit</a>
-                    <a href="./pages/products.html#/brands/WareCPH" class="brand-link">WareCPH</a>
-                    <a href="./pages/products.html#/brands/Wrangler" class="brand-link">Wrangler</a>
+                    <a href="./pages/products.html#filter=Anerkjendt" class="brand-link">Anerkjendt</a>
+                    <a href="./pages/products.html#filter=Borlemstock" class="brand-link">Borlemstock</a>
+                    <a href="./pages/products.html#filter=Clean Cut" class="brand-link">Clean Cut</a>
+                    <a href="./pages/products.html#filter=Dedicated" class="brand-link">Dedicated</a>
+                    <a href="./pages/products.html#filter=Egtved-Soc" class="brand-link">Egtved Socks</a>
+                    <a href="./pages/products.html#filter=Elvine" class="brand-link">Elvine</a>
+                    <a href="./pages/products.html#filter=Fuza-Wo" class="brand-link">Fuza Wool</a>
+                    <a href="./pages/products.html#filter=Garcia" class="brand-link">Garcia</a>
+                    <a href="./pages/products.html#filter=Gola" class="brand-link">Gola</a>
+                    <a href="./pages/products.html#filter=JBS" class="brand-link">JBS</a>
+                    <a href="./pages/products.html#filter=KnowledgeCotton-Apparel" class="brand-link">KnowledgeCotton Apparel</a>
+                    <a href="./pages/products.html#filter=Laktor" class="brand-link">Laktor</a>
+                    <a href="./pages/products.html#filter=Mads-noregaard" class="brand-link">Mads Nøregaard</a>
+                    <a href="./pages/products.html#filter=Nature-footwear" class="brand-link">Nature Footwear</a>
+                    <a href="./pages/products.html#filter=ResterRöds" class="brand-link">ResterRöds</a>
+                    <a href="./pages/products.html#filter=Revolution" class="brand-link">Revolution</a>
+                    <a href="./pages/products.html#filter=Royal-republicq" class="brand-link">Royal Republicq</a>
+                    <a href="./pages/products.html#filter=Scotch&soda" class="brand-link">Scotch & Soda</a>
+                    <a href="./pages/products.html#filter=Shoe-the-bear" class="brand-link">Shoe the Bear</a>
+                    <a href="./pages/products.html#filter=Suit" class="brand-link">Suit</a>
+                    <a href="./pages/products.html#filter=WareCPH" class="brand-link">WareCPH</a>
+                    <a href="./pages/products.html#filter=Wrangler" class="brand-link">Wrangler</a>
                 </div>
             </div>
             <div class="bigmenu-col2">
@@ -241,23 +241,23 @@
             <div class="bigmenu-col1">
                 <h2>Kategorier</h2>
     
-                <a href="./pages/products.html#/kategorier" class="bignav-links">Alle kategorier <img src="./images/arrow-right.svg"
+                <a href="./pages/products.html#" class="bignav-links">Alle kategorier <img src="./images/arrow-right.svg"
                         alt="arrow"></a>
                 <div class="bignav-links brands-link">
-                    <a href="./pages/products.html#/kategorier/Bukser" class="brand-link">Bukser</a>
-                    <a href="./pages/products.html#/kategorier/Habitter" class="brand-link">Habitter</a>
-                    <a href="./pages/products.html#/kategorier/Jakker" class="brand-link">Jakker</a>
-                    <a href="./pages/products.html#/kategorier/Jeans" class="brand-link">Jeans</a>
-                    <a href="./pages/products.html#/kategorier/Shorts" class="brand-link">Shorts</a>
-                    <a href="./pages/products.html#/kategorier/Sko" class="brand-link">Sko</a>
-                    <a href="./pages/products.html#/kategorier/Strik" class="brand-link">Strik</a>
-                    <a href="./pages/products.html#/kategorier/Strømper" class="brand-link">Strømper</a>
-                    <a href="./pages/products.html#/kategorier/Underbukser" class="brand-link">Underbukser</a>
-                    <a href="./pages/products.html#/kategorier/Accessories" class="brand-link">Accessories</a>
-                    <a href="./pages/products.html#/kategorier/Bælter" class="brand-link">Bælter</a>
-                    <a href="./pages/products.html#/kategorier/Hatte" class="brand-link">Hatte</a>
-                    <a href="./pages/products.html#/kategorier/Huer" class="brand-link">Huer</a>
-                    <a href="./pages/products.html#/kategorier/Tasker" class="brand-link">Tasker</a>
+                    <a href="./pages/products.html#filter=Bukser" class="brand-link">Bukser</a>
+                    <a href="./pages/products.html#filter=Habitter" class="brand-link">Habitter</a>
+                    <a href="./pages/products.html#filter=Jakker" class="brand-link">Jakker</a>
+                    <a href="./pages/products.html#filter=Jeans" class="brand-link">Jeans</a>
+                    <a href="./pages/products.html#filter=Shorts" class="brand-link">Shorts</a>
+                    <a href="./pages/products.html#filter=Sko" class="brand-link">Sko</a>
+                    <a href="./pages/products.html#filter=Strik" class="brand-link">Strik</a>
+                    <a href="./pages/products.html#filter=Stromper" class="brand-link">Strømper</a>
+                    <a href="./pages/products.html#filter=Underbukser" class="brand-link">Underbukser</a>
+                    <a href="./pages/products.html#filter=Accessories" class="brand-link">Accessories</a>
+                    <a href="./pages/products.html#filter=Balter" class="brand-link">Bælter</a>
+                    <a href="./pages/products.html#filter=Hatte" class="brand-link">Hatte</a>
+                    <a href="./pages/products.html#filter=Huer" class="brand-link">Huer</a>
+                    <a href="./pages/products.html#filter=Tasker" class="brand-link">Tasker</a>
                 </div>
             </div>
             <div class="bigmenu-col2">
@@ -313,14 +313,14 @@
             <div class="menutopic brands">
                 <a href="#" class="menutopic-link">
                     <img src="./images/unexpected-lakor-tshirt.jpg" alt="Lakor clouthing" class="menutopic-image">
-                    <p class="menutopic-title">Brands</p>
+                    <p class="menutopic-title">Populære</p>
                 </a>
             </div>
 
             <div class="menutopic catagories">
                 <a href="#" class="menutopic-link">
                     <img src="./images/t-shirts-lakor.jpg" alt="Lakor clouthing" class="menutopic-image">
-                    <p class="menutopic-title">Kategorier</p>
+                    <p class="menutopic-title">Tilbud</p>
                 </a>
             </div>
         </section>
@@ -330,6 +330,21 @@
             <div class="splide" id="splide1">
                 <div class="splide__track">
                     <ul class="splide__list" id="mostPopular">
+                        <li class="splide__slide">
+                            <div class="product-empty"></div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="product-empty"></div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="product-empty"></div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="product-empty"></div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="product-empty"></div>
+                        </li>
                         <!-- Products injected via javascript from wordpress API  -->
                     </ul>
                 </div>
@@ -362,34 +377,19 @@
                 <div class="splide__track">
                     <ul class="splide__list" id="localBrands">
                         <li class="splide__slide">
-                            <div class="product">
-                                <a href="/pages/product.html?id=44" class="product-link">
-                                    <img src="./images/products/soho-shirt.jpg" alt="t-shirt showcase">
-                                    <p class="product-brand"><strong>H&M</strong> </p>
-                                    <p class="product-title">T-shirt i bomuldsjersey</p>
-                                    <p class="product-price">kr. 499.-</p>
-                                </a>
-                            </div>
+                            <div class="product-empty"></div>
                         </li>
                         <li class="splide__slide">
-                            <div class="product">
-                                <a href="/pages/product.html?id=44" class="product-link">
-                                    <img src="./images/products/soho-shirt.jpg" alt="t-shirt showcase">
-                                    <p class="product-brand"><strong>H&M</strong> </p>
-                                    <p class="product-title">T-shirt i bomuldsjersey</p>
-                                    <p class="product-price">kr. 499.-</p>
-                                </a>
-                            </div>
+                            <div class="product-empty"></div>
                         </li>
                         <li class="splide__slide">
-                            <div class="product">
-                                <a href="/pages/product.html?id=44" class="product-link">
-                                    <img src="./images/products/soho-shirt.jpg" alt="t-shirt showcase">
-                                    <p class="product-brand"><strong>H&M</strong> </p>
-                                    <p class="product-title">T-shirt i bomuldsjersey</p>
-                                    <p class="product-price">kr. 499.-</p>
-                                </a>
-                            </div>
+                            <div class="product-empty"></div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="product-empty"></div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="product-empty"></div>
                         </li>
                     </ul>
                 </div>
@@ -531,6 +531,23 @@
     </footer>
 
 
+    <script type="text/javascript">
+    const first = new Splide('#splide1', {
+        type: 'loop',
+        perPage: 4,
+        perMove: 1,
+        pagination: true,
+        autoHeight: true,
+    }).mount();
+
+     const secound = new Splide('#splide2', {
+         type: 'loop',
+         perPage: 4,
+         perMove: 1,
+         pagination: true,
+         autoHeight: true,
+        }).mount();
+    </script>
     <script type="text/javascript" src="js/serviceWorkerHandler.js"></script>
     <script type="text/javascript" src="js/Cart.js"></script>
     <script type="text/javascript" src="js/header.js"></script>

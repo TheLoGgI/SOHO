@@ -81,11 +81,18 @@ function toggleMobilMenu(icon, menu, direction, cb) {
 // Big Navigation Menu
 const bigmenuBrand = document.getElementById('bigmenuBrand')
 const bigmenuCategory = document.getElementById('bigmenuCategory')
-const bigMenuHover = document.querySelectorAll('[data-template]')
+const menuLinks = document.querySelectorAll('.menu-navagation-link')
 
-bigMenuHover.forEach(item => {
-    item.addEventListener('mouseenter', e => {
-        showBigMenu(item.dataset.template)
+// Show Big Menu
+menuLinks.forEach(item => {
+    item.addEventListener('mouseenter', e => showBigMenu(item.dataset.template))
+})
+
+// Hide Big menu
+menuLinks.forEach(itemLink => {
+    itemLink.addEventListener('mouseover', () => {
+        bigmenuCategory.style.transform = `translateY(-140%)`
+        bigmenuBrand.style.transform = `translateY(-140%)`
     })
 })
 
@@ -96,6 +103,7 @@ bigmenuCategory.addEventListener('mouseleave', e => {
 bigmenuBrand.addEventListener('mouseleave', e => {
     bigmenuBrand.style.transform = `translateY(-140%)`
 })
+
 
 /**
  * Toggling Big menu, menus for which to be enabled
@@ -109,6 +117,9 @@ function showBigMenu(changeTo) {
     } else if(changeTo === 'category') {
         bigmenuBrand.style.transform = `translateY(-140%)`
         bigmenuCategory.style.transform = `translateY(0%)`
+    } else {
+        bigmenuCategory.style.transform = `translateY(-140%)`
+        bigmenuBrand.style.transform = `translateY(-140%)`
     }
 
 }
@@ -133,7 +144,7 @@ document.getElementById('cartIcon').addEventListener('click', () => {
  */
 function removeLoading() {
     const loadingScene = document.getElementById('loading')
-    loadingScene.remove()
+    loadingScene?.remove()
 }
 
 
@@ -184,7 +195,7 @@ function basketTemplate() {
     
         <div class="cart-total">
                 <p>Pris i alt (inkl. moms)</p>
-                <p class="cart-total-price"><span>${totalPrice},00</span> kr</p>
+                <p class="cart-total-price"><span>${totalPrice + 29},00</span> kr</p>
             </div>
             <a href="#kurv" class="shopping-btn btn">Indkøbskurv</a>
             </div>`

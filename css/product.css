@@ -198,10 +198,10 @@
   float: right;
 }
 
-/* Anbefaling sektion - skal ikke vises på mobil, så vi bruger - display: none; - for at skjule sektionen */
+/* Anbefaling sektion - skal ikke vises på mobil, så vi bruger - display: none; - for at skjule sektionen
 .similar-products {
   display: none;
-}
+} */
 
 /* Desktop */
 @media screen and (min-width: 1200px) {
