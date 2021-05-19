@@ -103,24 +103,6 @@
     width: 20px;
 }
 
-/*
-.filter-subject-summary::before {
-    content: ' ';
-    border: solid #939faa;
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 0 5px 5px 0;
-    transform: rotate(-45deg);
-}
-*/
-
-/* .filter-subject-arrow {
-    width: 20px;
-    height: 20px;
-    transform: rotate(-90deg);
-    margin-right: 10px;
-} */
-
 .filter-subject-list {
     list-style: none;
     animation-duration: 3s;
@@ -285,6 +267,7 @@
     width: 50%;
     padding-left: 3px;
     padding-right: 3px;
+    margin-bottom: .5rem;
 }
 
 .filter-buttons {
@@ -526,6 +509,14 @@
         background-color: rgba(255, 255, 255, 0);
         border-style: none;
         cursor: pointer;
+        transition: background-color .3s;
+    }
+
+    .desktop-filter-btn:hover,
+    .desktop-filter-btn:active,
+    .desktop-reset-filter-btn:hover {
+        background-color: rgba(206, 196, 181, 0.561);
+        color: black;
     }
     .desktop-filter-btn-arrow {
         padding: 16px;

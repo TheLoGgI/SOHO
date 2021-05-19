@@ -19,7 +19,6 @@ function init() {
 
     document.body.classList.add('loaded')
     
-
     const first = new Splide('#splide1', {
         type: 'loop',
         perPage: 2,
@@ -35,6 +34,10 @@ function init() {
         pagination: true,
         autoHeight: true,
     }).mount();
+
+    // Clear splide pagination duplicates 
+    document.querySelectorAll('.splide__pagination:nth-child(odd)').forEach(el => el.remove())
+
 
     if (window.innerWidth > 800) {
         first.options = {perPage: 3}
@@ -64,10 +67,10 @@ function init() {
  * @param  {Array} - Array of products to be displayed
  * @return {null} 
  */
-const productList = document.getElementById("product-list")
 function displayProducts(arrayList) {
     let popular = ''
     let local = ''
+    
 
     const localBrandsList = ['lakor', 'garcia', 'revolution']
     for (const item of arrayList) {

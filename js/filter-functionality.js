@@ -13,8 +13,18 @@ async function fetchCategoriesAndTags() {
     // Checking when both responses has come back as resolved
     Promise.allSettled([categoriesData, brandsData]).
         then((results) => {
-            const categories = results[0].value.map(item => item.name.toLowerCase())
-            const brands = results[1].value.map(item => item.name.toLowerCase())
+            
+            const reducer = (acc, item) => {
+                if (['nyhed', 'popular', 'tilbud'].includes(item.slug)) return acc
+                acc.push([item.name.toLowerCase(), item.slug])
+                return acc
+            }
+
+            const categories = results[0].value.reduce( reducer, [])
+            const brands = results[1].value.reduce( reducer, [])
+
+            console.log('categories: ', categories);
+            console.log('brands: ', brands);
 
             const filters = [
                 {
@@ -31,8 +41,8 @@ async function fetchCategoriesAndTags() {
             appendFilters(filters);
             appendDesktopFilters(categories, "#desktop-categories-filter-list");
             appendDesktopFilters(brands, "#desktop-brands-filter-list");
-            eventFilterHandler()
-            removeLoading()
+            // eventFilterHandler()
+            // removeLoading()
         })
 
 }
@@ -71,8 +81,8 @@ function loopFilterEmner(filterList) {
         if (listItem === 'uncategorized') continue
         template += /*html*/ `
             <li class="filter-subject-list-item">
-            <input class="filter-subject-input-check" data-name="${listItem.replaceAll(' ', '-')}" type="checkbox"/>
-            <label for="${listItem.replaceAll(' ', '-')}" class="filter-subject-name">${listItem.capitalize()}</label>
+            <input class="filter-subject-input-check" data-name="${listItem[1]}" type="checkbox"/>
+            <label for="${listItem[1]}" class="filter-subject-name">${listItem[0].capitalize()}</label>
         </li>
     `;
     }
@@ -87,13 +97,14 @@ function loopFilterEmner(filterList) {
  * @return {null}
  */
 function appendDesktopFilters(filters, selector) {
+    console.log('filters: ', filters);
     let htmlTemplate = "";
     for (const filter of filters) {
         if (filter === 'uncategorized') continue
         htmlTemplate += /*html*/ `
         <li class="filter-subject-list-item">
-            <input class="filter-subject-input-check" data-name="${filter.replaceAll(' ', '-')}" id="1${filter.replaceAll(' ', '-')}" type="checkbox"/>
-            <label for="1${filter.replaceAll(' ', '-')}" class="filter-subject-name">${filter.capitalize()}</label>
+            <input class="filter-subject-input-check" data-name="${filter[1]}" id="1${filter[1]}" type="checkbox"/>
+            <label for="1${filter[1]}" class="filter-subject-name">${filter[0].capitalize()}</label>
         </li>
     `;
     }

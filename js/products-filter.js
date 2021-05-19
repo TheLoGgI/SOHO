@@ -6,6 +6,7 @@ window.addEventListener('hashchange', urlHashFilter)
 
 function urlHashFilter() {
     location.hash = location.hash.toLowerCase()
+
     const regex = /(\w+?-\w+|(\w+))/g
     const urlHashFilter = location.hash.match(regex)
     urlHashFilter?.shift()
@@ -16,18 +17,26 @@ function urlHashFilter() {
     } else {
         filterArray.length = 0
     }
+
+    syncFiltersAndUrl()
     filterProducts()
 }
 
+function syncFiltersAndUrl() {
+    const filters = Array.from(document.querySelectorAll("input[data-name]")).reduce( (acc, val) => {
+        
+        return acc.set(val.getAttribute('data-name'), val)
+    }, new Map())
 
-// function filterQuery() {
-//     const q = filterArray.reduce((acc, value) => {
-//         if (acc !== '') return `${acc}+${value.replaceAll(' ', '-')}`
-//             else return value.replaceAll(' ', '-')
-//     }, '')
-
-//     location.hash = `filter=${q}`
-// }
+    console.log('filters: ', filters);
+    const urlFilterList = location.hash.match(/(\w+?-\w+|(\w+))/g)
+    urlFilterList?.shift()
+    
+    urlFilterList?.forEach(item => {
+        const element = filters.get(item)
+        if (element) element.checked = true
+    })
+}
 
 /**
  * Fetcing API data from wordpress
@@ -135,7 +144,7 @@ function changeIcon(event) {
  */
 function eventFilterHandler() {
     const filters = document.querySelectorAll(".desktop-filter-list, .filter-subject-list")
-    const filterBtns = document.querySelectorAll(".reset-filters-btn")
+    const filterBtns = document.querySelectorAll(".reset-filters-btn, .desktop-reset-filter-btn")
     
     filters.forEach(item => {
         item.addEventListener("click", filter)
@@ -144,10 +153,9 @@ function eventFilterHandler() {
     filterBtns.forEach(item => {
         item.addEventListener("click", clearFilters)
     })
-
-    
 }
 
+eventFilterHandler()
 
 /**
  * Checking checkboxes for filter settings
@@ -156,17 +164,20 @@ function eventFilterHandler() {
  */
 function filter(e) {
     if (e.target.tagName === "LABEL" || e.target.tagName === "UL") return;
-    const filterName = e.target.getAttribute("data-name");
+    const filterName = e.target.getAttribute("data-name").toLowerCase();
 
     if (e.target.checked) {
-        filterArray.push(filterName.toLowerCase());
+        filterArray.push(filterName);
+        location.hash += location.hash.length <= 8 ? filterName : '+'+filterName
     } else {
-        const index = filterArray.indexOf(filterName.toLowerCase());
+        const index = filterArray.indexOf(filterName);
         filterArray.splice(index, 1);
+        location.hash = location.hash.replaceAll(new RegExp(`\\+?${filterName}`, 'g'), '')
     }
 
-    filterProducts();
-}   
+}  
+
+
 
 /**
  * Applying sorting and filters for product display
@@ -231,6 +242,9 @@ function clearFilters() {
     })
 
     filterArray.length = 0
+    location.hash = 'filter='
+
+
     filterProducts()
 }
 
