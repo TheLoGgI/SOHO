@@ -166,7 +166,7 @@ function filter(e) {
     }
 
     filterProducts();
-}
+}   
 
 /**
  * Applying sorting and filters for product display
@@ -183,10 +183,10 @@ function filterProducts() {
         return
     };
 
-
+    // Checks for dublikations and set it as filter 
     for (const product of prods) {
         [...product.categories, ...product.tags].forEach(category => {
-            // Checks if for dublikations and 
+            
             const hasprod = filteredProducts.find(p => product.id === p.id)
             if (hasprod === undefined && filterArray.includes(category.slug.toLowerCase())) {
                 filteredProducts.push(product);

@@ -194,6 +194,7 @@ function deliveryTime() {
 async function getProducts() {
     const data = await (await fetch('https://soho.lasseaakjaer.com/wp-json/wc/store/products')).json()
     showProductList(data)
+    
     const splideSlider = new Splide('#splide1', {
         type: 'loop',
         perPage: 2,

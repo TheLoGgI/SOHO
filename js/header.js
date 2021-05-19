@@ -29,6 +29,12 @@ document.getElementById('searchShoppingButton').addEventListener('click', e => {
         )
   })
 
+  
+//   Source: https://flaviocopes.com/how-to-uppercase-first-letter-javascript/
+  String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1)
+  }
+
 /**
  * Toggle mobil menu
  * @param  {Element} - Icon path on menu button
@@ -160,7 +166,7 @@ cart.addEventListener('mouseleave', e => {
  */
 function updateBasket() {
     const headerCartItems = document.getElementById('cartItems')
-    headerCartItems.textContent = userCart.cart.length
+    headerCartItems.textContent = userCart.cart.length === 0 ? '' : userCart.cart.length
     
 }
 

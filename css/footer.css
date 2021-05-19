@@ -3,6 +3,7 @@
 footer {
     background-color: var(--clr-footer);
     width: 100%;
+    margin-top: 5rem;
 }
 
 .footer-wrapper {
@@ -106,7 +107,6 @@ hr {
             "address opening help ... ..." 
             "hr hr hr hr hr" 
             "logo socials socials socials payments";
-        margin-top: 2rem;
     }
     .footer-opening-section, .footer-address-section, .footer-helping-section {
         margin-top: 0rem;
@@ -132,6 +132,8 @@ hr {
 }
 
 @media screen and (min-width: 1650px) { 
+
+
     .footer-wrapper {
         padding: 2rem 0;
     }

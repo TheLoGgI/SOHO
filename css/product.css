@@ -188,7 +188,7 @@
 
 /* Andmeldelse */
 .review {
-  font-size: var(--fs-nm);
+  font-size: var(--fs-sm);
   /* margin-top: 1rem; */
   padding: .6rem;
 }
@@ -198,10 +198,48 @@
   float: right;
 }
 
-/* Anbefaling sektion - skal ikke vises på mobil, så vi bruger - display: none; - for at skjule sektionen
 .similar-products {
-  display: none;
-} */
+  padding: var(--pd-mobil);
+} 
+
+.products {
+  display: flex;
+  flex-flow: row nowrap;
+  column-gap: 1rem;
+  overflow-x: auto;
+  /* -webkit-overflow-scrolling: touch; */
+  padding: 2rem 0;
+  width: auto;
+}
+
+.product {
+  margin: 0 0.5rem;
+}
+
+.product img {
+  width: 100%;
+  min-height: 300px;
+  object-fit: cover;
+  margin-bottom: 0.5em;
+}
+
+.product p {
+  font-size: var(--fs-sm);
+}
+
+.splide {
+  min-height: 16rem;
+}
+
+.splide__pagination .splide__pagination__page {
+  background-color: rgb(98, 98, 98);
+}
+
+.splide__pagination .is-active {
+  background-color: black;
+}
+
+
 
 /* Desktop */
 @media screen and (min-width: 1200px) {
@@ -252,14 +290,6 @@
     flex-wrap: nowrap;
     overflow-x: auto;
     flex-direction: row;
-  }
-
-  .product-card {
-    flex: 0 0 auto;
-      width: 20%;
-      margin: 10px;
-      position: relative;
-      background-color: #F3EFE9;
   }
 
   .like-button {

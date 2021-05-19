@@ -70,7 +70,7 @@ function loopFilterEmner(filterList) {
         template += /*html*/ `
             <li class="filter-subject-list-item">
             <input class="filter-subject-input-check" data-name="${listItem.replaceAll(' ', '-')}" type="checkbox"/>
-            <label for="${listItem.replaceAll(' ', '-')}" class="filter-subject-name">${listItem}</label>
+            <label for="${listItem.replaceAll(' ', '-')}" class="filter-subject-name">${listItem.capitalize()}</label>
         </li>
     `;
     }
@@ -91,7 +91,7 @@ function loopFilterEmner(filterList) {
         htmlTemplate += /*html*/ `
         <li class="filter-subject-list-item">
             <input class="filter-subject-input-check" data-name="${filter.replaceAll(' ', '-')}" id="1${filter.replaceAll(' ', '-')}" type="checkbox"/>
-            <label for="1${filter.replaceAll(' ', '-')}" class="filter-subject-name">${filter}</label>
+            <label for="1${filter.replaceAll(' ', '-')}" class="filter-subject-name">${filter.capitalize()}</label>
         </li>
     `;
     }
