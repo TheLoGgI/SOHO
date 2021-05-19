@@ -4,7 +4,7 @@
  * Fetching Categories and tags from API
  * @return {null}
  */
- async function fetchCategoriesAndTags() {
+async function fetchCategoriesAndTags() {
 
     // Fetching data from Wordpress API
     const categoriesData = await (await fetch('https://soho.lasseaakjaer.com/wp-json/wc/store/products/categories?per_page=30')).json()
@@ -52,7 +52,9 @@ function appendFilters(filters) {
             <summary class="filter-subject-summary">${filter.name}</summary>
             <ul class="filter-subject-list">${loopFilterEmner(filter.filterType)}</ul>
         </details>
-        <div class="filter-line-devider"></div>
+        <div class="filter-line-margin">
+            <div class="filter-line-devider"></div>
+        </div>
     `;
     }
     document.querySelector(".mobile-filter-subjects-window").innerHTML = htmlTemplate;
@@ -84,7 +86,7 @@ function loopFilterEmner(filterList) {
  * @param  {String} - Targeted element selector string
  * @return {null}
  */
- function appendDesktopFilters(filters, selector) {
+function appendDesktopFilters(filters, selector) {
     let htmlTemplate = "";
     for (const filter of filters) {
         if (filter === 'uncategorized') continue
