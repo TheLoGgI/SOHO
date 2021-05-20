@@ -223,7 +223,7 @@ function showProductList(array) {
         templet += `<li class="splide__slide">
         <div class="product">
             <a href="${'/pages/product.html?id=' + item.id}" class="product-link" target="_self">
-                <img src="${item?.images[1] ? item?.images[1].src : 'https://via.placeholder.com/300'
+                <img src="${item?.images[0] ? item?.images[0].src : 'https://via.placeholder.com/300'
             } " alt="t - shirt showcase">
         <p class="product-brand"> <strong>${item.tags[0] ? item?.tags[0].name : ''}</strong> </p >
             <p class="product-title">${item.name}</p>
