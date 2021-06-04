@@ -9,7 +9,7 @@ function urlHashFilter() {
 
     const regex = /(\w+?-\w+|(\w+))/g
     const urlHashFilter = location.hash.match(regex)
-    urlHashFilter?.shift()
+    urlHashFilter.includes('filter') ? urlHashFilter.splice(urlHashFilter.indexOf('filter'), 1) : null
 
     if (urlHashFilter?.length > 0 && urlHashFilter != null) {
         filterArray.length = 0
@@ -28,7 +28,6 @@ function syncFiltersAndUrl() {
         return acc.set(val.getAttribute('data-name'), val)
     }, new Map())
 
-    console.log('filters: ', filters);
     const urlFilterList = location.hash.match(/(\w+?-\w+|(\w+))/g)
     urlFilterList?.shift()
     
