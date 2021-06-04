@@ -1,8 +1,15 @@
 
 
+
+
+
+
+
+
 // Main navigation menu Button
 document.getElementById('menuIconButton').addEventListener('click', e => {
     document.getElementById('nav-icon').classList.toggle('open')
+    
     toggleMobilMenu( 
         null, 
         document.getElementById('mainMenuNav'), // Menu Element
@@ -50,11 +57,13 @@ function toggleMobilMenu(icon, menu, direction, cb) {
     if (isShowing === 'false' || isShowing === null ) {
         
         if (icon) icon.style.fill = '#dbac2b'
+
         if (direction === 'up' || direction === 'down') {
             menu.style.transform = `translateY(0%)`
         } else if (direction === 'left' || direction === 'right') {
             menu.style.transform = `translateX(0%)`
         }
+        
         document.body.classList.add('disabledScroll')
         menu.setAttribute('showing', true)
         cb?.()

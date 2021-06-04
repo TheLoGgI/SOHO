@@ -21,7 +21,7 @@ function init() {
     
     const first = new Splide('#splide1', {
         type: 'loop',
-        perPage: 2,
+        perPage: 1.2,
         perMove: 1,
         pagination: true,
         autoHeight: true,
@@ -29,7 +29,7 @@ function init() {
 
      const secound = new Splide('#splide2', {
         type: 'loop',
-        perPage: 2,
+        perPage: 1.2,
         perMove: 1,
         pagination: true,
         autoHeight: true,
