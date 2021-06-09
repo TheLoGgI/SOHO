@@ -1,5 +1,7 @@
 @import "footer.css";
 @import "shopping-cart.css";
+@import "search.css";
+
 .hero {
   width: 100%;
   height: 70vh;

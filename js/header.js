@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 // Main navigation menu Button
 document.getElementById('menuIconButton').addEventListener('click', e => {
     document.getElementById('nav-icon').classList.toggle('open')
@@ -23,7 +15,10 @@ document.getElementById('searchMenuButton').addEventListener('click', e => {
         e.currentTarget.children[0], // icon path 
         document.getElementById('mobilSearchNav'), // Menu Element
         'down', // Menu direction
-        () => document.getElementById('searchInput').focus()
+        setTimeout(() => {
+            document.getElementById('searchInput').focus()
+        }, 10)
+       
     )
   })
 
@@ -118,6 +113,8 @@ bigmenuCategory.addEventListener('mouseleave', e => {
 bigmenuBrand.addEventListener('mouseleave', e => {
     bigmenuBrand.style.transform = `translateY(-140%)`
 })
+
+
 
 
 /**

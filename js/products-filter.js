@@ -9,7 +9,8 @@ function urlHashFilter() {
 
     const regex = /(\w+?-\w+|(\w+))/g
     const urlHashFilter = location.hash.match(regex)
-    urlHashFilter.includes('filter') ? urlHashFilter.splice(urlHashFilter.indexOf('filter'), 1) : null
+    urlHashFilter.includes('filter') ? 
+        urlHashFilter.splice(urlHashFilter.indexOf('filter'), 1) : null
 
     if (urlHashFilter?.length > 0 && urlHashFilter != null) {
         filterArray.length = 0

@@ -2,6 +2,7 @@
 const localBrands = document.getElementById('localBrands')
 const mostPopular = document.getElementById('mostPopular')
 
+
 /** Source: https://blog.abelotech.com/posts/number-currency-formatting-javascript/
  *  Changes format on currency totals
  * @param {Number} - Number to format
@@ -20,19 +21,20 @@ function init() {
     document.body.classList.add('loaded')
     
     const first = new Splide('#splide1', {
-        type: 'loop',
+        // type: 'loop',
         perPage: 1.2,
         perMove: 1,
-        pagination: true,
+        pagination: false,
         autoHeight: true,
     }).mount();
 
      const secound = new Splide('#splide2', {
-        type: 'loop',
+        // type: 'loop',
         perPage: 1.2,
         perMove: 1,
-        pagination: true,
+        pagination: false,
         autoHeight: true,
+        arrows: false
     }).mount();
 
     // Clear splide pagination duplicates 
@@ -70,7 +72,6 @@ function init() {
 function displayProducts(arrayList) {
     let popular = ''
     let local = ''
-    
 
     const localBrandsList = ['lakor', 'garcia', 'revolution']
     for (const item of arrayList) {

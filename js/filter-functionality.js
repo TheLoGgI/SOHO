@@ -23,8 +23,6 @@ async function fetchCategoriesAndTags() {
             const categories = results[0].value.reduce( reducer, [])
             const brands = results[1].value.reduce( reducer, [])
 
-            console.log('categories: ', categories);
-            console.log('brands: ', brands);
 
             const filters = [
                 {

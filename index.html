@@ -29,7 +29,7 @@
 
 <body>
     <nav class="mobil-bottom-nav">
-        <button id="menuIconButton" class="mobil-nav-item">
+        <button id="menuIconButton" class="mobil-nav-item" title="main menu icon">
             <div id="nav-icon">
                 <span></span>
                 <span></span>
@@ -78,6 +78,7 @@
             </svg>
         </a>
     </nav>
+    <div class="search-backdrop" id="searchBackdrop"></div>
 
     <nav class="mobil-menu-nav" id="mainMenuNav">
         <ul class="mobil-menu-nav-list">
@@ -114,37 +115,23 @@
 
         <div class="logo">
             <a href="/" target="_self">
-                <svg xmlns="http://www.w3.org/2000/svg" width="236" height="160.181" viewBox="0 0 236 160.181">
-                    <g id="Soho-logo-head-black" transform="translate(-382 -543)">
-                        <rect id="Rectangle_15" data-name="Rectangle 15" width="236" height="14" rx="7"
-                            transform="translate(382 613)" />
-                        <path id="Rectangle_17" data-name="Rectangle 17"
-                            d="M56,0h2a56,56,0,0,1,56,56v0a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0v0A56,56,0,0,1,56,0Z"
-                            transform="translate(443 543)" />
-                        <circle id="Ellipse_6" data-name="Ellipse 6" cx="12.5" cy="12.5" r="12.5"
-                            transform="translate(460 643)" />
-                        <circle id="Ellipse_7" data-name="Ellipse 7" cx="12.5" cy="12.5" r="12.5"
-                            transform="translate(515 643)" />
-                        <path id="Path_4" data-name="Path 4"
-                            d="M2650.542,686.275a16.15,16.15,0,0,1,12.069-5.363,18.584,18.584,0,0,1,12.931,5.363"
-                            transform="translate(-2190.542 -42.946)" fill="none" stroke="#000" stroke-linecap="round"
-                            stroke-width="4" />
-                        <path id="Path_5" data-name="Path 5"
-                            d="M2650.542,686.275a16.15,16.15,0,0,1,12.069-5.363,18.584,18.584,0,0,1,12.931,5.363"
-                            transform="translate(-2135.542 -42.946)" fill="none" stroke="#000" stroke-linecap="round"
-                            stroke-width="4" />
-                        <line id="Line_1" data-name="Line 1" y1="13" transform="translate(472.5 624.5)" fill="none"
-                            stroke="#000" stroke-width="2" />
-                        <line id="Line_2" data-name="Line 2" y1="13" transform="translate(527.5 624.5)" fill="none"
-                            stroke="#000" stroke-width="2" />
-                        <path id="Path_7" data-name="Path 7"
-                            d="M2709.394,154.572s-6.466-11.941-16.756-10.819-16.8,8.923-22.76,8.992-8.606.034-14.974-1.555,8.547,17.727,20.052,16.069,19.036-8.277,22.264-9.32a16.843,16.843,0,0,1,10.324-.731C2712.387,158.2,2709.394,154.572,2709.394,154.572Z"
-                            transform="translate(-2209.344 535.822)" />
-                        <path id="Path_54" data-name="Path 54"
-                            d="M2654.293,154.572s6.466-11.941,16.757-10.819,16.8,8.923,22.76,8.992,8.606.034,14.974-1.555-8.547,17.727-20.052,16.069-19.036-8.277-22.264-9.32a16.844,16.844,0,0,0-10.324-.731C2651.3,158.2,2654.293,154.572,2654.293,154.572Z"
-                            transform="translate(-2154.344 535.822)" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="787.492" height="174.467" viewBox="0 0 787.492 174.467">
+                    <g id="Logo-soho" transform="translate(9594.869 2386.912)">
+                      <g id="Soho-logo-head-black" transform="translate(-9594.869 -2383.456)">
+                        <path id="soho-head-hat-buttom-black" d="M246.864,77.322a7.322,7.322,0,0,1-7.322,7.322h-86.3v9.414a21.318,21.318,0,0,1,13.5,6.151,2.093,2.093,0,1,1-2.95,2.971,17.26,17.26,0,0,0-12.061-4.937h-.063a14.8,14.8,0,0,0-11,4.916,2.1,2.1,0,1,1-3.107-2.824,18.944,18.944,0,0,1,13.6-6.276V84.645H95.723v9.414a21.318,21.318,0,0,1,13.5,6.151,2.093,2.093,0,0,1-2.95,2.971,17.26,17.26,0,0,0-12.071-4.937h0a14.8,14.8,0,0,0-11,4.916,2.123,2.123,0,1,1-3.169-2.824,19.163,19.163,0,0,1,13.6-6.276V84.645H7.322A7.322,7.322,0,0,1,7.322,70h232.22a7.322,7.322,0,0,1,7.322,7.322Z" transform="translate(0 3.223)"/>
+                        <path id="soho-head-hat-top-black" d="M119.578,0h2.092a58.578,58.578,0,0,1,58.578,58.578H61A58.578,58.578,0,0,1,119.578,0Z" transform="translate(2.808)"/>
+                        <circle id="soho-head-eye-left-black" cx="13.291" cy="13.291" r="13.291" transform="translate(81.292 104.379)"/>
+                        <circle id="soho-head-eye-right-black" cx="13.291" cy="13.291" r="13.291" transform="translate(139.015 104.379)"/>
+                        <path id="soho-head-mustache-black" d="M156.548,161.167c-12.04-1.736-19.875-8.661-23.3-9.749a17.584,17.584,0,0,0-10.8-.795,12.176,12.176,0,0,1-3.766,0,17.584,17.584,0,0,0-10.8.764c-3.379,1.046-11.255,8.013-23.3,9.749s-27.636-18.473-20.921-16.81,9.414,1.705,15.691,1.632,13.044-8.232,23.808-9.414c10.251-1.13,16.873,10.136,17.479,11.224.607-1.046,7.228-12.354,17.479-11.224,10.764,1.172,17.573,9.331,23.808,9.414a50.276,50.276,0,0,0,15.691-1.632C184.331,142.694,168.578,162.9,156.548,161.167Z" transform="translate(2.857 6.282)"/>
+                      </g>
+                      <g id="Soho-logo-letters-black" transform="translate(-9999.36 -3272.752)">
+                        <path id="Path_230" data-name="Path 230" d="M1096.568,885.84v174.467h-18.815V982.481h-65v77.826H993.94V885.84h18.815v77.826h65V885.84Z" transform="translate(-37.145)"/>
+                        <path id="Path_231" data-name="Path 231" d="M1189.951,1024.865a59.011,59.011,0,1,1,59.011-59.011A59.078,59.078,0,0,1,1189.951,1024.865Zm0-99.207a40.2,40.2,0,1,0,40.2,40.2A40.241,40.241,0,0,0,1189.951,925.658Z" transform="translate(-56.978 -3.041)"/>
+                        <path id="Path_232" data-name="Path 232" d="M898.952,1024.865a59.011,59.011,0,1,1,59.011-59.011A59.077,59.077,0,0,1,898.952,1024.865Zm0-99.207a40.2,40.2,0,1,0,40.2,40.2A40.241,40.241,0,0,0,898.952,925.658Z" transform="translate(-14.85 -3.041)"/>
+                        <path id="Path_233" data-name="Path 233" d="M816.725,992.68a30.755,30.755,0,0,1-10.554,23.365c-7.372,6.5-17.823,9.929-30.215,9.929-22.031,0-34.466-9.835-37.758-12.846l-.838-.77,11.05-15.539,1.069.889c6.243,5.234,15.1,11.238,28.265,11.238,12.136,0,19.679-5.858,19.679-15.292,0-9.715-10.126-14.282-21.851-19.576-14.9-6.731-31.78-14.351-31.78-35.022,0-19.012,15.916-32.807,37.853-32.807,18.541,0,28.992,8.475,31.746,11.075l.864.813-11.648,14.471-1.009-.872c-4.105-3.558-10.767-8.3-21.09-8.3-10.673,0-17.566,5.687-17.566,14.479,0,9.929,10.263,14.6,22.142,20C799.912,964.654,816.725,972.291,816.725,992.68Z" transform="translate(0 -4.149)"/>
+                      </g>
                     </g>
-                </svg>
+                  </svg>
 
             </a>
         </div>
@@ -168,8 +155,15 @@
                 <li><a href="#" class="menu-navagation-link">Om Soho</a></li>
                 <li><a href="#" class="menu-navagation-link">Kontakt</a></li>
             </ul>
+
             <div class="navigation-banner">
-                <img src="icons/Search-icon.svg" alt="Search">
+                <div class="search-icon" id="menuSearch">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26.866" height="31.234" viewBox="0 0 26.866 31.234">
+                        <g id="Search-icon" transform="translate(0 0)">
+                          <path id="Search-path" d="M27.035,30.264l-7.33-9.384a11.567,11.567,0,1,0-1.681,1.259l7.357,9.415a1.049,1.049,0,0,0,1.654-1.292ZM2.452,12.257a9.5,9.5,0,1,1,9.5,9.5,9.5,9.5,0,0,1-9.5-9.5Z" transform="translate(-0.391 -0.725)"/>
+                        </g>
+                      </svg>
+                </div>
                 <img src="./icons/Heart-icon.svg" alt="favoritter">
                 <img src="./icons/Profile-icon.svg" alt="profil">
                 <div class="menu-cart" id="cartIcon">
@@ -189,6 +183,22 @@
 
     <div class="shopping-cart" id="shoppingCart" aria-label="closed">
         <!-- Basket items -->
+    </div>
+
+    <div class="search-menu" id="searchDesk" aria-label="closed">
+        <div class="search-input">
+            <input type="search" id="search" placeholder="Hvad søger du?" aria-placeholder="Hvad søger du?">
+            <div class="search-close" id="searchClose" aria-label="luk søge menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25.243" height="25.243" viewBox="0 0 25.243 25.243">
+                    <g id="x-close-icon" transform="translate(2.164 2.164)">
+                        <line id="Line_149" data-name="Line 149" x2="21" y2="21" transform="translate(-0.043 -0.043)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="3"/>
+                        <line id="Line_150" data-name="Line 150" x1="21" y2="21" transform="translate(-0.043 -0.043)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="3"/>
+                    </g>
+                </svg>
+            </div>    
+        </div>
+        
+        <ul class="search-results" id="deskSearchResults"></ul>
     </div>
 
     <div class="bigmenu" id="bigmenuBrand" aria-label="Close" tabindex="-1">
@@ -442,8 +452,8 @@
                 <p class="footer-list-label">
                     <strong>Soho Aarhus</strong>
                 </p>
+                <address>
                 <ul class="footer-list">
-                    <address>
                         <li class="list-item address-item">
                             <img src="./icons/Location-icon-white.svg" alt="marker">
                             <p> Rosensgade 30, 8000 Aarhus C</p>
@@ -457,8 +467,8 @@
                             <img src="./icons/Mail-icon-white.svg" alt="mail">
                             <p>sohoaarhus@gmail.com </p>
                         </li>
-                    </address>
-                </ul>
+                    </ul>
+                </address>
             </div>
 
             <div class="footer-opening-section">
@@ -539,18 +549,19 @@
 
     <script type="text/javascript">
         const first = new Splide('#splide1', {
-            type: 'loop',
+            type: 'slide',
             perPage: 4,
             perMove: 1,
-            pagination: true,
+            pagination: false,
             autoHeight: true,
         }).mount();
 
         const secound = new Splide('#splide2', {
-            type: 'loop',
+            type: 'slide',
             perPage: 4,
             perMove: 1,
-            pagination: true,
+            pagination: false,
+            arrows: false,
             autoHeight: true,
         }).mount();
     </script>
@@ -558,6 +569,8 @@
     <script type="text/javascript" src="js/Cart.js"></script>
     <script type="text/javascript" src="js/header.js"></script>
     <script type="text/javascript" src="js/forepage.js"></script>
+    <script type="text/javascript" src="js/search.js"></script>
+
 
 
 

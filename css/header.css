@@ -95,10 +95,12 @@ a.mobil-nav-item, .mobil-nav-item {
 .mobil-search-menu {
   background-color: #e8e3db;
   width: 100%;
-  min-height: 100%;
+  height: 100%;
+  /* min-height: 60vh; */
+  /* position: absolute; */
   position: fixed;
   z-index: 9;
-  top: 0rem;
+  bottom: 0rem;
   transform: translateY(140%);
   transition: transform 0.2s ease-in-out;
 }
@@ -250,11 +252,18 @@ a.mobil-nav-item, .mobil-nav-item {
     display: flex;
     align-items: center;
   }
-  .navigation-banner img {
+  .navigation-banner img,
+  .navigation-banner svg{
     --image-size: 1.4rem;
     max-width: var(--image-size);
     max-height: var(--image-size);
+    cursor: pointer;
   }
+
+  .navigation-banner svg:hover {
+    fill: var(--clr-primary);
+  }
+
   .bigmenu h2 {
     margin-bottom: 1rem;
   }
