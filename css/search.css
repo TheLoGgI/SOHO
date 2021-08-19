@@ -85,5 +85,13 @@
     margin-bottom: 1rem;
 }
 
-
+@media screen and (max-width: 1200px) { 
+    .search-menu {
+        display: none;
+    }
+    
+    .search-backdrop {
+        display: none;
+    }
+}
 

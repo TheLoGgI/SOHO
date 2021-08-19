@@ -139,10 +139,8 @@
 }
 
 .customer-club-form {
-  display: block;
-  /* align-items: flex-end;
-  flex-flow: row wrap;
-  gap: 1rem; */
+  display: flex;
+  flex-direction: column;
   margin: 1rem 0;
 }
 
@@ -165,10 +163,6 @@
 .clothing-showcase {
   padding: 2rem var(--pd-mobil);
   /* max-height: 36rem; */
-}
-
-.loaded .clothing-showcase {
-  /* max-height: initial; */
 }
 
 .showcase-title {
@@ -208,8 +202,8 @@
 
 .product img {
   width: 100%;
-  min-height: 300px;
-  object-fit: cover;
+  min-height: 450px;
+  object-fit: contain;
   margin-bottom: 0.5em;
 }
 
@@ -294,6 +288,7 @@
   .customer-club-form {
     display: flex;
     align-items: flex-end;
+    flex-direction: row;
     gap: 1rem;
     margin: 1rem 0;
   }

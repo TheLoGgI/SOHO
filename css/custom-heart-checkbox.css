@@ -16,6 +16,8 @@
   [id="heart"] {
     position: absolute;
     left: -100vw;
+    appearance: none;
+    -webkit-appearance: none;
   }
   
   [for="heart"] {

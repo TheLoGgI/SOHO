@@ -39,7 +39,7 @@ async function fetchCategoriesAndTags() {
             appendFilters(filters);
             appendDesktopFilters(categories, "#desktop-categories-filter-list");
             appendDesktopFilters(brands, "#desktop-brands-filter-list");
-            // eventFilterHandler()
+            eventFilterHandler()
             // removeLoading()
         })
 

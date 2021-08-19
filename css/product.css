@@ -111,7 +111,7 @@
 
 /* Tilføj til kurv knap*/
 .add-to-cart {
-    background-color: #D8A61F;
+  background-color: #D8A61F;
   width: 100%;
   color: black;
   padding: 16px;
@@ -123,6 +123,8 @@
   align-items: center;
   justify-content: center;
   transition: color .3s ease;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 .add-to-cart:hover,

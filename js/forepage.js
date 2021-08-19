@@ -21,20 +21,21 @@ function init() {
     document.body.classList.add('loaded')
     
     const first = new Splide('#splide1', {
-        // type: 'loop',
+        type: 'loop',
         perPage: 1.2,
         perMove: 1,
         pagination: false,
+        arrows: false,
         autoHeight: true,
     }).mount();
 
      const secound = new Splide('#splide2', {
-        // type: 'loop',
+        type: 'loop',
         perPage: 1.2,
         perMove: 1,
         pagination: false,
         autoHeight: true,
-        arrows: false
+        arrows: false,
     }).mount();
 
     // Clear splide pagination duplicates 
